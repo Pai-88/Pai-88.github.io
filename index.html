@@ -1,0 +1,382 @@
+<title>Paing Hein Htet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','sans-serif'] },
+    colors: {
+      border: 'hsl(var(--border))', input: 'hsl(var(--input))', ring: 'hsl(var(--ring))',
+      background: 'hsl(var(--background))', foreground: 'hsl(var(--foreground))',
+      primary: { DEFAULT: 'hsl(var(--primary))', foreground: 'hsl(var(--primary-foreground))' },
+      secondary: { DEFAULT: 'hsl(var(--secondary))', foreground: 'hsl(var(--secondary-foreground))' },
+      muted: { DEFAULT: 'hsl(var(--muted))', foreground: 'hsl(var(--muted-foreground))' },
+      accent: { DEFAULT: 'hsl(var(--accent))', foreground: 'hsl(var(--accent-foreground))' },
+      card: { DEFAULT: 'hsl(var(--card))', foreground: 'hsl(var(--card-foreground))' },
+    },
+    borderRadius: { lg: 'var(--radius)', md: 'calc(var(--radius) - 2px)', sm: 'calc(var(--radius) - 4px)' },
+  } }
+}
+</script>
+<style>
+:root{
+  --background:43 30% 95%; --foreground:36 8% 13%;
+  --card:0 0% 100%; --card-foreground:36 8% 13%;
+  --primary:35 74% 41%; --primary-foreground:0 0% 100%;
+  --secondary:40 27% 91%; --secondary-foreground:36 8% 13%;
+  --muted:40 27% 91%; --muted-foreground:40 6% 41%;
+  --accent:40 27% 91%; --accent-foreground:36 8% 13%;
+  --border:38 19% 86%; --input:38 19% 86%; --ring:35 74% 41%;
+  --radius:0.75rem;
+  --glow:35 74% 41%;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --background:40 8% 7%; --foreground:40 24% 90%;
+    --card:30 8% 10%; --card-foreground:40 24% 90%;
+    --primary:36 65% 57%; --primary-foreground:40 8% 7%;
+    --secondary:30 9% 14%; --secondary-foreground:40 24% 90%;
+    --muted:30 9% 14%; --muted-foreground:39 8% 61%;
+    --accent:30 9% 14%; --accent-foreground:40 24% 90%;
+    --border:30 10% 17%; --input:30 10% 17%; --ring:36 65% 57%;
+    --glow:36 65% 57%;
+  }
+}
+:root[data-theme="dark"]{
+  --background:40 8% 7%; --foreground:40 24% 90%;
+  --card:30 8% 10%; --card-foreground:40 24% 90%;
+  --primary:36 65% 57%; --primary-foreground:40 8% 7%;
+  --secondary:30 9% 14%; --secondary-foreground:40 24% 90%;
+  --muted:30 9% 14%; --muted-foreground:39 8% 61%;
+  --accent:30 9% 14%; --accent-foreground:40 24% 90%;
+  --border:30 10% 17%; --input:30 10% 17%; --ring:36 65% 57%;
+  --glow:36 65% 57%;
+}
+html{scroll-behavior:smooth}
+body{background:hsl(var(--background));color:hsl(var(--foreground));-webkit-font-smoothing:antialiased}
+.glow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.glow::before{content:"";position:absolute;left:50%;top:-10%;width:60rem;height:30rem;transform:translateX(-50%);
+  background:radial-gradient(closest-side, hsl(var(--glow) / .13), transparent 70%);filter:blur(40px)}
+.shot{box-shadow:0 20px 50px -20px hsl(var(--foreground) / .25)}
+.perspective-left{transform:perspective(1400px) rotateY(8deg) rotateX(2deg)}
+.perspective-right{transform:perspective(1400px) rotateY(-8deg) rotateX(2deg)}
+.num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+:focus-visible{outline:2px solid hsl(var(--ring));outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+
+<!-- Navigation -->
+<header class="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+    <a href="#top" class="text-base font-semibold tracking-tight">Paing Hein Htet</a>
+    <nav class="hidden items-center gap-7 text-sm text-muted-foreground md:flex" aria-label="Site">
+      <a href="#work" class="hover:text-foreground">Work</a>
+      <a href="#publication" class="hover:text-foreground">Publication</a>
+      <a href="#about" class="hover:text-foreground">About</a>
+      <a href="#skills" class="hover:text-foreground">Skills</a>
+    </nav>
+    <a href="cv.pdf" class="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+      Download CV
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Primary text CTA (hero) -->
+<section class="relative overflow-hidden">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="relative mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-24 text-center md:pb-28 md:pt-32">
+    <span class="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm">
+      <span class="h-2 w-2 rounded-full bg-primary"></span>
+      Open to summer 2027 internships
+    </span>
+    <h1 class="text-4xl font-bold leading-[1.08] tracking-tight md:text-6xl">
+      Circuit boards, and the machine learning that runs on them.
+    </h1>
+    <p class="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+      Second-year MEng Biomedical Engineering student at UCL. I design hardware, train the models on top of it, and spend most of my time checking whether the numbers are real.
+    </p>
+    <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a href="#work" class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90">
+        See the work
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <a href="https://doi.org/10.5281/zenodo.22782147" class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-6 py-3 text-base font-medium shadow-sm transition hover:bg-accent">
+        Read the preprint
+      </a>
+    </div>
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+      <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20 6 9 17l-5-5"/></svg>UCL MEng Biomedical Engineering</span>
+      <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20 6 9 17l-5-5"/></svg>First-class first year</span>
+      <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M20 6 9 17l-5-5"/></svg>Sole-author preprint with DOI</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="border-y border-border bg-secondary/50">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-px px-6 py-10 md:grid-cols-4 md:py-12">
+    <div class="p-4"><div class="num text-3xl font-bold md:text-4xl">383<span class="text-muted-foreground"> / 710</span></div><p class="mt-2 text-sm text-muted-foreground">distinct images found in a published clinical benchmark of 710 records</p></div>
+    <div class="p-4"><div class="num text-3xl font-bold md:text-4xl">0<span class="text-muted-foreground"> / 24,110</span></div><p class="mt-2 text-sm text-muted-foreground">false accepts across impostor faces in the drone's re-identification pipeline</p></div>
+    <div class="p-4"><div class="num text-3xl font-bold md:text-4xl">55<span class="text-muted-foreground"> / 59</span></div><p class="mt-2 text-sm text-muted-foreground">labelled bounces detected on real table-tennis footage, plus 39 of 39 net crossings</p></div>
+    <div class="p-4"><div class="num text-3xl font-bold md:text-4xl">&lt; 40 dB</div><p class="mt-2 text-sm text-muted-foreground">the noise regime where learned EIT reconstruction beats the classical method</p></div>
+  </div>
+</section>
+
+<!-- Product features -->
+<section id="work" class="mx-auto max-w-6xl px-6 pt-20 md:pt-28">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-wider text-primary">Selected work</p>
+    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Six projects, each with a number I can defend</h2>
+    <p class="mt-4 text-lg text-muted-foreground">Every figure below comes from a script that regenerates it. Where a result is simulation only, or from a single venue, it says so.</p>
+  </div>
+</section>
+
+<!-- 1 PallorHb: image right -->
+<section class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+  <div>
+    <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Preprint · Zenodo DOI</span>
+    <h3 class="mt-4 text-2xl font-bold tracking-tight md:text-3xl">PallorHb: anaemia screening from conjunctival images</h3>
+    <p class="mt-4 text-muted-foreground">A study on the public CP-AnemiC dataset that turned into a dataset-integrity audit. The 710 published records are 383 distinct photographs; duplicates crossed collection sites and carried conflicting haemoglobin labels on identical pixels.</p>
+    <ul class="mt-6 space-y-3 text-sm">
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Grouping folds by site, the standard safeguard, still left two-fifths of a <b>+0.176</b> AUROC inflation in place.</span></li>
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Corrected baseline AUROC <b>0.706</b> (95% CI 0.653 to 0.757); 68 manuscript claims verified automatically.</span></li>
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Code and the duplicate detector released.</span></li>
+    </ul>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a href="https://github.com/Pai-88/pallor-hb" class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition hover:bg-accent">View code</a>
+      <a href="https://doi.org/10.5281/zenodo.22782147" class="inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-primary hover:underline">Read the preprint →</a>
+    </div>
+    <p class="mt-5 text-xs text-muted-foreground">Python · scikit-learn · NumPy · SciPy · bootstrap CIs · DeLong · Bland–Altman · grouped CV</p>
+  </div>
+  <div class="group">
+    <div class="shot perspective-right overflow-hidden rounded-xl border border-border bg-white transition duration-300 group-hover:scale-[1.02]">
+      <img src="assets/pallorhb_pair.png" alt="Figure from the preprint: the same conjunctiva photograph filed under two identifiers at two hospitals with two haemoglobin values, and the near-zero residual after a 3-pixel shift" class="block w-full">
+    </div>
+    <p class="mt-3 text-xs text-muted-foreground">One photograph, two identifiers, two hospitals, two haemoglobin values. Images: CP-AnemiC dataset (Asare, Mendeley Data), CC BY 4.0.</p>
+  </div>
+</section>
+
+<!-- 2 PURSUIT-1: image left -->
+<section class="bg-secondary/40">
+<div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+  <div class="group order-2 md:order-1">
+    <div class="shot perspective-left overflow-hidden rounded-xl border border-border bg-white transition duration-300 group-hover:scale-[1.02]">
+      <img src="assets/pursuit_board.png" alt="Render of the PURSUIT-1 flight-controller PCB, an X-shaped four-arm board with motor rings at each corner" class="block w-full">
+    </div>
+  </div>
+  <div class="order-1 md:order-2">
+    <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Hardware · Firmware · Vision</span>
+    <h3 class="mt-4 text-2xl font-bold tracking-tight md:text-3xl">PURSUIT-1: a person-following quadcopter whose airframe is the PCB</h3>
+    <p class="mt-4 text-muted-foreground">The 4-layer flight-controller board is generated from a Python circuit description, so the netlist and layout have one source of truth. All checks pass and fabrication files are released.</p>
+    <ul class="mt-6 space-y-3 text-sm">
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>ESP32-S3 flight firmware: sensor fusion, cascaded PID, motor mixing and failsafes, validated on the bench.</span></li>
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Off-board detection, tracking and face re-identification on ONNX Runtime with CoreML, chosen over PyTorch to keep the deployment at 40 MB.</span></li>
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>0 false accepts</b> in 24,110 impostor faces; 369 tests.</span></li>
+    </ul>
+    <p class="mt-5 text-xs text-muted-foreground">KiCad · SKiDL · Freerouting · ngspice · C++ · Python · ONNX Runtime · OpenCV · PlatformIO</p>
+  </div>
+</div>
+</section>
+
+<!-- 3 EIT: image right -->
+<section class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+  <div>
+    <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Instrument · Inverse problem</span>
+    <h3 class="mt-4 text-2xl font-bold tracking-tight md:text-3xl">EIT-16CH: an electrical impedance tomography instrument</h3>
+    <p class="mt-4 text-muted-foreground">A 16-electrode, 4-layer measurement board with 104 components, DRC clean and released for fabrication, alongside a simulation study of how images should be reconstructed from it.</p>
+    <ul class="mt-6 space-y-3 text-sm">
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Learned and classical (Gauss-Newton) reconstruction compared across noise levels, in simulation.</span></li>
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>The learned method wins below <b>40 dB</b> SNR; above it the classical method holds its own.</span></li>
+    </ul>
+    <p class="mt-5 text-xs text-muted-foreground">KiCad · ESP32-S3 · PlatformIO · PyTorch · NumPy · pyEIT</p>
+  </div>
+  <div class="group">
+    <div class="shot perspective-right overflow-hidden rounded-xl border border-border bg-white transition duration-300 group-hover:scale-[1.02]">
+      <img src="assets/eit_recon.png" alt="Grid of EIT reconstructions: ground truth, classical Gauss-Newton and the learned method at clean, 30 dB and 20 dB noise" class="block w-full">
+    </div>
+  </div>
+</section>
+
+<!-- 4 TT-Scout: image left -->
+<section class="bg-secondary/40">
+<div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+  <div class="group order-2 md:order-1">
+    <div class="shot perspective-left overflow-hidden rounded-xl border border-border bg-white transition duration-300 group-hover:scale-[1.02]">
+      <img src="assets/ttscout_frames.png" alt="Two frames from a real match with the detected ball track drawn on: bounces marked in green, net crossings in magenta, racket hits in red" class="block w-full">
+    </div>
+    <p class="mt-3 text-xs text-muted-foreground">Detected track and events on real match footage. Frames: OpenTTGames (OSAI), CC BY-NC-SA 4.0.</p>
+  </div>
+  <div class="order-1 md:order-2">
+    <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Computer vision · Validated on real footage</span>
+    <h3 class="mt-4 text-2xl font-bold tracking-tight md:text-3xl">TT-Scout: table tennis match analytics from video</h3>
+    <p class="mt-4 text-muted-foreground">A classical ball detector, tracker and velocity-kink event detector for bounces and net crossings, with no trained model. Player identity by shirt colour, no faces.</p>
+    <ul class="mt-6 space-y-3 text-sm">
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>On public footage (OpenTTGames, two clips, one venue): ball on <b>94 to 96%</b> of labelled frames, <b>55/59</b> labelled bounces at 2 to 4 cm median error.</span></li>
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>39/39</b> net crossings; <b>4/4</b> winners match the umpire's scoreboard.</span></li>
+    </ul>
+    <p class="mt-5 text-xs text-muted-foreground">Python · OpenCV · NumPy · Matplotlib</p>
+  </div>
+</div>
+</section>
+
+<!-- 5 RL Car: image right -->
+<section class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+  <div>
+    <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Reinforcement learning · Uncertainty</span>
+    <h3 class="mt-4 text-2xl font-bold tracking-tight md:text-3xl">RL Car: uncertainty-aware autonomous racing</h3>
+    <p class="mt-4 text-muted-foreground">A racer that estimates its own epistemic uncertainty and slows when a sensor is blinded. The useful result was a negative one.</p>
+    <ul class="mt-6 space-y-3 text-sm">
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Uncertainty has to be estimated on a forward model, not the policy: the policy-space ensemble scored AUROC <b>0.127</b>, anti-correlated, on a blinded sensor.</span></li>
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>A Navier–Stokes solver written from scratch for the body aerodynamics, validated against published cylinder-flow benchmarks.</span></li>
+    </ul>
+    <p class="mt-5 text-xs text-muted-foreground">Python · NumPy · SciPy · bootstrap ridge regression · random Fourier features · FreeCAD · gmsh · CalculiX</p>
+  </div>
+  <div class="group">
+    <div class="shot perspective-right overflow-hidden rounded-xl border border-border bg-white transition duration-300 group-hover:scale-[1.02]">
+      <img src="assets/rlcar_hero.png" alt="CAD render of the RL car body shell on its chassis" class="block w-full">
+    </div>
+  </div>
+</section>
+
+<!-- 6 PBR: image left -->
+<section class="bg-secondary/40">
+<div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+  <div class="group order-2 md:order-1">
+    <div class="shot perspective-left overflow-hidden rounded-xl border border-border bg-white transition duration-300 group-hover:scale-[1.02]">
+      <img src="assets/pbr_board.png" alt="3D render of the airlift photobioreactor controller PCB, rev B, with ESP32-S3 module and screw terminals" class="block w-full">
+    </div>
+  </div>
+  <div class="order-1 md:order-2">
+    <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Embedded · Modelling</span>
+    <h3 class="mt-4 text-2xl font-bold tracking-tight md:text-3xl">Airlift photobioreactor controller</h3>
+    <p class="mt-4 text-muted-foreground">A 2-layer ESP32-S3 controller for a 1 L algae culture, with a growth model fitted to decide the light schedule.</p>
+    <ul class="mt-6 space-y-3 text-sm">
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Optimised schedule predicts <b>+21%</b> biomass at equal energy, in simulation.</span></li>
+      <li class="flex gap-3"><svg class="mt-0.5 shrink-0 text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Board is DRC clean with fabrication files built.</span></li>
+    </ul>
+    <p class="mt-5 text-xs text-muted-foreground">KiCad · ngspice · CadQuery · Python · PlatformIO</p>
+  </div>
+</div>
+</section>
+
+<!-- Publication card -->
+<section id="publication" class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-wider text-primary">Publication</p>
+    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">One preprint, sole author</h2>
+  </div>
+  <div class="relative mx-auto mt-10 max-w-3xl overflow-hidden rounded-xl border border-border bg-card p-8 shadow-sm md:p-10">
+    <div class="absolute inset-x-0 top-0 h-1 bg-primary"></div>
+    <h3 class="text-xl font-semibold leading-snug md:text-2xl">Duplicate leakage in a public conjunctival pallor benchmark, and an honest baseline for image-based anaemia screening</h3>
+    <p class="mt-3 text-sm text-muted-foreground">Htet, P. H. (2026). Preprint, Zenodo. doi:10.5281/zenodo.22782147</p>
+    <p class="mt-5 text-muted-foreground">Shows that a published clinical image dataset contains far fewer distinct images than records, that the duplicates carry conflicting labels, and that the usual site-grouped cross-validation does not remove the resulting inflation. Reports a corrected baseline and releases the detector.</p>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a href="https://doi.org/10.5281/zenodo.22782147" class="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90">Open on Zenodo</a>
+      <a href="https://github.com/Pai-88/pallor-hb" class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-5 py-2.5 text-sm font-medium shadow-sm transition hover:bg-accent">Code and detector</a>
+    </div>
+  </div>
+</section>
+
+<!-- About: feature grid -->
+<section id="about" class="border-y border-border bg-secondary/40">
+  <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-wider text-primary">About</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Where the work comes from</h2>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <div class="rounded-xl border border-border bg-card p-7">
+        <div class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold">MEng Biomedical Engineering, UCL</h3>
+        <p class="mt-2 text-sm text-muted-foreground">2025 to 2029. First-class result in year one. A-Levels: A* Mathematics, Further Mathematics, Physics, Chemistry; A Biology.</p>
+      </div>
+      <div class="rounded-xl border border-border bg-card p-7">
+        <div class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold">Research</h3>
+        <p class="mt-2 text-sm text-muted-foreground">Oral cancer detection with deep learning, with Dr J. W. Asare, University of Energy and Natural Resources, Ghana. 2026 to present.</p>
+      </div>
+      <div class="rounded-xl border border-border bg-card p-7">
+        <div class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold">Six months on the wards</h3>
+        <p class="mt-2 text-sm text-muted-foreground">Healthcare assistant at Grand Mandalay Hospital, Myanmar, January to June 2025. This is what turned my interest towards machine learning for clinical care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills grid -->
+<section id="skills" class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-wider text-primary">Skills</p>
+    <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Tools I use every week</h2>
+  </div>
+  <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="rounded-xl border border-border bg-card p-6"><h3 class="font-semibold">Languages</h3><p class="mt-2 text-sm text-muted-foreground">Python, C, C++, MATLAB, SQL</p></div>
+    <div class="rounded-xl border border-border bg-card p-6"><h3 class="font-semibold">Evaluation</h3><p class="mt-2 text-sm text-muted-foreground">Bootstrap confidence intervals, DeLong test, calibration (Hosmer–Lemeshow, ECE, Brier), Bland–Altman agreement, decision curves, grouped cross-validation, leakage control</p></div>
+    <div class="rounded-xl border border-border bg-card p-6"><h3 class="font-semibold">Machine learning</h3><p class="mt-2 text-sm text-muted-foreground">scikit-learn, PyTorch; epistemic uncertainty via ensembles and random Fourier features, out-of-distribution detection, reinforcement learning, gradient boosting</p></div>
+    <div class="rounded-xl border border-border bg-card p-6"><h3 class="font-semibold">Vision</h3><p class="mt-2 text-sm text-muted-foreground">CNN, ViT, DETR, YOLO; OpenCV, ONNX Runtime, CoreML; detection, tracking, face recognition</p></div>
+    <div class="rounded-xl border border-border bg-card p-6"><h3 class="font-semibold">Electronics</h3><p class="mt-2 text-sm text-muted-foreground">2- and 4-layer PCB layout, analog front ends, power; KiCad, SKiDL, LTspice, ngspice; SMD soldering; ESP32-S3, RP2040</p></div>
+    <div class="rounded-xl border border-border bg-card p-6"><h3 class="font-semibold">Simulation and CAD</h3><p class="mt-2 text-sm text-muted-foreground">MuJoCo, domain randomisation; Fusion 360, SolidWorks, CadQuery, gmsh, CalculiX; 3D printing</p></div>
+  </div>
+</section>
+
+<!-- CTA band -->
+<section class="relative overflow-hidden border-t border-border bg-secondary/50">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-3xl px-6 py-20 text-center md:py-24">
+    <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Looking for a summer 2027 internship</h2>
+    <p class="mt-4 text-lg text-muted-foreground">Medical imaging, biosignals or embedded systems, ideally somewhere the evaluation has to satisfy a regulator as well as a reviewer. Available full-time from mid-June to late September 2027.</p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a href="mailto:zcemphh@ucl.ac.uk" class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Email me
+      </a>
+      <a href="cv.pdf" class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-6 py-3 text-base font-medium shadow-sm transition hover:bg-accent">Download CV</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-border">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <p class="text-base font-semibold">Paing Hein Htet</p>
+      <p class="mt-2 max-w-sm text-sm text-muted-foreground">Biomedical engineering student at UCL. Hardware, machine learning, and the evaluation in between.</p>
+    </div>
+    <div>
+      <p class="text-sm font-semibold">Site</p>
+      <ul class="mt-3 space-y-2 text-sm text-muted-foreground">
+        <li><a href="#work" class="hover:text-foreground">Work</a></li>
+        <li><a href="#publication" class="hover:text-foreground">Publication</a></li>
+        <li><a href="#about" class="hover:text-foreground">About</a></li>
+        <li><a href="cv.pdf" class="hover:text-foreground">CV (PDF)</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-sm font-semibold">Elsewhere</p>
+      <ul class="mt-3 space-y-2 text-sm text-muted-foreground">
+        <li><a href="https://github.com/Pai-88" class="hover:text-foreground">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/paing-hein-htet-3115b4373" class="hover:text-foreground">LinkedIn</a></li>
+        <li><a href="mailto:zcemphh@ucl.ac.uk" class="hover:text-foreground">zcemphh@ucl.ac.uk</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-border">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-6 text-xs text-muted-foreground">
+      <span>London</span><span>Updated September 2026</span>
+    </div>
+  </div>
+</footer>
