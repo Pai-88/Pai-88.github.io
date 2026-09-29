@@ -1,0 +1,401 @@
+# Everything the page says lives in this file. Edit it, then run:  python3 build.py
+#
+# Inline markup: **bold** only. Everything else is escaped.
+# `evidence` is one of:  real | sim | untested   (measured on real data or hardware | simulation or
+#   synthetic data | written but not yet run on the hardware). It is not shown on the page; build.py
+#   uses it to decide how soon a block needs re-checking.
+# `layout` (featured projects only) is one of:  side | wide   (figure beside the text, or figures below it)
+# `checked` is the date the facts in that block were last compared against the repo or README.
+
+[site]
+url = "https://paingheinhtet.com/"
+title = "Paing Hein Htet"
+description = "Biomedical engineering student at UCL working on machine learning for clinical data and the hardware that collects it. Preprint on duplicate leakage in a public anaemia benchmark."
+og_description = "Machine learning for clinical data, and the hardware that collects it. MEng Biomedical Engineering, UCL."
+og_image = "assets/og.png"
+
+[person]
+name = "Paing Hein Htet"
+headline = "Machine learning for clinical data, and the hardware that collects it."
+intro = "Second-year MEng Biomedical Engineering student at UCL. I design the boards, write the firmware and train the models, and spend most of my time checking whether the numbers are real."
+availability = "Looking for a summer 2027 internship in medical imaging, biosignals or embedded systems. Available full-time from mid-June to late September 2027."
+email = "zcemphh@ucl.ac.uk"
+email_personal = "paingheinhtet2021@gmail.com"
+cv = "cv.pdf"
+location = "London"
+
+[[fact]]
+label = "Degree"
+value = "MEng Biomedical Engineering, UCL, 2025 to 2029"
+[[fact]]
+label = "Year one"
+value = "First Class"
+[[fact]]
+label = "Preprint"
+value = "doi:10.5281/zenodo.22782147"
+href = "https://doi.org/10.5281/zenodo.22782147"
+[[fact]]
+label = "Memberships"
+value = "IEEE and IET, student member"
+[[fact]]
+label = "Based in"
+value = "London"
+
+# The stripe figure under the introduction. Numbers come from tools/make_stripes.py.
+[band]
+src = "assets/img/pallorhb_stripes.png"
+alt = "A band of 383 vertical stripes in shades of pink, red and brown, one per photograph, with no visible trend from left to right"
+low = "4.2 g/dL"
+high = "15.0 g/dL"
+mark = "11 g/dL"
+mark_note = "WHO anaemia threshold"
+mark_at = 50.9          # per cent from the left: 195 of 383 photographs fall below the threshold
+caption = "Each stripe is one of the **383** distinct photographs in the CP-AnemiC dataset, drawn in its measured conjunctiva colour and ordered by the child's laboratory haemoglobin. The tick is the WHO threshold for anaemia. There is no clean fade from pale to red. The signal is real but subtle, which is why it had to be measured properly. From PallorHb, below."
+
+
+# ───────────────────────────── Selected work ─────────────────────────────
+
+[[project]]
+id = "pallorhb"
+tier = "featured"
+name = "PallorHb"
+what = "Anaemia screening from photographs of the eyelid, and an audit of the benchmark it is tested on"
+evidence = "real"
+status = "Preprint on Zenodo, September 2026. Sole author."
+checked = 2026-09-29
+layout = "wide"
+summary = "I set out to estimate haemoglobin from conjunctiva photographs on the public CP-AnemiC dataset. Its 710 published records turned out to be 383 distinct photographs. The copies cross hospitals and carry conflicting haemoglobin values, so grouping folds by site, the standard safeguard, still left two-fifths of the inflation in place."
+tools = "Python, scikit-learn, NumPy, SciPy"
+
+  [[project.fact]]
+  label = "Distinct photographs"
+  value = "**383** of 710 records"
+  [[project.fact]]
+  label = "Inflation from a naive split"
+  value = "**+0.176** AUROC (95% CI +0.120 to +0.232)"
+  [[project.fact]]
+  label = "Corrected baseline"
+  value = "AUROC **0.706** (95% CI 0.653 to 0.757)"
+  [[project.fact]]
+  label = "What the image adds"
+  value = "**+0.182** AUROC over demographics alone (DeLong p = 2 × 10⁻⁶)"
+  [[project.fact]]
+  label = "Limit"
+  value = "A triage screen, not a haemoglobin meter: Bland-Altman limits of agreement span 7.8 g/dL"
+  [[project.fact]]
+  label = "Reproducibility"
+  value = "62 tests. Every number in the manuscript is regenerated and checked by script."
+
+  [[project.link]]
+  label = "Read the preprint"
+  href = "https://doi.org/10.5281/zenodo.22782147"
+  [[project.link]]
+  label = "Code and duplicate detector"
+  href = "https://github.com/Pai-88/pallor-hb"
+
+  [[project.figure]]
+  src = "assets/img/pallorhb_pair.webp"
+  kind = "plate"
+  alt = "Figure from the preprint: the same conjunctiva photograph filed as Image_143 at one hospital with haemoglobin 12.5 g/dL and as Image_165 at another with 12.8 g/dL, beside the near-zero difference between them after a 3 pixel shift"
+  caption = "One photograph filed under two identifiers, at two hospitals, with two haemoglobin values. The third panel is the difference after a 3 pixel shift. Images: CP-AnemiC dataset (Asare, Mendeley Data), CC BY 4.0."
+
+
+[[project]]
+id = "pursuit"
+tier = "featured"
+name = "PURSUIT-1"
+what = "A 92 mm quadcopter whose circuit board is its own airframe, built to follow one enrolled person"
+evidence = "real"
+status = "Rev A board built and bench-tested. Not yet flown."
+checked = 2026-09-29
+layout = "side"
+summary = "There is no separate frame. The 4-layer board is the structure, and the motors clamp into rings at the ends of its arms. The board is generated from a Python netlist. The flight firmware runs on an ESP32-S3 and is written from the IMU registers up. Detection and identity run on a laptop, which sends setpoints over WiFi."
+tools = "KiCad and its Python API, ngspice, C++, PlatformIO, Python, ONNX Runtime, OpenCV"
+
+  [[project.fact]]
+  label = "Boards"
+  value = "Rev A fabricated and brought up on the bench, August 2026. Rev C released for fabrication."
+  [[project.fact]]
+  label = "Link"
+  value = "**0** corrupt in 3,828 command and 2,551 telemetry packets, with the control loop at about 1.09 kHz"
+  [[project.fact]]
+  label = "Identity"
+  value = "**0** false accepts in 24,110 impostor faces. Held lock on 391 of 400 frames with a second person in view, and never transferred."
+  [[project.fact]]
+  label = "Stability"
+  value = "Uncompensated, the vision loop goes unstable at about 17 ms of delay, and the measured round trip is 20 ms. With attitude compensation it settles past 200 ms, in simulation."
+  [[project.fact]]
+  label = "Caught on the bench"
+  value = "The IMU sat 180 degrees out in yaw, which would have flipped the aircraft on take-off. The host tests had passed on synthetic data."
+  [[project.fact]]
+  label = "Tests"
+  value = "**369**: 128 firmware, 227 vision, 14 flight simulation"
+  [[project.fact]]
+  label = "Next"
+  value = "Measure hover throttle on a scale, tune each axis with the aircraft restrained, then hover at 1 m"
+
+  [[project.link]]
+  label = "Code, board files and bring-up log"
+  href = "https://github.com/Pai-88/pursuit-drone"
+
+  [[project.figure]]
+  src = "assets/img/board_pursuit.webp"
+  kind = "render"
+  alt = "Render of the PURSUIT-1 board: an X-shaped circuit board with a motor ring at the end of each of its four arms, marked REV C"
+  caption = "Rev C board. KiCad render."
+
+
+[[project]]
+id = "eit"
+tier = "featured"
+name = "EIT-16CH"
+what = "A 16-electrode electrical impedance tomography instrument, and how to reconstruct images from it"
+evidence = "sim"
+status = "Simulation only. Boards designed, nothing powered yet."
+checked = 2026-09-29
+layout = "wide"
+summary = "EIT images a cross-section from voltages measured at the surface. It is the method used at the bedside to watch a lung inflate. My first learned reconstruction, trained on clean simulations, lost to the classical Gauss-Newton solver as soon as noise was added. Trained with the noise model the instrument will actually have, a small U-Net beat it at every noise level tested."
+tools = "KiCad, ESP32-S3, PlatformIO, PyTorch, NumPy, pyEIT"
+
+  [[project.fact]]
+  label = "At 20 dB"
+  value = "Correlation with the truth **0.566**, against 0.170 for Gauss-Newton"
+  [[project.fact]]
+  label = "Clean data"
+  value = "0.825 against 0.791"
+  [[project.fact]]
+  label = "Uncertainty"
+  value = "Five-member ensemble: the confident half of each image is **8 to 18 times** more accurate than the doubtful half"
+  [[project.fact]]
+  label = "Hardware"
+  value = "A 4-layer 100 x 100 mm board with 104 footprints, and a 2-layer through-hole version for hand assembly. Neither is fabricated."
+  [[project.fact]]
+  label = "Next"
+  value = "Measure the real signal-to-noise ratio in a saline tank and test the simulation-trained model against it"
+
+  [[project.figure]]
+  src = "assets/img/eit_recon.webp"
+  kind = "plate"
+  alt = "Grid of reconstructions: ground truth, classical Gauss-Newton and the learned method, on clean data and at 30 dB and 20 dB of noise. The classical images break up as noise rises; the learned ones keep both inclusions."
+  caption = "Ground truth, Gauss-Newton and the U-Net at three noise levels. Simulated data."
+  [[project.figure]]
+  src = "assets/img/board_eit16.webp"
+  kind = "render"
+  alt = "Render of the EIT-16CH measurement board: a square board with multiplexers, amplifiers and an ESP32-S3 module"
+  caption = "The 4-layer board. KiCad render."
+
+
+[[project]]
+id = "ttscout"
+tier = "featured"
+name = "TT-Scout"
+what = "Table tennis match analysis from one phone on a tripod"
+evidence = "real"
+status = "Checked by hand against real match video."
+checked = 2026-09-29
+layout = "side"
+summary = "Film a match from the side of the table. TT-Scout finds every point and who won it, keeps the score, and measures each shot's speed in 3D with its own error bar. The table is the calibration: it is exactly 2.74 by 1.525 m, so its four corners recover where the phone stood. Ball tracking is classical, so when it goes wrong you can find the frame and see why."
+tools = "Python, OpenCV, NumPy, PyTorch, Apple Vision"
+
+  [[project.fact]]
+  label = "Point winners"
+  value = "Correct on all **21** endings that could be judged by eye: 16 of 16 on the recording the rules were tuned on, 5 of 5 checked blind on another"
+  [[project.fact]]
+  label = "Shot speed"
+  value = "Median error **3%** on simulated shots with noise, spin and hidden contacts. Not yet measured against a real ball."
+  [[project.fact]]
+  label = "Table found automatically"
+  value = "8 of 8 own recordings, 12 of 12 OpenTTGames clips"
+  [[project.fact]]
+  label = "Learned detector, research only"
+  value = "Finds the ball in 98% of labelled frames against 77% for the classical detector, on 7 held-out clips"
+
+  [[project.link]]
+  label = "Code"
+  href = "https://github.com/Pai-88/tt-scout"
+  [[project.link]]
+  label = "Open an example report"
+  href = "tt-scout/report.html"
+
+  [[project.figure]]
+  src = "assets/img/ttscout_clip.webp"
+  kind = "frame"
+  alt = "A frame from a generated point clip: two players at a blue table, the ball's trail drawn over the net, the bounce ringed, with a scoreboard, a ball speed gauge and a small table diagram of where each shot landed"
+  caption = "One point as TT-Scout draws it: ball trail, bounce, score and shot speed. Footage: OpenTTGames (OSAI), CC BY-NC-SA 4.0."
+
+
+# ─────────────────────────────── More work ───────────────────────────────
+
+[[project]]
+id = "emg"
+tier = "hardware"
+name = "EMG front end"
+what = "Surface-EMG amplifier and RP2040 firmware for proportional grip control"
+evidence = "real"
+status = "Board built, telemetry verified. No EMG recorded yet."
+checked = 2026-09-29
+summary = "An instrumentation amplifier with driven-right-leg mains rejection feeds a Raspberry Pi Pico, which runs the whole loop: filtering, a safety state machine, and a map from contraction strength to grip. In a 10 s capture the link delivered 499 frames with no CRC errors and none dropped. The analog stage has not been powered, so nothing has been recorded from skin."
+tools = "KiCad, C++, PlatformIO, Python"
+  [[project.link]]
+  label = "Code and board files"
+  href = "https://github.com/Pai-88/emg-robotic-hand"
+  [[project.figure]]
+  src = "assets/img/board_emg.webp"
+  kind = "render"
+  alt = "Render of the EMG front end board, rev E: a through-hole board with two amplifier chips, a socket for a Raspberry Pi Pico and the silkscreen warning BATTERY POWER ONLY"
+  caption = "Rev E. KiCad render."
+
+[[project]]
+id = "rlcar"
+tier = "hardware"
+name = "RL Car"
+what = "Uncertainty-aware autonomous racing"
+evidence = "sim"
+status = "Simulation only. The car is not built."
+checked = 2026-09-29
+summary = "A racer meant to slow down when it stops trusting a sensor. The useful result was negative: an ensemble over the policy scored AUROC 0.127 on a blinded sensor, worse than chance, because steering has many right answers and disagreement between them means nothing. Moved onto a forward model, the same kind of ensemble scores above 0.96. The body aerodynamics use a Navier-Stokes solver written from scratch and validated against published cylinder-flow benchmarks."
+tools = "Python, NumPy, SciPy, OpenSCAD, FreeCAD, gmsh, CalculiX"
+  [[project.figure]]
+  src = "assets/img/rlcar.webp"
+  kind = "render"
+  alt = "Render of the RL car: a lofted blue body shell over a printed chassis with four treaded wheels, seen from the front left"
+  caption = "150 by 90 by 46 mm. Rendered from the OpenSCAD model."
+
+[[project]]
+id = "pbr"
+tier = "hardware"
+name = "Photobioreactor controller"
+what = "ESP32-S3 controller for a 1 L algae culture"
+evidence = "sim"
+status = "Simulation only. Board designed, not fabricated."
+checked = 2026-09-29
+summary = "A 2-layer board that reads optical density, pH and temperature and switches the lights, air and dosing. A fitted growth model chooses the light schedule. Across ten simulated runs with unknown parameters it grew a median of 21% more biomass than a fixed timer at equal energy, and never less."
+tools = "KiCad, ngspice, CadQuery, Python, PlatformIO"
+  [[project.figure]]
+  src = "assets/img/board_pbr.webp"
+  kind = "render"
+  alt = "Render of the photobioreactor controller board, rev B, with an ESP32-S3 module, a barrel jack and a row of white connectors"
+  caption = "Rev B. KiCad render."
+
+[[project]]
+id = "sentinel"
+tier = "software"
+name = "Watch Sentinel"
+what = "Illness early-warning from Apple Watch data"
+evidence = "sim"
+status = "Validated on synthetic data only."
+checked = 2026-09-29
+summary = "Resting heart rate, heart rate variability, respiratory rate and wrist temperature are each scored against a personal 28-day baseline that never sees the future, and three of the four must agree before it alerts. A SwiftUI app exports the data from HealthKit. It compiles but has not yet run on a device."
+tools = "Python, pandas, Swift, HealthKit"
+  [[project.link]]
+  label = "Code"
+  href = "https://github.com/Pai-88/watch-sentinel"
+
+[[project]]
+id = "gripper"
+tier = "software"
+name = "Gripper"
+what = "Control software for a 4-DOF robot arm"
+evidence = "untested"
+status = "100 unit tests pass. Not yet run on the arm."
+checked = 2026-09-29
+summary = "Two modes, switched by a hand gesture: teleoperation that follows a tracked hand, and a grasp that aligns to an object by visual servoing. A Raspberry Pi 5 does perception and planning. An ESP32 does servo control and safety, so the arm stops if the Python side hangs or the cable is pulled."
+tools = "Python, MediaPipe, C++, ESP32"
+  [[project.link]]
+  label = "Code"
+  href = "https://github.com/Pai-88/gripper"
+
+[[project]]
+id = "wavelab"
+tier = "software"
+name = "Wave Lab"
+what = "Real-time harmonic analyser in the browser"
+evidence = "real"
+status = "Runs live in the browser."
+checked = 2026-09-29
+summary = "Microphone input split into its component sine waves as it plays, with a spectrum, Fourier resynthesis and live filters. Plain HTML and JavaScript on the Web Audio API, with no build step."
+tools = "JavaScript, Web Audio API"
+  [[project.link]]
+  label = "Try it"
+  href = "https://paingheinhtet.com/wave-lab-analyzer/live.html#demo"
+  [[project.link]]
+  label = "Code"
+  href = "https://github.com/Pai-88/wave-lab-analyzer"
+
+
+# ─────────────────────────────── Publication ─────────────────────────────
+
+[[publication]]
+authors = "Htet, P. H."
+year = "2026"
+title = "Duplicate leakage in a public conjunctival pallor benchmark, and an honest baseline for image-based anaemia screening"
+venue = "Preprint, Zenodo"
+doi = "10.5281/zenodo.22782147"
+note = "Shows that a published clinical image dataset contains far fewer distinct images than records, that the duplicates carry conflicting labels, and that the usual site-grouped cross-validation does not remove the resulting inflation. Reports a corrected baseline and releases the detector."
+
+
+# ─────────────────────────────── Background ──────────────────────────────
+
+[[background]]
+when = "2025 to 2029"
+what = "MEng Biomedical Engineering, University College London"
+detail = "First Class in year one. Second year in progress."
+
+[[background]]
+when = "2026 to now"
+what = "Research: oral cancer detection with deep learning"
+detail = "With Dr J. W. Asare, University of Energy and Natural Resources, Ghana."
+
+[[background]]
+when = "Jan to Jun 2025"
+what = "Healthcare assistant, Grand Mandalay Hospital, Myanmar"
+detail = "Six months on the wards, supporting staff with patient care and observations. That experience turned my work towards machine learning for clinical care."
+
+[[background]]
+when = "2025"
+what = "A-Levels"
+detail = "A* in Mathematics, Further Mathematics, Physics and Chemistry. A in Biology. IGCSE (2023): grade 9 in all nine subjects."
+
+
+# ───────────────────────────────── Skills ────────────────────────────────
+
+[[skill]]
+label = "Languages"
+value = "Python, C, C++, MATLAB, SQL. Data structures and algorithms."
+[[skill]]
+label = "Evaluation"
+value = "Bootstrap confidence intervals, DeLong test, calibration (Hosmer-Lemeshow, expected calibration error, Brier score), Bland-Altman agreement, decision curves, grouped cross-validation, leakage control"
+[[skill]]
+label = "Machine learning"
+value = "scikit-learn, PyTorch. Epistemic uncertainty with bootstrap ensembles and random Fourier features, out-of-distribution detection, reinforcement learning, gradient boosting"
+[[skill]]
+label = "Vision"
+value = "CNN, ViT, DETR, YOLO. OpenCV, ONNX Runtime, CoreML. Detection, tracking, face recognition"
+[[skill]]
+label = "LLMs and agents"
+value = "Anthropic API, tool use, MCP, multi-step agents, Hugging Face Transformers, Whisper"
+[[skill]]
+label = "Signals and control"
+value = "EMG, PPG and Wi-Fi channel-state processing. MuJoCo, domain randomisation"
+[[skill]]
+label = "Electronics"
+value = "2- and 4-layer PCB layout, analog front ends, power. KiCad, SKiDL, LTspice, ngspice. SMD soldering. ESP32-S3, RP2040"
+[[skill]]
+label = "CAD and laboratory"
+value = "Fusion 360, SolidWorks, CadQuery, 3D printing. Aseptic technique, cell passaging, Instron tensile testing"
+
+
+# ───────────────────────────────── Contact ───────────────────────────────
+
+[[elsewhere]]
+label = "GitHub"
+href = "https://github.com/Pai-88"
+[[elsewhere]]
+label = "LinkedIn"
+href = "https://www.linkedin.com/in/paing-hein-htet-3115b4373"
+[[elsewhere]]
+label = "ORCID"
+href = "https://orcid.org/0009-0004-1172-0852"
+[[elsewhere]]
+label = "Kaggle"
+href = "https://www.kaggle.com/painghtetsw"

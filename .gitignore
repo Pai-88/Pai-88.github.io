@@ -1,4 +1,5 @@
 index_v1_editorial.html
-assets/pallorhb_leakage.png
-assets/ttscout_report.png
+.impeccable.md
 .DS_Store
+__pycache__/
+tools/renders/
