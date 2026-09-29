@@ -33,7 +33,7 @@ Each project block carries `checked`, the date its claims were last compared aga
 | `assets/img/pallorhb_stripes.png` | `tools/make_stripes.py` | colour statistics of the CP-AnemiC photographs, via the `pallor-hb` checkout |
 | `assets/img/board_*.webp` | `tools/render_boards.sh`, then `tools/make_images.py` | the KiCad boards, rendered with one camera |
 | `assets/img/*.webp` (the rest) | `tools/make_images.py` | figures from each project |
-| `assets/og.png` | `tools/make_og.py` | the headline in `content/site.toml` |
+| `assets/og.png` | `tools/make_og.py` | a capture of the first screen of the built page |
 
 The tools read the project folders that sit next to this one and never write to them.
 

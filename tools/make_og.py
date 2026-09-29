@@ -3,6 +3,8 @@
 
     python3 build.py && python3 tools/make_og.py
 
+The page is rebuilt at the end, because its link to the picture carries the picture's hash.
+
 It is a capture of the first screen of the page itself, taken with headless Chrome at
 1800 x 945 (the same shape) and reduced, so the card always matches the site.
 Needs Google Chrome and Pillow.
@@ -48,3 +50,4 @@ with tempfile.TemporaryDirectory() as tmp:
 out = ROOT / "assets/og.png"
 card.save(out, optimize=True)
 print(f"wrote {out.relative_to(ROOT)} {card.size}, {out.stat().st_size / 1024:.0f} KB")
+subprocess.run(["python3", str(ROOT / "build.py")], check=True)

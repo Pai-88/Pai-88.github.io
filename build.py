@@ -237,6 +237,8 @@ def page(site: dict) -> str:
     checked = max(p["checked"] for p in projects)
     css = hashlib.sha256(STYLES.read_bytes()).hexdigest()[:10]
     url = meta["url"]
+    # sites that show link previews cache the picture by its address, so the address changes with the picture
+    card = url + meta["og_image"] + "?v=" + hashlib.sha256((ROOT / meta["og_image"]).read_bytes()).hexdigest()[:10]
     bw, bh = image_size(ROOT / band["src"])
 
     selected = "".join(featured(p) for p in by_tier["featured"])
@@ -273,13 +275,13 @@ def page(site: dict) -> str:
 <meta property="og:site_name" content="{esc(meta['title'])}">
 <meta property="og:title" content="{esc(meta['title'])}">
 <meta property="og:description" content="{esc(meta['og_description'])}">
-<meta property="og:image" content="{esc(url + meta['og_image'])}">
+<meta property="og:image" content="{esc(card)}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(meta['title'])}">
 <meta name="twitter:description" content="{esc(meta['og_description'])}">
-<meta name="twitter:image" content="{esc(url + meta['og_image'])}">
+<meta name="twitter:image" content="{esc(card)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{esc(FONTS)}">
