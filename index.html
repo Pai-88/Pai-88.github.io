@@ -232,7 +232,7 @@
       </div>
       <div class="row__text">
         <p class="status"><span class="mark" aria-hidden="true"></span>Simulation only. The car is not built.</p>
-        <p>A racer meant to slow down when it stops trusting a sensor. The useful result was negative: an ensemble over the policy scored AUROC 0.127 on a blinded sensor, worse than chance, because steering has many right answers and disagreement between them means nothing. Moved onto a forward model, the same kind of ensemble scores above 0.96. The body aerodynamics use a Navier-Stokes solver written from scratch and validated against published cylinder-flow benchmarks.</p>
+        <p>A racer meant to slow down when it stops trusting a sensor. The useful result was negative: an ensemble over the policy scored AUROC 0.127 on a blinded sensor, worse than chance, because steering has many right answers and disagreement between them means nothing. Estimating it on a forward model and isolating the faulty sensor, instead of braking, cut crashes from 155 to 2 across 192 held-out fault episodes at full speed. The body aerodynamics use a Navier-Stokes solver written from scratch and validated against published cylinder-flow benchmarks.</p>
         <p class="tools">Python, NumPy, SciPy, OpenSCAD, FreeCAD, gmsh, CalculiX</p>
       </div>
       <figure class="fig fig--render row__fig"><div class="fig__in"><img src="assets/img/rlcar.webp" width="1400" height="826" alt="Render of the RL car: a lofted blue body shell over a printed chassis with four treaded wheels, seen from the front left" loading="lazy" decoding="async"></div><figcaption>150 by 90 by 46 mm. Rendered from the OpenSCAD model.</figcaption></figure>

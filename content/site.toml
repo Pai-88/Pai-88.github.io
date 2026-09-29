@@ -253,7 +253,7 @@ what = "Uncertainty-aware autonomous racing"
 evidence = "sim"
 status = "Simulation only. The car is not built."
 checked = 2026-09-29
-summary = "A racer meant to slow down when it stops trusting a sensor. The useful result was negative: an ensemble over the policy scored AUROC 0.127 on a blinded sensor, worse than chance, because steering has many right answers and disagreement between them means nothing. Moved onto a forward model, the same kind of ensemble scores above 0.96. The body aerodynamics use a Navier-Stokes solver written from scratch and validated against published cylinder-flow benchmarks."
+summary = "A racer meant to slow down when it stops trusting a sensor. The useful result was negative: an ensemble over the policy scored AUROC 0.127 on a blinded sensor, worse than chance, because steering has many right answers and disagreement between them means nothing. Estimating it on a forward model and isolating the faulty sensor, instead of braking, cut crashes from 155 to 2 across 192 held-out fault episodes at full speed. The body aerodynamics use a Navier-Stokes solver written from scratch and validated against published cylinder-flow benchmarks."
 tools = "Python, NumPy, SciPy, OpenSCAD, FreeCAD, gmsh, CalculiX"
   [[project.figure]]
   src = "assets/img/rlcar.webp"
