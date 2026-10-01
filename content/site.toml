@@ -146,6 +146,54 @@ tools = "KiCad and its Python API, ngspice, C++, PlatformIO, Python, ONNX Runtim
 
 
 [[project]]
+id = "wavelab"
+tier = "featured"
+name = "Wave Lab"
+what = "A real-time harmonic analyser that runs in the browser"
+evidence = "real"
+status = "Live at paingheinhtet.com since June 2026. Demo mode needs no microphone."
+checked = 2026-10-01
+layout = "wide"
+summary = "A single-page instrument that takes the microphone signal and shows what it is made of while it plays: each dominant frequency drawn as its own travelling sine wave with its note name, the spectrum with its peaks marked, the raw waveform, an X-Y phase scope, and the detected sines re-summed and laid over the real wave. The analysis runs on an 8,192-point FFT in the Web Audio API; the overlay uses a direct DFT at each detected frequency, so amplitude and phase are exact rather than read off a bin. Low-, high- and band-pass filters apply live, with optional monitoring. A YAMNet classifier runs in the browser through TensorFlow.js and names the sound among 521 classes; song recognition goes through the AudD API with the user's own token, which never leaves the browser."
+tools = "JavaScript, Web Audio API, Canvas, TensorFlow.js"
+
+  [[project.fact]]
+  label = "Analysis frame"
+  value = "**8,192**-point FFT: 5.9 Hz per bin and 171 ms of audio per frame at 48 kHz, smoothing 0.78"
+  [[project.fact]]
+  label = "Decomposition"
+  value = "The strongest peaks (**5** by default, adjustable) each traced as a travelling sine; phase and amplitude from a direct DFT at the detected frequency"
+  [[project.fact]]
+  label = "Measurements"
+  value = "Level and peak in dB, fundamental with note name, period, wavelength in air at 343 m/s, spectral centroid, zero-crossing rate, harmonics H1 to H8"
+  [[project.fact]]
+  label = "Filters"
+  value = "Low-, high- and band-pass biquad stages with a live cutoff; Q 0.7, band-pass Q 4"
+  [[project.fact]]
+  label = "Classifier"
+  value = "YAMNet, **521** AudioSet classes, running client-side in TensorFlow.js; no server and no API call"
+  [[project.fact]]
+  label = "Size"
+  value = "One HTML file of about 800 lines, no build step, no dependencies beyond TensorFlow.js. MIT licence."
+  [[project.fact]]
+  label = "Also"
+  value = "A desktop version in Python (matplotlib) with a Laplace s-plane view, and a Colab notebook"
+
+  [[project.link]]
+  label = "Open the instrument (demo mode)"
+  href = "https://paingheinhtet.com/wave-lab-analyzer/live.html#demo"
+  [[project.link]]
+  label = "Code"
+  href = "https://github.com/Pai-88/wave-lab-analyzer"
+
+  [[project.figure]]
+  src = "assets/img/wavelab_demo.webp"
+  kind = "frame"
+  alt = "The Wave Lab instrument in demo mode: a dark dashboard with three travelling sine traces labelled 193 Hz G3, 393 Hz G4 and 586 Hz D5, an X-Y phase scope, a measurements table, a harmonics bar chart from H1 to H8, a spectrum with three marked peaks, a waveform, a Fourier synthesis overlay, a song recognition panel and a control column with power, range, channels, filter and cutoff"
+  caption = "Demo mode, no microphone: a 193 Hz tone split into its three strongest components, their sum laid over the real waveform, and the H1 to H8 harmonics meter. Screenshot from the browser."
+
+
+[[project]]
 id = "eit"
 tier = "featured"
 name = "EIT-16CH"
@@ -306,21 +354,47 @@ tools = "Python, MediaPipe, C++, ESP32"
   href = "https://github.com/Pai-88/gripper"
 
 [[project]]
-id = "wavelab"
+id = "kaggriculture"
 tier = "software"
-name = "Wave Lab"
-what = "Real-time harmonic analyser in the browser"
+name = "Kaggriculture"
+what = "Market-timing layers for Kaggle's two-farm simulation competition"
 evidence = "real"
-status = "Runs live in the browser."
-checked = 2026-09-29
-summary = "Microphone input split into its component sine waves as it plays, with a spectrum, Fourier resynthesis and live filters. Plain HTML and JavaScript on the Web Audio API, with no build step."
-tools = "JavaScript, Web Audio API"
+status = "Rank 339 of 10,246 on the public leaderboard at the close, 30 September 2026. Final standing settles in mid-October."
+checked = 2026-10-01
+summary = "Two farms sell into one market where the price is a fixed function of stock and orders are served slot by slot, so the position of an order in the list is worth money. Most rivals in my band ran the same public engine, so I could predict their list, check that prediction every turn against their public money, and place each of my sales one slot ahead of theirs. When a rival buys a block of wheat, a layer buys alongside it and sells in the last slot of the same turn, taking the rise the rival's own purchase causes. Every build was replayed into my seat of a few hundred recorded ladder games and had to win at least as many; the farm itself is the public 2965 Master Engine (Apache-2.0), unchanged except three constants."
+tools = "Python, NumPy, kaggle-environments"
+
+  [[project.fact]]
+  label = "Ladder"
+  value = "Rank **339** of 10,246 teams at the close, 30 September 2026 (the silver line stood at 2050; my entry at 2188)"
+  [[project.fact]]
+  label = "One turn of the ride"
+  value = "**+94** coins for us, **+94** more paid by the rival for its own block, in a recorded game replayed unit by unit"
+  [[project.fact]]
+  label = "Recorded games against early wheat buyers"
+  value = "**31** of 42 won with the ride, 24 without"
+  [[project.fact]]
+  label = "Testbeds"
+  value = "401 recorded games replayed to the coin; a reactive panel of synthetic rivals; a census of destroyed goods and failed orders; fault injection; a control build for every new switch"
+  [[project.fact]]
+  label = "Limit"
+  value = "Recorded rivals cannot react. A live rival whose blocks cost more may stop buying, and then the ride earns nothing."
+
   [[project.link]]
-  label = "Try it"
-  href = "https://paingheinhtet.com/wave-lab-analyzer/live.html#demo"
-  [[project.link]]
-  label = "Code"
-  href = "https://github.com/Pai-88/wave-lab-analyzer"
+  label = "Competition"
+  href = "https://www.kaggle.com/competitions/kaggriculture"
+
+  [[project.figure]]
+  src = "assets/img/kaggriculture_game.webp"
+  kind = "frame"
+  alt = "The competition's pixel-art visualiser at day 23 of a 30-day game: two fenced farms of ten by ten tiles either side of a town square with seven shops, crops and animals on both farms, farm hands walking the rows, and beneath them two player panels and a price board for eight products"
+  caption = "Day 23 of 30 in one of the entry's ladder games on 30 September 2026, in the competition's own visualiser. Our farm is on the right."
+
+  [[project.figure]]
+  src = "assets/img/kaggriculture_ride.webp"
+  kind = "frame"
+  alt = "Two step charts of the wheat price, 39 to 43 coins, in one market turn. Left, what the rival paid for each of its 80 units: a grey line rising 39, 40, 41, 42 had we stood aside, and an orange line reaching 43 sooner with our block in its slot, the gap shaded. Right, our 60 units: bought along the same rising orange line, sold in the last slot along a blue line at 43 falling to 42, the gap between them shaded."
+  caption = "One shop turn of a recorded ladder game, replayed unit by unit from the engine's price rule. Our block of 60, bought in the rival's slot and sold in the last one, made 94 coins; the rival paid 94 more for its 80."
 
 
 # ─────────────────────────────── Publication ─────────────────────────────
@@ -399,46 +473,3 @@ href = "https://orcid.org/0009-0004-1172-0852"
 [[elsewhere]]
 label = "Kaggle"
 href = "https://www.kaggle.com/painghtetsw"
-[[project]]
-id = "kaggriculture"
-tier = "software"
-name = "Kaggriculture"
-what = "Market-timing layers for Kaggle's two-farm simulation competition"
-evidence = "real"
-status = "Rank 339 of 10,246 on the public leaderboard at the close, 30 September 2026. Final standing settles in mid-October."
-checked = 2026-10-01
-summary = "Two farms sell into one market where the price is a fixed function of stock and orders are served slot by slot, so the position of an order in the list is worth money. Most rivals in my band ran the same public engine, so I could predict their list, check that prediction every turn against their public money, and place each of my sales one slot ahead of theirs. When a rival buys a block of wheat, a layer buys alongside it and sells in the last slot of the same turn, taking the rise the rival's own purchase causes. Every build was replayed into my seat of a few hundred recorded ladder games and had to win at least as many; the farm itself is the public 2965 Master Engine (Apache-2.0), unchanged except three constants."
-tools = "Python, NumPy, kaggle-environments"
-
-  [[project.fact]]
-  label = "Ladder"
-  value = "Rank **339** of 10,246 teams at the close, 30 September 2026 (the silver line stood at 2050; my entry at 2188)"
-  [[project.fact]]
-  label = "One turn of the ride"
-  value = "**+94** coins for us, **+94** more paid by the rival for its own block, in a recorded game replayed unit by unit"
-  [[project.fact]]
-  label = "Recorded games against early wheat buyers"
-  value = "**31** of 42 won with the ride, 24 without"
-  [[project.fact]]
-  label = "Testbeds"
-  value = "401 recorded games replayed to the coin; a reactive panel of synthetic rivals; a census of destroyed goods and failed orders; fault injection; a control build for every new switch"
-  [[project.fact]]
-  label = "Limit"
-  value = "Recorded rivals cannot react. A live rival whose blocks cost more may stop buying, and then the ride earns nothing."
-
-  [[project.link]]
-  label = "Competition"
-  href = "https://www.kaggle.com/competitions/kaggriculture"
-
-  [[project.figure]]
-  src = "assets/img/kaggriculture_game.webp"
-  kind = "frame"
-  alt = "The competition's pixel-art visualiser at day 23 of a 30-day game: two fenced farms of ten by ten tiles either side of a town square with seven shops, crops and animals on both farms, farm hands walking the rows, and beneath them two player panels and a price board for eight products"
-  caption = "Day 23 of 30 in one of the entry's ladder games on 30 September 2026, in the competition's own visualiser. Our farm is on the right."
-
-  [[project.figure]]
-  src = "assets/img/kaggriculture_ride.webp"
-  kind = "frame"
-  alt = "Two step charts of the wheat price, 39 to 43 coins, in one market turn. Left, what the rival paid for each of its 80 units: a grey line rising 39, 40, 41, 42 had we stood aside, and an orange line reaching 43 sooner with our block in its slot, the gap shaded. Right, our 60 units: bought along the same rising orange line, sold in the last slot along a blue line at 43 falling to 42, the gap between them shaded."
-  caption = "One shop turn of a recorded ladder game, replayed unit by unit from the engine's price rule. Our block of 60, bought in the rival's slot and sold in the last one, made 94 coins; the rival paid 94 more for its 80."
-

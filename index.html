@@ -155,6 +155,33 @@
       </div>
     </div>
   </article>
+  <article class="work work--wide" id="wavelab">
+    <header class="work__head">
+      <h3 class="work__name">Wave Lab</h3>
+      <div class="work__intro">
+        <p class="work__what">A real-time harmonic analyser that runs in the browser</p>
+        <p class="status"><span class="mark" aria-hidden="true"></span>Live at paingheinhtet.com since June 2026. Demo mode needs no microphone.</p>
+      </div>
+    </header>
+    <div class="work__body">
+      <div class="work__text">
+        <p class="work__summary">A single-page instrument that takes the microphone signal and shows what it is made of while it plays: each dominant frequency drawn as its own travelling sine wave with its note name, the spectrum with its peaks marked, the raw waveform, an X-Y phase scope, and the detected sines re-summed and laid over the real wave. The analysis runs on an 8,192-point FFT in the Web Audio API; the overlay uses a direct DFT at each detected frequency, so amplitude and phase are exact rather than read off a bin. Low-, high- and band-pass filters apply live, with optional monitoring. A YAMNet classifier runs in the browser through TensorFlow.js and names the sound among 521 classes; song recognition goes through the AudD API with the user&#x27;s own token, which never leaves the browser.</p>
+        <div class="work__more"><p class="links"><a href="https://paingheinhtet.com/wave-lab-analyzer/live.html#demo">Open the instrument (demo mode)</a><a href="https://github.com/Pai-88/wave-lab-analyzer">Code</a></p><p class="tools">JavaScript, Web Audio API, Canvas, TensorFlow.js</p></div>
+      </div>
+      <dl class="kv">
+        <div><dt>Analysis frame</dt><dd><b>8,192</b>-point FFT: 5.9 Hz per bin and 171 ms of audio per frame at 48 kHz, smoothing 0.78</dd></div>
+        <div><dt>Decomposition</dt><dd>The strongest peaks (<b>5</b> by default, adjustable) each traced as a travelling sine; phase and amplitude from a direct DFT at the detected frequency</dd></div>
+        <div><dt>Measurements</dt><dd>Level and peak in dB, fundamental with note name, period, wavelength in air at 343 m/s, spectral centroid, zero-crossing rate, harmonics H1 to H8</dd></div>
+        <div><dt>Filters</dt><dd>Low-, high- and band-pass biquad stages with a live cutoff; Q 0.7, band-pass Q 4</dd></div>
+        <div><dt>Classifier</dt><dd>YAMNet, <b>521</b> AudioSet classes, running client-side in TensorFlow.js; no server and no API call</dd></div>
+        <div><dt>Size</dt><dd>One HTML file of about 800 lines, no build step, no dependencies beyond TensorFlow.js. MIT licence.</dd></div>
+        <div><dt>Also</dt><dd>A desktop version in Python (matplotlib) with a Laplace s-plane view, and a Colab notebook</dd></div>
+      </dl>
+      <div class="work__figs">
+        <figure class="fig fig--frame"><div class="fig__in"><img src="assets/img/wavelab_demo.webp" width="1480" height="920" alt="The Wave Lab instrument in demo mode: a dark dashboard with three travelling sine traces labelled 193 Hz G3, 393 Hz G4 and 586 Hz D5, an X-Y phase scope, a measurements table, a harmonics bar chart from H1 to H8, a spectrum with three marked peaks, a waveform, a Fourier synthesis overlay, a song recognition panel and a control column with power, range, channels, filter and cutoff" loading="lazy" decoding="async"></div><figcaption>Demo mode, no microphone: a 193 Hz tone split into its three strongest components, their sum laid over the real waveform, and the H1 to H8 harmonics meter. Screenshot from the browser.</figcaption></figure>
+      </div>
+    </div>
+  </article>
   <article class="work work--wide" id="eit">
     <header class="work__head">
       <h3 class="work__name">EIT-16CH</h3>
@@ -271,18 +298,6 @@
         <p class="status"><span class="mark" aria-hidden="true"></span>100 unit tests pass. Not yet run on the arm.</p>
         <p>Two modes, switched by a hand gesture: teleoperation that follows a tracked hand, and a grasp that aligns to an object by visual servoing. A Raspberry Pi 5 does perception and planning. An ESP32 does servo control and safety, so the arm stops if the Python side hangs or the cable is pulled.</p>
         <p class="links"><a href="https://github.com/Pai-88/gripper">Code</a></p><p class="tools">Python, MediaPipe, C++, ESP32</p>
-      </div>
-      
-    </article>
-    <article class="row" id="wavelab">
-      <div class="row__id">
-        <h4 class="row__name">Wave Lab</h4>
-        <p class="row__what">Real-time harmonic analyser in the browser</p>
-      </div>
-      <div class="row__text">
-        <p class="status"><span class="mark" aria-hidden="true"></span>Runs live in the browser.</p>
-        <p>Microphone input split into its component sine waves as it plays, with a spectrum, Fourier resynthesis and live filters. Plain HTML and JavaScript on the Web Audio API, with no build step.</p>
-        <p class="links"><a href="https://paingheinhtet.com/wave-lab-analyzer/live.html#demo">Try it</a><a href="https://github.com/Pai-88/wave-lab-analyzer">Code</a></p><p class="tools">JavaScript, Web Audio API</p>
       </div>
       
     </article>
