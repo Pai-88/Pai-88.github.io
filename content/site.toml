@@ -200,54 +200,6 @@ tools = "KiCad and its Python API, ngspice, C++, PlatformIO, Python, ONNX Runtim
 
 
 [[project]]
-id = "wavelab"
-tier = "featured"
-name = "Wave Lab"
-what = "A real-time harmonic analyser that runs in the browser"
-evidence = "real"
-status = "Live at paingheinhtet.com since June 2026. Demo mode needs no microphone."
-checked = 2026-10-01
-layout = "wide"
-summary = "A single-page instrument that takes the microphone signal and shows what it is made of while it plays: each dominant frequency drawn as its own travelling sine wave with its note name, the spectrum with its peaks marked, the raw waveform, an X-Y phase scope, and the detected sines re-summed and laid over the real wave. The analysis runs on an 8,192-point FFT in the Web Audio API; the overlay uses a direct DFT at each detected frequency, so amplitude and phase are exact rather than read off a bin. Low-, high- and band-pass filters apply live, with optional monitoring. A YAMNet classifier runs in the browser through TensorFlow.js and names the sound among 521 classes; song recognition goes through the AudD API with the user's own token, which never leaves the browser."
-tools = "JavaScript, Web Audio API, Canvas, TensorFlow.js"
-
-  [[project.fact]]
-  label = "Analysis frame"
-  value = "**8,192**-point FFT: 5.9 Hz per bin and 171 ms of audio per frame at 48 kHz, smoothing 0.78"
-  [[project.fact]]
-  label = "Decomposition"
-  value = "The strongest peaks (**5** by default, adjustable) each traced as a travelling sine; phase and amplitude from a direct DFT at the detected frequency"
-  [[project.fact]]
-  label = "Measurements"
-  value = "Level and peak in dB, fundamental with note name, period, wavelength in air at 343 m/s, spectral centroid, zero-crossing rate, harmonics H1 to H8"
-  [[project.fact]]
-  label = "Filters"
-  value = "Low-, high- and band-pass biquad stages with a live cutoff; Q 0.7, band-pass Q 4"
-  [[project.fact]]
-  label = "Classifier"
-  value = "YAMNet, **521** AudioSet classes, running client-side in TensorFlow.js; no server and no API call"
-  [[project.fact]]
-  label = "Size"
-  value = "One HTML file of about 800 lines, no build step, no dependencies beyond TensorFlow.js. MIT licence."
-  [[project.fact]]
-  label = "Also"
-  value = "A desktop version in Python (matplotlib) with a Laplace s-plane view, and a Colab notebook"
-
-  [[project.link]]
-  label = "Open the instrument (demo mode)"
-  href = "https://paingheinhtet.com/wave-lab-analyzer/live.html#demo"
-  [[project.link]]
-  label = "Code"
-  href = "https://github.com/Pai-88/wave-lab-analyzer"
-
-  [[project.figure]]
-  src = "assets/img/wavelab_demo.webp"
-  kind = "frame"
-  alt = "The Wave Lab instrument in demo mode: a dark dashboard with three travelling sine traces labelled 193 Hz G3, 393 Hz G4 and 586 Hz D5, an X-Y phase scope, a measurements table, a harmonics bar chart from H1 to H8, a spectrum with three marked peaks, a waveform, a Fourier synthesis overlay, a song recognition panel and a control column with power, range, channels, filter and cutoff"
-  caption = "Demo mode, no microphone: a 193 Hz tone split into its three strongest components, their sum laid over the real waveform, and the H1 to H8 harmonics meter. Screenshot from the browser."
-
-
-[[project]]
 id = "eit"
 tier = "featured"
 name = "EIT-16CH"
@@ -324,6 +276,54 @@ tools = "Python, OpenCV, NumPy, PyTorch, Apple Vision"
   kind = "frame"
   alt = "A frame from a generated point clip: two players at a blue table, the ball's trail drawn over the net, the bounce ringed, with a scoreboard, a ball speed gauge and a small table diagram of where each shot landed"
   caption = "One point as TT-Scout draws it: ball trail, bounce, score and shot speed. Footage: OpenTTGames (OSAI), CC BY-NC-SA 4.0."
+
+
+[[project]]
+id = "wavelab"
+tier = "featured"
+name = "Wave Lab"
+what = "A real-time harmonic analyser that runs in the browser"
+evidence = "real"
+status = "Live at paingheinhtet.com since June 2026. Demo mode needs no microphone."
+checked = 2026-10-01
+layout = "wide"
+summary = "A single-page instrument that takes the microphone signal and shows what it is made of while it plays: each dominant frequency drawn as its own travelling sine wave with its note name, the spectrum with its peaks marked, the raw waveform, an X-Y phase scope, and the detected sines re-summed and laid over the real wave. The analysis runs on an 8,192-point FFT in the Web Audio API; the overlay uses a direct DFT at each detected frequency, so amplitude and phase are exact rather than read off a bin. Low-, high- and band-pass filters apply live, with optional monitoring. A YAMNet classifier runs in the browser through TensorFlow.js and names the sound among 521 classes; song recognition goes through the AudD API with the user's own token, which never leaves the browser."
+tools = "JavaScript, Web Audio API, Canvas, TensorFlow.js"
+
+  [[project.fact]]
+  label = "Analysis frame"
+  value = "**8,192**-point FFT: 5.9 Hz per bin and 171 ms of audio per frame at 48 kHz, smoothing 0.78"
+  [[project.fact]]
+  label = "Decomposition"
+  value = "The strongest peaks (**5** by default, adjustable) each traced as a travelling sine; phase and amplitude from a direct DFT at the detected frequency"
+  [[project.fact]]
+  label = "Measurements"
+  value = "Level and peak in dB, fundamental with note name, period, wavelength in air at 343 m/s, spectral centroid, zero-crossing rate, harmonics H1 to H8"
+  [[project.fact]]
+  label = "Filters"
+  value = "Low-, high- and band-pass biquad stages with a live cutoff; Q 0.7, band-pass Q 4"
+  [[project.fact]]
+  label = "Classifier"
+  value = "YAMNet, **521** AudioSet classes, running client-side in TensorFlow.js; no server and no API call"
+  [[project.fact]]
+  label = "Size"
+  value = "One HTML file of about 800 lines, no build step, no dependencies beyond TensorFlow.js. MIT licence."
+  [[project.fact]]
+  label = "Also"
+  value = "A desktop version in Python (matplotlib) with a Laplace s-plane view, and a Colab notebook"
+
+  [[project.link]]
+  label = "Open the instrument (demo mode)"
+  href = "https://paingheinhtet.com/wave-lab-analyzer/live.html#demo"
+  [[project.link]]
+  label = "Code"
+  href = "https://github.com/Pai-88/wave-lab-analyzer"
+
+  [[project.figure]]
+  src = "assets/img/wavelab_demo.webp"
+  kind = "frame"
+  alt = "The Wave Lab instrument in demo mode: a dark dashboard with three travelling sine traces labelled 193 Hz G3, 393 Hz G4 and 586 Hz D5, an X-Y phase scope, a measurements table, a harmonics bar chart from H1 to H8, a spectrum with three marked peaks, a waveform, a Fourier synthesis overlay, a song recognition panel and a control column with power, range, channels, filter and cutoff"
+  caption = "Demo mode, no microphone: a 193 Hz tone split into its three strongest components, their sum laid over the real waveform, and the H1 to H8 harmonics meter. Screenshot from the browser."
 
 
 # ─────────────────────────────── More work ───────────────────────────────
