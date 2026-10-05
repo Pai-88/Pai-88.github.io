@@ -128,6 +128,34 @@
       </div>
     </div>
   </article>
+  <article class="work work--wide" id="unseenalleles">
+    <header class="work__head">
+      <h3 class="work__name">Unseen Alleles</h3>
+      <div class="work__intro">
+        <p class="work__what">Do protein foundation models help predict peptide-HLA stability on binding grooves they have never seen?</p>
+        <p class="status"><span class="mark" aria-hidden="true"></span>Built in 48 hours at the London AI x Science Hackathon, October 2026, with Radin Moradi, Sina Ahani and Andy Kaça. Team work, not mine alone.</p>
+      </div>
+    </header>
+    <div class="work__body">
+      <div class="work__text">
+        <p class="work__summary">How long a peptide stays bound to an HLA molecule predicts T cell response better than binding strength does, but it has been measured for only 75 alleles and for none of HLA-C. A patient has no obligation to carry one of the 75, so the question is extrapolation to a groove nobody has measured. We tried hard to make a protein language model win it, and it lost. The work that mattered was the test: every allele in this panel has a near-twin, so holding out one allele at a time measures copying rather than generalisation. We clustered the grooves at 80% identity over their 34 peptide-contact residues and held out whole clusters instead.</p>
+        <div class="work__more"><p class="links"><a href="https://peptidehla.com">Open the explorer</a><a href="https://github.com/Pai-88/peptide-hla-stability">Code, data and the audit trail</a></p><p class="tools">Python, PyTorch, Hugging Face Transformers, scikit-learn, NumPy, SciPy, 3Dmol.js</p></div>
+      </div>
+      <dl class="kv">
+        <div><dt>Conventional network, BLOSUM62 and one-hot</dt><dd>Median per-allele Spearman <b>0.265</b> over 21 held-out groove clusters</dd></div>
+        <div><dt>Best language-model arm</dt><dd><b>0.164</b>, the best of eleven configurations across three encoder families, including one fine-tuned end to end</dd></div>
+        <div><dt>The configuration most people use</dt><dd><b>0.092</b> for frozen mean-pooled ESM-2, which is not distinguishable from a control that is never shown which allele it is predicting for</dd></div>
+        <div><dt>Margin</dt><dd>The conventional network wins on <b>19 of 21</b> folds, median margin +0.080, Wilcoxon p = 1.3 × 10⁻⁵</dd></div>
+        <div><dt>Why they lose</dt><dd>Under ESM-2 the 75 alleles sit at <b>0.97 to 0.99</b> mean pairwise similarity, against 0.60 under one-hot. The pretrained representation has smoothed away the differences between grooves, which are the entire signal.</dd></div>
+        <div><dt>Limit, printed not buried</dt><dd>The fold unit is a cluster, so <b>80.9%</b> of test rows carry a peptide that also appears in training against some other allele. Restricted to genuinely novel peptides the result survives, 0.299 against 0.307, but on only 12 of the 21 folds.</dd></div>
+        <div><dt>Audit</dt><dd><b>17</b> leakage checks, including a negative control in which the guard is made to fire on purpose, and a check that predictions are bit-identical under scrambled bookkeeping columns</dd></div>
+      </dl>
+      <div class="work__figs">
+        <figure class="fig fig--plate"><div class="fig__in"><img src="assets/img/unseen_alleles_ladder.webp" width="1600" height="900" alt="A ladder chart titled Four escalating best shots, none of them closed the gap. Eight rows, one per model, each a horizontal line of 21 dots with a thick median tick. The conventional supervised net sits highest at 0.31, then ESM-2 un-pooled at 0.19, fine-tuned at 0.17, ESM-2 650M at 0.14, a peptide-mean lookup table at 0.13, off-the-shelf ESM-2 at 0.11, an allele-blind control at 0.06 and a null at minus 0.01." loading="lazy" decoding="async"></div><figcaption>Every arm on one scale, one dot per held-out groove cluster. A lookup table with no model and no allele information beats frozen ESM-2 off the shelf. Drawn with the deployed five-seed ensemble, where the conventional net reads 0.31; the numbers above use the per-fold mean over seeds, the stricter of the two conventions. The ordering is the same either way.</figcaption></figure>
+        <figure class="fig fig--frame"><div class="fig__in"><img src="assets/img/unseen_alleles_explorer.webp" width="1600" height="1228" alt="The explorer&#x27;s structure tab: a nine-residue peptide in teal lying in the slate binding groove of HLA-A*02:01, its two anchor positions in brick, with a T cell receptor in olive docked across the top, above buttons for the receptor, the position labels, the anchors and the groove surface." loading="lazy" decoding="async"></div><figcaption>The public explorer at peptidehla.com. Pick one of the ten trained models, type a peptide, and see the prediction beside the half-life the experiment actually measured. The structure is a crystal template, PDB 3GSN, not a predicted fold, and the page says so in place.</figcaption></figure>
+      </div>
+    </div>
+  </article>
   <article class="work work--side" id="pursuit">
     <header class="work__head">
       <h3 class="work__name">PURSUIT-1</h3>
@@ -385,7 +413,7 @@
         <li><a href="https://www.kaggle.com/painghtetsw">Kaggle</a></li>
         <li><a href="mailto:paingheinhtet2021@gmail.com">paingheinhtet2021@gmail.com</a></li>
     </ul>
-    <p class="foot__meta"><span>London</span><span>Facts last checked 1 October 2026</span></p>
+    <p class="foot__meta"><span>London</span><span>Facts last checked 6 October 2026</span></p>
   </div>
 </footer>
 </body>

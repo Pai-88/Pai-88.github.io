@@ -101,6 +101,60 @@ tools = "Python, scikit-learn, NumPy, SciPy"
 
 
 [[project]]
+id = "unseenalleles"
+tier = "featured"
+name = "Unseen Alleles"
+what = "Do protein foundation models help predict peptide-HLA stability on binding grooves they have never seen?"
+evidence = "real"
+status = "Built in 48 hours at the London AI x Science Hackathon, October 2026, with Radin Moradi, Sina Ahani and Andy Kaça. Team work, not mine alone."
+checked = 2026-10-06
+layout = "wide"
+summary = "How long a peptide stays bound to an HLA molecule predicts T cell response better than binding strength does, but it has been measured for only 75 alleles and for none of HLA-C. A patient has no obligation to carry one of the 75, so the question is extrapolation to a groove nobody has measured. We tried hard to make a protein language model win it, and it lost. The work that mattered was the test: every allele in this panel has a near-twin, so holding out one allele at a time measures copying rather than generalisation. We clustered the grooves at 80% identity over their 34 peptide-contact residues and held out whole clusters instead."
+tools = "Python, PyTorch, Hugging Face Transformers, scikit-learn, NumPy, SciPy, 3Dmol.js"
+
+  [[project.fact]]
+  label = "Conventional network, BLOSUM62 and one-hot"
+  value = "Median per-allele Spearman **0.265** over 21 held-out groove clusters"
+  [[project.fact]]
+  label = "Best language-model arm"
+  value = "**0.164**, the best of eleven configurations across three encoder families, including one fine-tuned end to end"
+  [[project.fact]]
+  label = "The configuration most people use"
+  value = "**0.092** for frozen mean-pooled ESM-2, which is not distinguishable from a control that is never shown which allele it is predicting for"
+  [[project.fact]]
+  label = "Margin"
+  value = "The conventional network wins on **19 of 21** folds, median margin +0.080, Wilcoxon p = 1.3 × 10⁻⁵"
+  [[project.fact]]
+  label = "Why they lose"
+  value = "Under ESM-2 the 75 alleles sit at **0.97 to 0.99** mean pairwise similarity, against 0.60 under one-hot. The pretrained representation has smoothed away the differences between grooves, which are the entire signal."
+  [[project.fact]]
+  label = "Limit, printed not buried"
+  value = "The fold unit is a cluster, so **80.9%** of test rows carry a peptide that also appears in training against some other allele. Restricted to genuinely novel peptides the result survives, 0.299 against 0.307, but on only 12 of the 21 folds."
+  [[project.fact]]
+  label = "Audit"
+  value = "**17** leakage checks, including a negative control in which the guard is made to fire on purpose, and a check that predictions are bit-identical under scrambled bookkeeping columns"
+
+  [[project.link]]
+  label = "Open the explorer"
+  href = "https://peptidehla.com"
+  [[project.link]]
+  label = "Code, data and the audit trail"
+  href = "https://github.com/Pai-88/peptide-hla-stability"
+
+  [[project.figure]]
+  src = "assets/img/unseen_alleles_ladder.webp"
+  kind = "plate"
+  alt = "A ladder chart titled Four escalating best shots, none of them closed the gap. Eight rows, one per model, each a horizontal line of 21 dots with a thick median tick. The conventional supervised net sits highest at 0.31, then ESM-2 un-pooled at 0.19, fine-tuned at 0.17, ESM-2 650M at 0.14, a peptide-mean lookup table at 0.13, off-the-shelf ESM-2 at 0.11, an allele-blind control at 0.06 and a null at minus 0.01."
+  caption = "Every arm on one scale, one dot per held-out groove cluster. A lookup table with no model and no allele information beats frozen ESM-2 off the shelf. Drawn with the deployed five-seed ensemble, where the conventional net reads 0.31; the numbers above use the per-fold mean over seeds, the stricter of the two conventions. The ordering is the same either way."
+
+  [[project.figure]]
+  src = "assets/img/unseen_alleles_explorer.webp"
+  kind = "frame"
+  alt = "The explorer's structure tab: a nine-residue peptide in teal lying in the slate binding groove of HLA-A*02:01, its two anchor positions in brick, with a T cell receptor in olive docked across the top, above buttons for the receptor, the position labels, the anchors and the groove surface."
+  caption = "The public explorer at peptidehla.com. Pick one of the ten trained models, type a peptide, and see the prediction beside the half-life the experiment actually measured. The structure is a crystal template, PDB 3GSN, not a predicted fold, and the page says so in place."
+
+
+[[project]]
 id = "pursuit"
 tier = "featured"
 name = "PURSUIT-1"
