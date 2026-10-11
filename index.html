@@ -268,6 +268,18 @@
   </div>
   <div class="ledger">
     <h3 class="label ledger__group">Hardware</h3>
+    <article class="row" id="crank">
+      <div class="row__id">
+        <h4 class="row__name">Crank Charger</h4>
+        <p class="row__what">A hand-crank phone charger: printed planetary drive, stepper motor as alternator</p>
+      </div>
+      <div class="row__text">
+        <p class="status"><span class="mark" aria-hidden="true"></span>Every part printed, electronics in assembly. Predicted 10 W into the phone; the first measured test is due 25 October 2026.</p>
+        <p>A 236 mm hand wheel turns a 91-tooth ring gear. Three 37-tooth planets on fixed steel pins drive a 17-tooth sun on a NEMA23 stepper, so the motor turns 5.35 times faster than the hand. The gears are herringbone and printed in one job, already meshed. Run as an alternator the stepper is inductance-limited: its current, and so its torque, barely rises with speed, which is why the drive multiplies speed and not torque. Two Schottky bridges, a 1000 uF capacitor and a buck converter make 5 V for the phone. The design document works through every number from 90 rpm at the hand to 10 W at the phone, and the prediction is written down before the first crank so that the USB meter can disagree with it.</p>
+        <p class="links"><a href="crank-charger/design-document.pdf">Design document (PDF)</a></p><p class="tools">CadQuery, Blender, ngspice, Python, PETG on a Bambu P1S</p>
+      </div>
+      <figure class="fig fig--render row__fig"><div class="fig__in"><img src="assets/img/crank_cartridge.webp" width="1400" height="909" alt="Render of the gear cartridge pulled apart: an orange herringbone ring gear with three planets inside it, the small sun gear and three pin spacers to its left, six steel washers and three bearings in the air, and the orange three-armed spider with its three M8 pin bolts and the axle bolt to the right" loading="lazy" decoding="async"></div><figcaption>The gear cartridge pulled apart: ring, planets and sun printed in one job, the planets&#x27; bearings, pins and spacers, and the spider that carries them. Rendered from the part files; nothing measured yet.</figcaption></figure>
+    </article>
     <article class="row" id="emg">
       <div class="row__id">
         <h4 class="row__name">EMG front end</h4>
@@ -413,7 +425,7 @@
         <li><a href="https://www.kaggle.com/painghtetsw">Kaggle</a></li>
         <li><a href="mailto:paingheinhtet2021@gmail.com">paingheinhtet2021@gmail.com</a></li>
     </ul>
-    <p class="foot__meta"><span>London</span><span>Facts last checked 6 October 2026</span></p>
+    <p class="foot__meta"><span>London</span><span>Facts last checked 11 October 2026</span></p>
   </div>
 </footer>
 </body>
