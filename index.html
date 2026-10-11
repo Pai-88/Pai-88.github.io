@@ -233,30 +233,31 @@
       </div>
     </div>
   </article>
-  <article class="work work--wide" id="wavelab">
+  <article class="work work--wide" id="crank">
     <header class="work__head">
-      <h3 class="work__name">Wave Lab</h3>
+      <h3 class="work__name">Crank Charger</h3>
       <div class="work__intro">
-        <p class="work__what">A real-time harmonic analyser that runs in the browser</p>
-        <p class="status"><span class="mark" aria-hidden="true"></span>Live at paingheinhtet.com since June 2026. Demo mode needs no microphone.</p>
+        <p class="work__what">A hand-crank phone charger: printed planetary drive, stepper motor as alternator</p>
+        <p class="status"><span class="mark" aria-hidden="true"></span>Every part printed, electronics in assembly. Predicted 10 W into the phone; the first measured test is due 25 October 2026.</p>
       </div>
     </header>
     <div class="work__body">
       <div class="work__text">
-        <p class="work__summary">A single-page instrument that takes the microphone signal and shows what it is made of while it plays: each dominant frequency drawn as its own travelling sine wave with its note name, the spectrum with its peaks marked, the raw waveform, an X-Y phase scope, and the detected sines re-summed and laid over the real wave. The analysis runs on an 8,192-point FFT in the Web Audio API; the overlay uses a direct DFT at each detected frequency, so amplitude and phase are exact rather than read off a bin. Low-, high- and band-pass filters apply live, with optional monitoring. A YAMNet classifier runs in the browser through TensorFlow.js and names the sound among 521 classes; song recognition goes through the AudD API with the user&#x27;s own token, which never leaves the browser.</p>
-        <div class="work__more"><p class="links"><a href="https://paingheinhtet.com/wave-lab-analyzer/live.html#demo">Open the instrument (demo mode)</a><a href="https://github.com/Pai-88/wave-lab-analyzer">Code</a></p><p class="tools">JavaScript, Web Audio API, Canvas, TensorFlow.js</p></div>
+        <p class="work__summary">A 236 mm hand wheel turns a 91-tooth ring gear. Three 37-tooth planets on fixed steel pins drive a 17-tooth sun on a NEMA23 stepper, so the motor turns 5.35 times faster than the hand. The gears are herringbone and printed in one job, already meshed. Run as an alternator the stepper is inductance-limited: its current, and so its torque, barely rises with speed, which is why the drive multiplies speed and not torque. Two Schottky bridges, a 1000 uF capacitor and a buck converter make 5 V for the phone. The design document works through every number from 90 rpm at the hand to 10 W at the phone, and the prediction is written down before the first crank so that the USB meter can disagree with it.</p>
+        <div class="work__more"><p class="links"><a href="crank-charger/design-document.pdf">Design document (PDF)</a></p><p class="tools">CadQuery, Blender, ngspice, Python, PETG on a Bambu P1S</p></div>
       </div>
       <dl class="kv">
-        <div><dt>Analysis frame</dt><dd><b>8,192</b>-point FFT: 5.9 Hz per bin and 171 ms of audio per frame at 48 kHz, smoothing 0.78</dd></div>
-        <div><dt>Decomposition</dt><dd>The strongest peaks (<b>5</b> by default, adjustable) each traced as a travelling sine; phase and amplitude from a direct DFT at the detected frequency</dd></div>
-        <div><dt>Measurements</dt><dd>Level and peak in dB, fundamental with note name, period, wavelength in air at 343 m/s, spectral centroid, zero-crossing rate, harmonics H1 to H8</dd></div>
-        <div><dt>Filters</dt><dd>Low-, high- and band-pass biquad stages with a live cutoff; Q 0.7, band-pass Q 4</dd></div>
-        <div><dt>Classifier</dt><dd>YAMNet, <b>521</b> AudioSet classes, running client-side in TensorFlow.js; no server and no API call</dd></div>
-        <div><dt>Size</dt><dd>One HTML file of about 800 lines, no build step, no dependencies beyond TensorFlow.js. MIT licence.</dd></div>
-        <div><dt>Also</dt><dd>A desktop version in Python (matplotlib) with a Laplace s-plane view, and a Colab notebook</dd></div>
+        <div><dt>Drive</dt><dd>One planetary stage, ring <b>91</b>, planets 37, sun 17, module 2.4: 5.35 to 1. Herringbone, printed in one job, already meshed.</dd></div>
+        <div><dt>Generator</dt><dd>A NEMA23 stepper run backwards: <b>0.318</b> V per rad/s from its own label, so 16 V peak per coil at 482 rpm</dd></div>
+        <div><dt>Why only speed buys watts</dt><dd>At 400 Hz the coil&#x27;s reactance is 6.3 ohm against 0.9 ohm of resistance, so the current it can pass stays near <b>2.5 A</b> at any speed. The torque is pinned, so the drive multiplies speed.</dd></div>
+        <div><dt>Predicted</dt><dd><b>10 W</b> into the phone for 17.5 W at the hand at 90 rpm, about 19 N on the grip. 57 percent, hand to phone.</dd></div>
+        <div><dt>Electronics</dt><dd>Eight SB560 Schottkys in two bridges, a 1000 uF bus capacitor, a 7 to 30 V buck converter, a USB meter in the lead</dd></div>
+        <div><dt>Limit</dt><dd>Nothing measured yet. Iron loss is not modelled and the mesh efficiency is a guess, so the real number will be lower.</dd></div>
+        <div><dt>Test</dt><dd>60 s of cranking on film, the phone charging, the meter in shot, judged against the number written down beforehand. By 25 October 2026.</dd></div>
       </dl>
       <div class="work__figs">
-        <figure class="fig fig--frame"><div class="fig__in"><img src="assets/img/wavelab_demo.webp" width="1480" height="920" alt="The Wave Lab instrument in demo mode: a dark dashboard with three travelling sine traces labelled 193 Hz G3, 393 Hz G4 and 586 Hz D5, an X-Y phase scope, a measurements table, a harmonics bar chart from H1 to H8, a spectrum with three marked peaks, a waveform, a Fourier synthesis overlay, a song recognition panel and a control column with power, range, channels, filter and cutoff" loading="lazy" decoding="async"></div><figcaption>Demo mode, no microphone: a 193 Hz tone split into its three strongest components, their sum laid over the real waveform, and the H1 to H8 harmonics meter. Screenshot from the browser.</figcaption></figure>
+        <figure class="fig fig--render"><div class="fig__in"><img src="assets/img/crank_exploded.webp" width="1800" height="692" alt="Render of the crank charger pulled apart along its axle: a black NEMA23 motor and its screws, a grey printed frame, an orange herringbone ring gear with three planets and a sun, three steel pins with washers, a grey spoked hand wheel with its two bearings and spacer, and the grip on its M6 bolt" loading="lazy" decoding="async"></div><figcaption>Every part along the axle, from the motor behind the wall to the grip. Rendered from the part files; nothing measured yet.</figcaption></figure>
+        <figure class="fig fig--render"><div class="fig__in"><img src="assets/img/crank_cartridge.webp" width="1400" height="909" alt="Render of the gear cartridge pulled apart: an orange herringbone ring gear with three planets inside it, the small sun gear and three pin spacers to its left, six steel washers and three bearings in the air, and the orange three-armed spider with its three M8 pin bolts and the axle bolt to the right" loading="lazy" decoding="async"></div><figcaption>The gear cartridge: ring, planets and sun printed in one job, the planets&#x27; bearings, pins and spacers, and the spider that carries them.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -268,18 +269,6 @@
   </div>
   <div class="ledger">
     <h3 class="label ledger__group">Hardware</h3>
-    <article class="row" id="crank">
-      <div class="row__id">
-        <h4 class="row__name">Crank Charger</h4>
-        <p class="row__what">A hand-crank phone charger: printed planetary drive, stepper motor as alternator</p>
-      </div>
-      <div class="row__text">
-        <p class="status"><span class="mark" aria-hidden="true"></span>Every part printed, electronics in assembly. Predicted 10 W into the phone; the first measured test is due 25 October 2026.</p>
-        <p>A 236 mm hand wheel turns a 91-tooth ring gear. Three 37-tooth planets on fixed steel pins drive a 17-tooth sun on a NEMA23 stepper, so the motor turns 5.35 times faster than the hand. The gears are herringbone and printed in one job, already meshed. Run as an alternator the stepper is inductance-limited: its current, and so its torque, barely rises with speed, which is why the drive multiplies speed and not torque. Two Schottky bridges, a 1000 uF capacitor and a buck converter make 5 V for the phone. The design document works through every number from 90 rpm at the hand to 10 W at the phone, and the prediction is written down before the first crank so that the USB meter can disagree with it.</p>
-        <p class="links"><a href="crank-charger/design-document.pdf">Design document (PDF)</a></p><p class="tools">CadQuery, Blender, ngspice, Python, PETG on a Bambu P1S</p>
-      </div>
-      <figure class="fig fig--render row__fig"><div class="fig__in"><img src="assets/img/crank_cartridge.webp" width="1400" height="909" alt="Render of the gear cartridge pulled apart: an orange herringbone ring gear with three planets inside it, the small sun gear and three pin spacers to its left, six steel washers and three bearings in the air, and the orange three-armed spider with its three M8 pin bolts and the axle bolt to the right" loading="lazy" decoding="async"></div><figcaption>The gear cartridge pulled apart: ring, planets and sun printed in one job, the planets&#x27; bearings, pins and spacers, and the spider that carries them. Rendered from the part files; nothing measured yet.</figcaption></figure>
-    </article>
     <article class="row" id="emg">
       <div class="row__id">
         <h4 class="row__name">EMG front end</h4>
@@ -317,6 +306,18 @@
       <figure class="fig fig--render row__fig"><div class="fig__in"><img src="assets/img/board_pbr.webp" width="1600" height="1245" alt="Render of the photobioreactor controller board, rev B, with an ESP32-S3 module, a barrel jack and a row of white connectors" loading="lazy" decoding="async"></div><figcaption>Rev B. KiCad render.</figcaption></figure>
     </article>
     <h3 class="label ledger__group">Software</h3>
+    <article class="row" id="wavelab">
+      <div class="row__id">
+        <h4 class="row__name">Wave Lab</h4>
+        <p class="row__what">A real-time harmonic analyser that runs in the browser</p>
+      </div>
+      <div class="row__text">
+        <p class="status"><span class="mark" aria-hidden="true"></span>Live at paingheinhtet.com since June 2026. Demo mode needs no microphone.</p>
+        <p>A single-page instrument that takes the microphone signal and shows what it is made of while it plays: each dominant frequency drawn as its own travelling sine wave with its note name, the spectrum with its peaks marked, the raw waveform, an X-Y phase scope, and the detected sines re-summed and laid over the real wave. The analysis runs on an 8,192-point FFT in the Web Audio API; the overlay uses a direct DFT at each detected frequency, so amplitude and phase are exact rather than read off a bin. Low-, high- and band-pass filters apply live, with optional monitoring. A YAMNet classifier runs in the browser through TensorFlow.js and names the sound among 521 classes; song recognition goes through the AudD API with the user&#x27;s own token, which never leaves the browser.</p>
+        <p class="links"><a href="https://paingheinhtet.com/wave-lab-analyzer/live.html#demo">Open the instrument (demo mode)</a><a href="https://github.com/Pai-88/wave-lab-analyzer">Code</a></p><p class="tools">JavaScript, Web Audio API, Canvas, TensorFlow.js</p>
+      </div>
+      <figure class="fig fig--frame row__fig"><div class="fig__in"><img src="assets/img/wavelab_demo.webp" width="1480" height="920" alt="The Wave Lab instrument in demo mode: a dark dashboard with three travelling sine traces labelled 193 Hz G3, 393 Hz G4 and 586 Hz D5, an X-Y phase scope, a measurements table, a harmonics bar chart from H1 to H8, a spectrum with three marked peaks, a waveform, a Fourier synthesis overlay, a song recognition panel and a control column with power, range, channels, filter and cutoff" loading="lazy" decoding="async"></div><figcaption>Demo mode, no microphone: a 193 Hz tone split into its three strongest components, their sum laid over the real waveform, and the H1 to H8 harmonics meter. Screenshot from the browser.</figcaption></figure>
+    </article>
     <article class="row" id="sentinel">
       <div class="row__id">
         <h4 class="row__name">Watch Sentinel</h4>
