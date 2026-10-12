@@ -9,6 +9,7 @@ Needs NumPy, SciPy, Pillow and cwebp (brew install webp). Sources:
   ../pallor-hb/results/fig13_shifted_pair.png
   ../eit/recon/recon_comparison.png
   tools/src/ttscout_clip.png      a frame of a generated point clip (OpenTTGames footage)
+  tools/src/ttscout_sina.jpg      a frame of a generated point clip (own footage: Sina v Radin, filmed with permission)
 """
 import subprocess
 import tempfile
@@ -74,3 +75,4 @@ webp(cut_out(Image.open(DOCS / "rlcar/aero/docs/car_hero_v5.png")), "rlcar", qua
 webp(Image.open(DOCS / "pallor-hb/results/fig13_shifted_pair.png").convert("RGB"), "pallorhb_pair", quality=90, max_width=2000)
 webp(Image.open(DOCS / "eit/recon/recon_comparison.png").convert("RGB"), "eit_recon", lossless=True, max_width=1104)
 webp(Image.open(ROOT / "tools/src/ttscout_clip.png").convert("RGB"), "ttscout_clip", quality=86, max_width=960)
+webp(Image.open(ROOT / "tools/src/ttscout_sina.jpg").convert("RGB"), "ttscout_sina", quality=86, max_width=960)

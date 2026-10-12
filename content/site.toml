@@ -246,7 +246,7 @@ name = "TT-Scout"
 what = "Table tennis match analysis from one phone on a tripod"
 evidence = "real"
 status = "Checked by hand against real match video."
-checked = 2026-09-29
+checked = 2026-10-12
 layout = "side"
 summary = "Film a match from the side of the table. TT-Scout finds every point and who won it, keeps the score, and measures each shot's speed in 3D with its own error bar. The table is the calibration: it is exactly 2.74 by 1.525 m, so its four corners recover where the phone stood. Ball tracking is classical, so when it goes wrong you can find the frame and see why."
 tools = "Python, OpenCV, NumPy, PyTorch, Apple Vision"
@@ -272,10 +272,10 @@ tools = "Python, OpenCV, NumPy, PyTorch, Apple Vision"
   href = "tt-scout/report.html"
 
   [[project.figure]]
-  src = "assets/img/ttscout_clip.webp"
+  src = "assets/img/ttscout_sina.webp"
   kind = "frame"
-  alt = "A frame from a generated point clip: two players at a blue table, the ball's trail drawn over the net, the bounce ringed, with a scoreboard, a ball speed gauge and a small table diagram of where each shot landed"
-  caption = "One point as TT-Scout draws it: ball trail, bounce, score and shot speed. Footage: OpenTTGames (OSAI), CC BY-NC-SA 4.0."
+  alt = "A frame from a generated point clip: Sina and Radin at a table in a sports hall, pose skeletons drawn on both players, the ball's trail over the net with the bounce ringed, a scoreboard reading Sina 5 Radin 6, a ball speed gauge at 45 km/h, a small table diagram of where each shot landed, and a coach's note about topspin"
+  caption = "One point as TT-Scout draws it: ball trail, bounce, score, shot speed, both players' poses and a coaching note. Sina, left, receiving Radin's serve, filmed on a phone from the side of the table. Both players agreed to be filmed."
 
 
 [[project]]
