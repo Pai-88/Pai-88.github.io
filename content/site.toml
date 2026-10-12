@@ -285,10 +285,10 @@ name = "Crank Charger"
 what = "A hand-crank phone charger: printed planetary drive, stepper motor as alternator"
 evidence = "untested"
 status = "Every part printed, electronics in assembly. Predicted 10 W into the phone; the first measured test is due 25 October 2026."
-checked = 2026-10-11
+checked = 2026-10-12
 layout = "wide"
 summary = "A 236 mm hand wheel turns a 91-tooth ring gear. Three 37-tooth planets on fixed steel pins drive a 17-tooth sun on a NEMA23 stepper, so the motor turns 5.35 times faster than the hand. The gears are herringbone and printed in one job, already meshed. Run as an alternator the stepper is inductance-limited: its current, and so its torque, barely rises with speed, which is why the drive multiplies speed and not torque. Two Schottky bridges, a 1000 uF capacitor and a buck converter make 5 V for the phone. The design document works through every number from 90 rpm at the hand to 10 W at the phone, and the prediction is written down before the first crank so that the USB meter can disagree with it."
-tools = "CadQuery, Blender, ngspice, Python, PETG on a Bambu P1S"
+tools = "Fusion 360, Blender, ngspice, Python, PETG on a Bambu P1S"
 
   [[project.fact]]
   label = "Drive"
