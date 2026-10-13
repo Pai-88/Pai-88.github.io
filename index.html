@@ -328,7 +328,7 @@
         <p>Resting heart rate, heart rate variability, respiratory rate and wrist temperature are each scored against a personal 28-day baseline that never sees the future, and three of the four must agree before it alerts. A SwiftUI app exports the data from HealthKit. It compiles but has not yet run on a device.</p>
         <p class="links"><a href="https://github.com/Pai-88/watch-sentinel">Code</a></p><p class="tools">Python, pandas, Swift, HealthKit</p>
       </div>
-      
+      <figure class="fig fig--frame row__fig"><div class="fig__in"><img src="assets/img/sentinel_risk.webp" width="1680" height="1260" alt="Two dark charts over 120 days. Top: a resting heart rate trace in white around 52 bpm with a grey trailing-median line and a shaded band, rising to 60 bpm at two dashed lines marked planted illness onset near days 45 and 95. Bottom: the daily risk score, flat at zero except two peaks to about 4.5 at the same days, with orange dots on the days above a dashed alert line at 1.75" loading="lazy" decoding="async"></div><figcaption>The detector on its synthetic export: resting heart rate against a 28-day trailing baseline that ends yesterday, and the daily risk score. Two planted illnesses at days 45 and 95; alerts from days 43 and 93. No real watch data yet.</figcaption></figure>
     </article>
     <article class="row" id="gripper">
       <div class="row__id">
@@ -340,7 +340,7 @@
         <p>Two modes, switched by a hand gesture: teleoperation that follows a tracked hand, and a grasp that aligns to an object by visual servoing. A Raspberry Pi 5 does perception and planning. An ESP32 does servo control and safety, so the arm stops if the Python side hangs or the cable is pulled.</p>
         <p class="links"><a href="https://github.com/Pai-88/gripper">Code</a></p><p class="tools">Python, MediaPipe, C++, ESP32</p>
       </div>
-      
+      <figure class="fig fig--frame row__fig"><div class="fig__in"><img src="assets/img/gripper_dashboard.webp" width="1360" height="560" alt="A dark monospace telemetry page titled gripper, live telemetry: a green TELEOP state badge, bars for base 15.1 degrees, shoulder 30, elbow minus 60, wrist 14 and grip 68 percent, then latency p50 58 ms p95 95 ms, vbat 7.40 V, and the words no faults in green" loading="lazy" decoding="async"></div><figcaption>The live telemetry page the package serves, here in its standalone demo with made-up joint angles. The arm is not attached yet.</figcaption></figure>
     </article>
     <article class="row" id="kaggriculture">
       <div class="row__id">
