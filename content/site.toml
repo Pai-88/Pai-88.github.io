@@ -337,25 +337,25 @@ tools = "Fusion 360, Blender, ngspice, Python, PETG on a Bambu P1S"
 id = "cyclo"
 tier = "featured"
 name = "Cycloidal Arm"
-what = "A five-axis robot arm on three printed 11:1 cycloidal joints, driven from a webcam"
+what = "A five-axis robot arm on three printed 21:1 cycloidal joints, driven from a webcam"
 evidence = "untested"
 status = "Drawn and checked, printing in progress: four of sixteen plates printed, nothing assembled or measured. The joint test, backlash and stall torque against a locked prediction, is due 30 November 2026."
 checked = 2026-10-13
-summary = "A NEMA17 behind a printed cycloidal reducer: twelve ring pins on a 72 mm circle, an eleven-lobe disc running 1.8 mm off centre, a second disc 180 degrees round to cancel the wobble, six output pins through oversized holes. Eleven to one in 23 mm of depth, and several lobes carry the load at once, which is why a printed disc can take what printed spur teeth would strip. Three of these joints are the yaw, shoulder and elbow of an arm with 150 mm links; two servos do wrist pitch and roll, and three two-joint fingers close on a can. A laptop turns webcam pose into joint angles and an ESP32-S3 steps the motors. The question the build answers is not whether it turns but two numbers: backlash at the output and holding torque, measured against a prediction written down before the test."
-tools = "CadQuery, Blender, ngspice, C++ on ESP32-S3, Python, MediaPipe, PETG on a Bambu P1S"
+summary = "A NEMA17 behind a printed cycloidal reducer: twenty-two steel dowel pins on a 72 mm circle, a 21-lobe disc running 1.0 mm off centre, a second disc 180 degrees round to cancel the wobble, six output dowels through oversized holes. Twenty-one to one in a single stage, and several lobes carry the load at once, which is why a printed disc can take what printed spur teeth would strip. Three identical joints, each on a 42 N cm NEMA17 with no balancer spring, are the yaw, shoulder and elbow of an arm with 150 mm links; two servos do wrist pitch and roll, and three two-joint fingers close on a 66 mm can. A laptop turns webcam pose into joint angles and an ESP32-S3 steps the motors. The question the build answers is not whether it turns but two numbers: backlash at the output and holding torque, measured against a prediction written down before the test."
+tools = "Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, MediaPipe, PETG on a Bambu P1S"
 
   [[project.fact]]
   label = "Joint"
-  value = "12 ring pins on a 72 mm circle, an 11-lobe disc thrown **1.8 mm**, two discs 180 degrees apart, six output pins: 11 to 1"
+  value = "22 steel dowel pins on a 72 mm circle, a 21-lobe disc thrown **1.0 mm**, two discs 180 degrees apart, six output dowels through 7.2 mm holes: 21 to 1 in one stage"
   [[project.fact]]
   label = "Why cycloidal"
   value = "Several lobes share the load, so PETG carries what printed spur teeth would strip. The price is backlash from the pin clearances, and that is what the test measures."
   [[project.fact]]
   label = "Predicted"
-  value = "**3.5 N m** stall per joint, from 0.40 N m x 11 x 0.80. The 0.80 is a guess the test replaces."
+  value = "**4.28 N m** stall per joint, from 0.34 N m x 21 x 0.60; the 0.60 is a guess the test replaces. Backlash 0.76 degrees from the drawn clearances, against a 0.9 degree gate."
   [[project.fact]]
   label = "Arm"
-  value = "Yaw, shoulder and elbow on cycloidal joints, 150 mm links, wrist pitch and roll on hobby servos, three two-joint fingers"
+  value = "Yaw, shoulder and elbow on three identical 21:1 joints, one 42 N cm NEMA17 each and no balancer spring; 150 mm links; wrist pitch and roll on hobby servos; three two-joint fingers rated 150 g on a 66 mm can"
   [[project.fact]]
   label = "Control"
   value = "Webcam pose through MediaPipe to joint angles on a laptop; step pulses from an ESP32-S3; no encoders, homed by hand"
