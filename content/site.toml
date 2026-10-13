@@ -315,6 +315,9 @@ tools = "Fusion 360, Blender, ngspice, Python, PETG on a Bambu P1S"
   [[project.link]]
   label = "Design document (PDF)"
   href = "crank-charger/design-document.pdf"
+  [[project.link]]
+  label = "Code, part files and showcase video"
+  href = "https://github.com/Pai-88/crank-charger"
 
   [[project.figure]]
   src = "assets/img/crank_exploded.webp"
