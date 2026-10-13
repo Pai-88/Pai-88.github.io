@@ -261,6 +261,33 @@
       </div>
     </div>
   </article>
+  <article class="work work--side" id="cyclo">
+    <header class="work__head">
+      <h3 class="work__name">Cycloidal Arm</h3>
+      <div class="work__intro">
+        <p class="work__what">A five-axis robot arm on three printed 11:1 cycloidal joints, driven from a webcam</p>
+        <p class="status"><span class="mark" aria-hidden="true"></span>Drawn and checked, printing in progress: four of sixteen plates printed, nothing assembled or measured. The joint test, backlash and stall torque against a locked prediction, is due 30 November 2026.</p>
+      </div>
+    </header>
+    <div class="work__body">
+      <div class="work__text">
+        <p class="work__summary">A NEMA17 behind a printed cycloidal reducer: twelve ring pins on a 72 mm circle, an eleven-lobe disc running 1.8 mm off centre, a second disc 180 degrees round to cancel the wobble, six output pins through oversized holes. Eleven to one in 23 mm of depth, and several lobes carry the load at once, which is why a printed disc can take what printed spur teeth would strip. Three of these joints are the yaw, shoulder and elbow of an arm with 150 mm links; two servos do wrist pitch and roll, and three two-joint fingers close on a can. A laptop turns webcam pose into joint angles and an ESP32-S3 steps the motors. The question the build answers is not whether it turns but two numbers: backlash at the output and holding torque, measured against a prediction written down before the test.</p>
+        <div class="work__more"><p class="tools">CadQuery, Blender, ngspice, C++ on ESP32-S3, Python, MediaPipe, PETG on a Bambu P1S</p></div>
+        <dl class="kv">
+        <div><dt>Joint</dt><dd>12 ring pins on a 72 mm circle, an 11-lobe disc thrown <b>1.8 mm</b>, two discs 180 degrees apart, six output pins: 11 to 1</dd></div>
+        <div><dt>Why cycloidal</dt><dd>Several lobes share the load, so PETG carries what printed spur teeth would strip. The price is backlash from the pin clearances, and that is what the test measures.</dd></div>
+        <div><dt>Predicted</dt><dd><b>3.5 N m</b> stall per joint, from 0.40 N m x 11 x 0.80. The 0.80 is a guess the test replaces.</dd></div>
+        <div><dt>Arm</dt><dd>Yaw, shoulder and elbow on cycloidal joints, 150 mm links, wrist pitch and roll on hobby servos, three two-joint fingers</dd></div>
+        <div><dt>Control</dt><dd>Webcam pose through MediaPipe to joint angles on a laptop; step pulses from an ESP32-S3; no encoders, homed by hand</dd></div>
+        <div><dt>Checks</dt><dd><b>143</b> geometric checks on the joint and 144 on the arm, a collision scan over 82,485 poses, every print plate mesh-checked before slicing. Fits are estimates until the first joint is read.</dd></div>
+        <div><dt>Test</dt><dd>Backlash under 1 degree at the output, the arm holding 1 kg at 150 mm, and measured stall within 20 percent of the locked prediction, on film, by 30 November 2026</dd></div>
+      </dl>
+      </div>
+      <div class="work__figs">
+        <figure class="fig fig--render"><div class="fig__in"><img src="assets/img/cyclo_arm.webp" width="1600" height="1159" alt="Render on a black studio floor of a grey printed robot arm standing on a dark square board: a round base with the yaw joint, an upright shoulder joint and an elbow joint, each a cylindrical drum with an orange ring, two flat links, a wrist block and three printed fingers closed round a satin steel can" loading="lazy" decoding="async"></div><figcaption>The arm as drawn, holding a 66 mm can: three cycloidal joints with their orange ring housings, wrist servos and the three-finger gripper. Rendered from the part files; four plates printed, nothing assembled.</figcaption></figure>
+      </div>
+    </div>
+  </article>
 </section>
 
 <section class="section wrap" id="more">
