@@ -288,6 +288,35 @@
       </div>
     </div>
   </article>
+  <article class="work work--wide" id="oxi">
+    <header class="work__head">
+      <h3 class="work__name">OXI-1 Pulse Oximeter</h3>
+      <div class="work__intro">
+        <p class="work__what">A fingertip reflectance pulse oximeter: own analogue front end, board, shell and firmware</p>
+        <p class="status"><span class="mark" aria-hidden="true"></span>Drawn and checked, nothing ordered: the board files sit at the fab&#x27;s order form, nothing printed or soldered as of 26 October 2026. The 60 s test against a fingertip oximeter is due 30 November 2026.</p>
+      </div>
+    </header>
+    <div class="work__body">
+      <div class="work__text">
+        <p class="work__summary">A 660 nm red and a 940 nm infrared LED either side of a photodiode on the centre line of a 55 x 28 mm board, printed light walls between them, and a finger on the printed bed above. A transimpedance amplifier turns the photocurrent into a voltage, a 16-bit ADC reads it at 100 Hz per colour, and an ESP32-S3 band-passes each channel, finds the pulse and takes the ratio of ratios that the SpO2 reading comes from. The cycle is dark, red, dark, infrared every 10 ms, so mains flicker at 100 Hz lands on DC and the dark slots take it out. Everything sits inside a 60 x 33 x 29 mm printed clip: a pouch cell and its charger, the display in the lid, USB-C through the back wall. It is the physical version of the block diagram in my MPHY0011 oximetry report, drawn as a finished device rather than a bench board, and it is not a medical device. Schematic, board and shell are generated from Python with AI assistance, and every number below is a design value: nothing has been measured yet.</p>
+        <div class="work__more"><p class="tools">KiCad, CadQuery, Blender, ngspice, C++ on ESP32-S3, Python, PLA on a Bambu P1S</p></div>
+      </div>
+      <dl class="kv">
+        <div><dt>Optics</dt><dd>Reflectance, on the board&#x27;s centre line: red at <b>26.0</b> mm from the mouth, photodiode at 31.4, infrared at 37.3, printed light walls between them so an LED reaches the photodiode only through the finger</dd></div>
+        <div><dt>Front end</dt><dd>MCP6002 transimpedance amplifier with 100 k feedback: <b>10 uA</b> of photocurrent is 1.5 V. ADS1115 16-bit ADC, so a 1 percent pulse is 10 mV, 160 LSB at the first gain, before the programmable gain adds up to 8x</dd></div>
+        <div><dt>Timing</dt><dd>Four 2.5 ms slots every <b>10 ms</b>: dark, red, dark, infrared. 100 Hz per colour, so 100 Hz mains flicker aliases to DC and the two darks around each colour cancel it. Simulated loop: the amplifier settles in 21 us, phase margin about 85 degrees</dd></div>
+        <div><dt>Power</dt><dd>A 502025 pouch cell across the front, TP4056 charging at <b>65 mA</b>, a P-FET switched by the slide switch and a Schottky to the module&#x27;s 5 V pin, 0.32 V below the cell. Under 80 mA running, so about 3 h a charge on paper</dd></div>
+        <div><dt>Shell</dt><dd><b>60 x 33 x 29</b> mm, four printed parts: tub, finger bed, lid and pad; a pen spring and a 1.75 mm filament hinge pin; display in the lid, USB-C through the rear wall. 97 interference and fit checks pass against the real board&#x27;s pads</dd></div>
+        <div><dt>Board</dt><dd>55.2 x 28.2 mm, two layers, <b>41</b> machine-placed parts on 23 order lines: DRC clean, every pad proved against the netlist, 100 percent ground under the ADC and the photodiode node, placement rotations checked against the fab&#x27;s own footprints, three adversarial reviews</dd></div>
+        <div><dt>Limit</dt><dd>The ratio to SpO2 map is the textbook first-order line until a three-point calibration against a fingertip oximeter, and the rule for when a number is shown at all is still to be written. Not a medical device.</dd></div>
+        <div><dt>Test</dt><dd>Finger on the bed, a live pulse trace on the display and SpO2 within 3 points of a fingertip oximeter read at the same time, for 60 s on film, by 30 November 2026</dd></div>
+      </dl>
+      <div class="work__figs">
+        <figure class="fig fig--render"><div class="fig__in"><img src="assets/img/oxi_hero.webp" width="1600" height="1105" alt="Render on a black studio floor of a small fingertip oximeter clip: a white printed lid with a rectangular display window and OXI-1 on its side, over a matte black lower shell with the finger opening at the front and a hinge pin at the back" loading="lazy" decoding="async"></div><figcaption>The unit as drawn, closed: 60 x 33 x 29 mm, white lid over a black tub, the finger goes in at the front. Rendered from the part files and the routed board; nothing printed or ordered.</figcaption></figure>
+        <figure class="fig fig--render"><div class="fig__in"><img src="assets/img/oxi_exploded.webp" width="1600" height="1024" alt="Exploded render of the same oximeter with its parts lifted along one vertical line: the white lid with its display, the black finger pad, the black finger bed on its screws, the black circuit board with its parts facing up, a pen spring and a long steel hinge pin to the side, and the black tub with a pouch cell inside and four screws below" loading="lazy" decoding="async"></div><figcaption>Every part on its axis: lid and display, finger pad, finger bed with the light walls, the 55 x 28 mm board with the optics facing up and the ESP32-S3 module under it, the pouch cell in the tub, the pen spring and the filament hinge pin.</figcaption></figure>
+      </div>
+    </div>
+  </article>
 </section>
 
 <section class="section wrap" id="more">
@@ -453,7 +482,7 @@
         <li><a href="https://www.kaggle.com/painghtetsw">Kaggle</a></li>
         <li><a href="mailto:paingheinhtet2021@gmail.com">paingheinhtet2021@gmail.com</a></li>
     </ul>
-    <p class="foot__meta"><span>London</span><span>Facts last checked 13 October 2026</span></p>
+    <p class="foot__meta"><span>London</span><span>Facts last checked 26 October 2026</span></p>
   </div>
 </footer>
 </body>
