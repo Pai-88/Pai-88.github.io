@@ -412,8 +412,8 @@ tools = "KiCad, Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, PLA on a 
   [[project.figure]]
   src = "assets/img/oxi_hero.webp"
   kind = "render"
-  alt = "Render on a black studio floor of a small fingertip oximeter clip: a white printed lid with a rectangular display window and OXI-1 on its side, over a matte black lower shell with the finger opening at the front and a hinge pin at the back"
-  caption = "The unit as drawn, closed: 60 x 33 x 29 mm, white lid over a black tub, the finger goes in at the front. Rendered from the part files and the routed board; nothing printed or ordered."
+  alt = "Render on a black studio floor of a small fingertip oximeter clip beside its bare circuit board: a white printed lid with a rectangular display window and OXI-1 on its side, over a matte black lower shell with the finger opening at the front and a hinge pin at the back; in front of it the black 55 by 28 mm two-layer board lies flat, components up, with the sensor window, the amplifier and ADC and a row of labelled test pads"
+  caption = "The unit as drawn, closed, with the board it is built around: 60 x 33 x 29 mm shell, white lid over a black tub, the finger goes in at the front; the 55 x 28 mm board carries the optics, the front end and the ADC on top, and the ESP32-S3 module plugs in underneath. Rendered from the part files and the routed board; nothing printed or ordered."
   [[project.figure]]
   src = "assets/img/oxi_exploded.webp"
   kind = "render"
