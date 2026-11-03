@@ -350,7 +350,7 @@ name = "Cycloidal Arm"
 what = "A five-axis robot arm on three printed 21:1 cycloidal joints, driven from a webcam"
 evidence = "untested"
 status = "Drawn and checked, printing in progress: four of sixteen plates printed, nothing assembled or measured. The joint test, backlash and stall torque against a locked prediction, is due 30 November 2026."
-checked = 2026-10-13
+checked = 2026-11-03
 summary = "A NEMA17 behind a printed cycloidal reducer: twenty-two steel dowel pins on a 72 mm circle, a 21-lobe disc running 1.0 mm off centre, a second disc 180 degrees round to cancel the wobble, six output dowels through oversized holes. Twenty-one to one in a single stage, and several lobes carry the load at once, which is why a printed disc can take what printed spur teeth would strip. Three identical joints, each on a 42 N cm NEMA17 with no balancer spring, are the yaw, shoulder and elbow of an arm with 150 mm links; two servos do wrist pitch and roll, and three two-joint fingers close on a 66 mm can. A laptop turns webcam pose into joint angles and an ESP32-S3 steps the motors. The question the build answers is not whether it turns but two numbers: backlash at the output and holding torque, measured against a prediction written down before the test."
 tools = "Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, MediaPipe, PETG on a Bambu P1S"
 
@@ -376,6 +376,22 @@ tools = "Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, MediaPipe, PETG 
   label = "Test"
   value = "Backlash under 1 degree at the output, the arm holding 1 kg at 150 mm, and measured stall within 20 percent of the locked prediction, on film, by 30 November 2026"
 
+  [[project.link]]
+  label = "How the cycloidal joint works"
+  href = "cycloidal-arm/joint.html"
+
+  [[project.figure]]
+  src = "assets/img/cyclo_arm_poster.webp"
+  video = "assets/video/cyclo_arm.mp4"
+  kind = "render"
+  alt = "Animated line drawing of the five-axis arm on its stand: the yaw, shoulder and elbow joints, each a drum with a copper ring and a stepper motor, swing the arm down over a drinks can; the three fingers close round it, lift it, carry it round 40 degrees and set it down, then carry it back."
+  caption = "The pick, as the control code computes it: three 21:1 cycloidal joints and two wrist servos. Drawn from the part files, not built."
+  [[project.figure]]
+  src = "assets/img/cyclo_joint_exploded.webp"
+  kind = "render"
+  wide = true
+  alt = "Line drawing of one cycloidal joint pulled apart along its axis, every part numbered and named: 1 NEMA 17 stepper, 2 back plate, 3 housing, 4 twenty-two steel pins, 5 eccentric cam with two 61801 bearings, 6 cycloid disc with 21 lobes, 7 second disc half a turn round, 8 six output pins, 9 output plate, 10 61809 bearing, 11 front ring."
+  caption = "One joint, apart: 22 pins round two 21-lobe discs on an eccentric cam give 21 to 1. Every part named; nothing assembled yet."
   [[project.figure]]
   src = "assets/img/cyclo_arm.webp"
   kind = "render"
