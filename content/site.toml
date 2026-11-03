@@ -13,6 +13,8 @@ title = "Paing Hein Htet"
 description = "Biomedical engineering student at UCL working on machine learning for clinical data and the hardware that collects it. Preprint on duplicate leakage in a public anaemia benchmark."
 og_description = "Machine learning for clinical data, and the hardware that collects it. MEng Biomedical Engineering, UCL."
 og_image = "assets/og.png"
+# visitor counter: your GoatCounter code (the "paing" in paing.goatcounter.com). Empty = no counter on the page.
+goatcounter = "paing-hein-htet"
 
 [person]
 name = "Paing Hein Htet"

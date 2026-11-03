@@ -242,6 +242,18 @@ def person_schema(site: dict) -> str:
 
 # ── The page ─────────────────────────────────────────────────────────────────
 
+def counter(code: str, path: str) -> str:
+    """GoatCounter: page views, referrers and countries, no cookies. The script records where a visitor came from; the
+    image inside <noscript> still counts the page when scripts are off."""
+    if not code:
+        return ""
+    if not re.fullmatch(r"[a-z0-9-]+", code):
+        raise SystemExit(f"[site] goatcounter: {code!r} is not a GoatCounter code (lowercase letters, digits, dashes)")
+    return (f'<script data-goatcounter="https://{code}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+            f'<noscript><img src="https://{code}.goatcounter.com/count?p={path}" alt="" width="1" height="1" '
+            f'style="position:absolute;left:-9999px"></noscript>')
+
+
 def page(site: dict) -> str:
     meta, me, band = site["site"], site["person"], site["band"]
     projects = site["project"]
@@ -397,6 +409,7 @@ def page(site: dict) -> str:
     <p class="foot__meta"><span>{esc(me['location'])}</span><span>Facts last checked {long_date(checked)}</span></p>
   </div>
 </footer>
+{counter(meta.get("goatcounter", ""), "/")}
 </body>
 </html>
 """
