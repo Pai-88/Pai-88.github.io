@@ -124,6 +124,8 @@ def validate(site: dict) -> None:
                 raise SystemExit(f"{where}: figure {f['src']} does not exist")
             if not f.get("alt"):
                 raise SystemExit(f"{where}: figure {f['src']} needs alt text")
+            if "video" in f and not (ROOT / f["video"]).is_file():
+                raise SystemExit(f"{where}: video {f['video']} does not exist")
     text = CONTENT.read_text(encoding="utf-8")
     for n, line in enumerate(text.splitlines(), 1):
         if any(dash in line for dash in DASHES):
@@ -138,6 +140,16 @@ MARK = '<span class="mark" aria-hidden="true"></span>'
 def figure(f: dict, cls: str = "") -> str:
     w, h = image_size(ROOT / f["src"])
     extra = f" {cls}" if cls else ""
+    if f.get("video"):
+        # a looping, muted clip that spans the whole figure row; `src` is its poster frame
+        return (
+            f'<figure class="fig fig--{f["kind"]} fig--wide{extra}">'
+            f'<div class="fig__in"><video src="{esc(f["video"])}" poster="{esc(f["src"])}" width="{w}" height="{h}" '
+            f'autoplay muted loop playsinline preload="metadata" aria-label="{esc(f["alt"])}"></video></div>'
+            f'<figcaption>{rich(f["caption"])}</figcaption></figure>'
+        )
+    if f.get("wide"):
+        extra += " fig--wide"     # spans the whole figure row (labelled drawings need the room)
     return (
         f'<figure class="fig fig--{f["kind"]}{extra}">'
         f'<div class="fig__in"><img src="{esc(f["src"])}" width="{w}" height="{h}" '

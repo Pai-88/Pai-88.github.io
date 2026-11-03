@@ -285,7 +285,7 @@ name = "Crank Charger"
 what = "A hand-crank phone charger: printed planetary drive, stepper motor as alternator"
 evidence = "untested"
 status = "Built. First charging icon seen 12 October 2026; predicted 10 W into the phone, nothing measured yet. The measured test is due 25 October 2026."
-checked = 2026-10-13
+checked = 2026-11-03
 layout = "wide"
 summary = "A 236 mm hand wheel turns a 91-tooth ring gear. Three 37-tooth planets on fixed steel pins drive a 17-tooth sun on a NEMA23 stepper, so the motor turns 5.35 times faster than the hand. The gears are herringbone and printed in one job, already meshed. Run as an alternator the stepper is inductance-limited: its current, and so its torque, barely rises with speed, which is why the drive multiplies speed and not torque. Two Schottky bridges, a 1000 uF capacitor and a buck converter make 5 V for the phone. The design document works through every number from 90 rpm at the hand to 10 W at the phone, and the prediction is written down before the first crank so that the USB meter can disagree with it."
 tools = "Fusion 360, Blender, ngspice, Python, PETG on a Bambu P1S"
@@ -313,6 +313,9 @@ tools = "Fusion 360, Blender, ngspice, Python, PETG on a Bambu P1S"
   value = "60 s of cranking on film, the phone charging, the meter in shot, judged against the number written down beforehand. By 25 October 2026."
 
   [[project.link]]
+  label = "How the circuit works"
+  href = "crank-charger/circuit.html"
+  [[project.link]]
   label = "Design document (PDF)"
   href = "crank-charger/design-document.pdf"
   [[project.link]]
@@ -320,10 +323,17 @@ tools = "Fusion 360, Blender, ngspice, Python, PETG on a Bambu P1S"
   href = "https://github.com/Pai-88/crank-charger"
 
   [[project.figure]]
-  src = "assets/img/crank_exploded.webp"
+  src = "assets/img/crank_figure_poster.webp"
+  video = "assets/video/crank_figure.mp4"
   kind = "render"
-  alt = "Render of the crank charger pulled apart along its axle: a black NEMA23 motor and its screws, a grey printed frame, an orange herringbone ring gear with three planets and a sun, three steel pins with washers, a grey spoked hand wheel with its two bearings and spacer, and the grip on its M6 bolt"
-  caption = "Every part along the axle, from the motor behind the wall to the grip. Rendered from the part files; nothing measured yet."
+  alt = "Animated line drawing of the crank charger on a bench, cranked at 90 rpm while the view slowly swings round it: the spoked wheel and handle turn the ring gear, three planets and the sun, the printed cover sits behind the wall, and a USB lead runs from the meter to a phone showing a charging bolt."
+  caption = "Cranked at 90 rpm. Drawn from the part files; the meter shows the prediction."
+  [[project.figure]]
+  src = "assets/img/crank_figure_exploded.webp"
+  kind = "render"
+  wide = true
+  alt = "Line drawing of the crank charger taken apart, every part numbered and named: 1 handle, 2 wheel, 3 ring gear with 91 teeth, 4 spider, 5 three planets with 37 teeth, 6 sun with 17 teeth, 7 frame, 8 wire cover, 9 NEMA 23 stepper, 10 eight Schottky diodes on a card, 11 the 1000 uF capacitor, 12 the 5 V converter, 13 USB meter and 14 phone."
+  caption = "Every part, named. The cover lifts off to show the stepper, the card of eight Schottky diodes with its capacitor, and the converter that feeds the meter."
   [[project.figure]]
   src = "assets/img/crank_cartridge.webp"
   kind = "render"

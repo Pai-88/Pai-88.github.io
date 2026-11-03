@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap">
-<link rel="stylesheet" href="styles.css?v=3548442cf3">
+<link rel="stylesheet" href="styles.css?v=2b6fef7b3e">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -244,7 +244,7 @@
     <div class="work__body">
       <div class="work__text">
         <p class="work__summary">A 236 mm hand wheel turns a 91-tooth ring gear. Three 37-tooth planets on fixed steel pins drive a 17-tooth sun on a NEMA23 stepper, so the motor turns 5.35 times faster than the hand. The gears are herringbone and printed in one job, already meshed. Run as an alternator the stepper is inductance-limited: its current, and so its torque, barely rises with speed, which is why the drive multiplies speed and not torque. Two Schottky bridges, a 1000 uF capacitor and a buck converter make 5 V for the phone. The design document works through every number from 90 rpm at the hand to 10 W at the phone, and the prediction is written down before the first crank so that the USB meter can disagree with it.</p>
-        <div class="work__more"><p class="links"><a href="crank-charger/design-document.pdf">Design document (PDF)</a><a href="https://github.com/Pai-88/crank-charger">Code, part files and showcase video</a></p><p class="tools">Fusion 360, Blender, ngspice, Python, PETG on a Bambu P1S</p></div>
+        <div class="work__more"><p class="links"><a href="crank-charger/circuit.html">How the circuit works</a><a href="crank-charger/design-document.pdf">Design document (PDF)</a><a href="https://github.com/Pai-88/crank-charger">Code, part files and showcase video</a></p><p class="tools">Fusion 360, Blender, ngspice, Python, PETG on a Bambu P1S</p></div>
       </div>
       <dl class="kv">
         <div><dt>Drive</dt><dd>One planetary stage, ring <b>91</b>, planets 37, sun 17, module 2.4: 5.35 to 1. Herringbone, printed in one job, already meshed.</dd></div>
@@ -256,7 +256,8 @@
         <div><dt>Test</dt><dd>60 s of cranking on film, the phone charging, the meter in shot, judged against the number written down beforehand. By 25 October 2026.</dd></div>
       </dl>
       <div class="work__figs">
-        <figure class="fig fig--render"><div class="fig__in"><img src="assets/img/crank_exploded.webp" width="1800" height="692" alt="Render of the crank charger pulled apart along its axle: a black NEMA23 motor and its screws, a grey printed frame, an orange herringbone ring gear with three planets and a sun, three steel pins with washers, a grey spoked hand wheel with its two bearings and spacer, and the grip on its M6 bolt" loading="lazy" decoding="async"></div><figcaption>Every part along the axle, from the motor behind the wall to the grip. Rendered from the part files; nothing measured yet.</figcaption></figure>
+        <figure class="fig fig--render fig--wide"><div class="fig__in"><video src="assets/video/crank_figure.mp4" poster="assets/img/crank_figure_poster.webp" width="1200" height="941" autoplay muted loop playsinline preload="metadata" aria-label="Animated line drawing of the crank charger on a bench, cranked at 90 rpm while the view slowly swings round it: the spoked wheel and handle turn the ring gear, three planets and the sun, the printed cover sits behind the wall, and a USB lead runs from the meter to a phone showing a charging bolt."></video></div><figcaption>Cranked at 90 rpm. Drawn from the part files; the meter shows the prediction.</figcaption></figure>
+        <figure class="fig fig--render fig--wide"><div class="fig__in"><img src="assets/img/crank_figure_exploded.webp" width="1200" height="941" alt="Line drawing of the crank charger taken apart, every part numbered and named: 1 handle, 2 wheel, 3 ring gear with 91 teeth, 4 spider, 5 three planets with 37 teeth, 6 sun with 17 teeth, 7 frame, 8 wire cover, 9 NEMA 23 stepper, 10 eight Schottky diodes on a card, 11 the 1000 uF capacitor, 12 the 5 V converter, 13 USB meter and 14 phone." loading="lazy" decoding="async"></div><figcaption>Every part, named. The cover lifts off to show the stepper, the card of eight Schottky diodes with its capacitor, and the converter that feeds the meter.</figcaption></figure>
         <figure class="fig fig--render"><div class="fig__in"><img src="assets/img/crank_cartridge.webp" width="1400" height="909" alt="Render of the gear cartridge pulled apart: an orange herringbone ring gear with three planets inside it, the small sun gear and three pin spacers to its left, six steel washers and three bearings in the air, and the orange three-armed spider with its three M8 pin bolts and the axle bolt to the right" loading="lazy" decoding="async"></div><figcaption>The gear cartridge: ring, planets and sun printed in one job, the planets&#x27; bearings, pins and spacers, and the spider that carries them.</figcaption></figure>
       </div>
     </div>
@@ -482,7 +483,7 @@
         <li><a href="https://www.kaggle.com/painghtetsw">Kaggle</a></li>
         <li><a href="mailto:paingheinhtet2021@gmail.com">paingheinhtet2021@gmail.com</a></li>
     </ul>
-    <p class="foot__meta"><span>London</span><span>Facts last checked 26 October 2026</span></p>
+    <p class="foot__meta"><span>London</span><span>Facts last checked 3 November 2026</span></p>
   </div>
 </footer>
 </body>

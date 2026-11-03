@@ -298,7 +298,8 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 }
 
 /* ── Figures ────────────────────────────────────────────────────────────── */
-.fig img { width: 100%; }
+.fig img, .fig video { width: 100%; height: auto; display: block; }
+.work--wide .work__figs .fig--wide { grid-column: 1 / -1; }
 .fig figcaption {
   margin-top: .8rem; max-width: 62ch;
   font-size: .8125rem; line-height: 1.55; color: var(--ink-3);
