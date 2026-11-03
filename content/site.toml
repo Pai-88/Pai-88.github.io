@@ -392,11 +392,6 @@ tools = "Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, MediaPipe, PETG 
   wide = true
   alt = "Line drawing of one cycloidal joint pulled apart along its axis, every part numbered and named: 1 NEMA 17 stepper, 2 back plate, 3 housing, 4 twenty-two steel pins, 5 eccentric cam with two 61801 bearings, 6 cycloid disc with 21 lobes, 7 second disc half a turn round, 8 six output pins, 9 output plate, 10 61809 bearing, 11 front ring."
   caption = "One joint, apart: 22 pins round two 21-lobe discs on an eccentric cam give 21 to 1. Every part named; nothing assembled yet."
-  [[project.figure]]
-  src = "assets/img/cyclo_arm.webp"
-  kind = "render"
-  alt = "Render on a black studio floor of a grey printed robot arm standing on a dark square board: a round base with the yaw joint, an upright shoulder joint and an elbow joint, each a cylindrical drum with an orange ring, two flat links, a wrist block and three printed fingers closed round a satin steel can"
-  caption = "The arm as drawn, holding a 66 mm can: three cycloidal joints with their orange ring housings, wrist servos and the three-finger gripper. Rendered from the part files; four plates printed, nothing assembled."
 
 [[project]]
 id = "oxi"
