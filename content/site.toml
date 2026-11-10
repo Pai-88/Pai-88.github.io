@@ -97,6 +97,12 @@ tools = "Python, NumPy, kaggle-environments"
   href = "https://www.kaggle.com/certification/competitions/painghtetsw/kaggriculture"
 
   [[project.figure]]
+  src = "assets/img/kaggriculture_certificate.webp"
+  kind = "frame"
+  alt = "Kaggle certificate of achievement: Paing, placed 549th of 10148 teams, Competition Bronze Medalist, Kaggriculture, awarded on October 15, 2026, signed by Will Cukierski, Head of Kaggle Competitions, with a bronze medallist badge"
+  caption = "The certificate, awarded 15 October 2026. Verify it at kaggle.com/certification/competitions/painghtetsw/kaggriculture."
+
+  [[project.figure]]
   src = "assets/img/kaggriculture_game.webp"
   kind = "frame"
   alt = "The competition's pixel-art visualiser at day 23 of a 30-day game: two fenced farms of ten by ten tiles either side of a town square with seven shops, crops and animals on both farms, farm hands walking the rows, and beneath them two player panels and a price board for eight products"
