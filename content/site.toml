@@ -660,6 +660,11 @@ what = "MEng Biomedical Engineering, University College London"
 detail = "First Class in year one. Second year in progress."
 
 [[background]]
+when = "Oct 2026 to now"
+what = "Student researcher: a keyhole tool that lays an imaging skin onto an organ"
+detail = "With Rozenn Raffaut and Dr Agostino Stilli, UCL. Designing the next prototype of a 12 mm tool that grips a soft imaging skin and deploys it through a surgical port: 19 CAD revisions in ten days on the researcher's feedback."
+
+[[background]]
 when = "2026 to now"
 what = "Research: oral cancer detection with deep learning"
 detail = "With Dr J. W. Asare, University of Energy and Natural Resources, Ghana."
