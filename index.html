@@ -103,6 +103,32 @@
 
 <section class="section wrap" id="work">
   <h2 class="vh">Selected work</h2>
+  <article class="work work--wide" id="kaggriculture">
+    <header class="work__head">
+      <h3 class="work__name">Kaggriculture</h3>
+      <div class="work__intro">
+        <p class="work__what">Market-timing layers for Kaggle&#x27;s two-farm simulation competition</p>
+        <p class="status"><span class="mark" aria-hidden="true"></span>Competition bronze medal: final rank 549 of 10,148 teams, awarded 15 October 2026.</p>
+      </div>
+    </header>
+    <div class="work__body">
+      <div class="work__text">
+        <p class="work__summary">Two farms sell into one market where the price is a fixed function of stock and orders are served slot by slot, so the position of an order in the list is worth money. Most rivals in my band ran the same public engine, so I could predict their list, check that prediction every turn against their public money, and place each of my sales one slot ahead of theirs. When a rival buys a block of wheat, a layer buys alongside it and sells in the last slot of the same turn, taking the rise the rival&#x27;s own purchase causes. Every build was replayed into my seat of a few hundred recorded ladder games and had to win at least as many; the farm itself is the public 2965 Master Engine (Apache-2.0), unchanged except three constants.</p>
+        <div class="work__more"><p class="links"><a href="https://www.kaggle.com/competitions/kaggriculture">Competition</a><a href="https://www.kaggle.com/certification/competitions/painghtetsw/kaggriculture">Certificate</a></p><p class="tools">Python, NumPy, kaggle-environments</p></div>
+      </div>
+      <dl class="kv">
+        <div><dt>Ladder</dt><dd>Final rank <b>549</b> of 10,148 teams, top 5.4%, bronze medal. Rank 339 at the close on 30 September 2026, before the ladder settled.</dd></div>
+        <div><dt>One turn of the ride</dt><dd><b>+94</b> coins for us, <b>+94</b> more paid by the rival for its own block, in a recorded game replayed unit by unit</dd></div>
+        <div><dt>Recorded games against early wheat buyers</dt><dd><b>31</b> of 42 won with the ride, 24 without</dd></div>
+        <div><dt>Testbeds</dt><dd>401 recorded games replayed to the coin; a reactive panel of synthetic rivals; a census of destroyed goods and failed orders; fault injection; a control build for every new switch</dd></div>
+        <div><dt>Limit</dt><dd>Recorded rivals cannot react. A live rival whose blocks cost more may stop buying, and then the ride earns nothing.</dd></div>
+      </dl>
+      <div class="work__figs">
+        <figure class="fig fig--frame"><div class="fig__in"><img src="assets/img/kaggriculture_game.webp" width="1600" height="1007" alt="The competition&#x27;s pixel-art visualiser at day 23 of a 30-day game: two fenced farms of ten by ten tiles either side of a town square with seven shops, crops and animals on both farms, farm hands walking the rows, and beneath them two player panels and a price board for eight products" loading="lazy" decoding="async"></div><figcaption>Day 23 of 30 in one of the entry&#x27;s ladder games on 30 September 2026, in the competition&#x27;s own visualiser. Our farm is on the right.</figcaption></figure>
+        <figure class="fig fig--frame"><div class="fig__in"><img src="assets/img/kaggriculture_ride.webp" width="1947" height="892" alt="Two step charts of the wheat price, 39 to 43 coins, in one market turn. Left, what the rival paid for each of its 80 units: a grey line rising 39, 40, 41, 42 had we stood aside, and an orange line reaching 43 sooner with our block in its slot, the gap shaded. Right, our 60 units: bought along the same rising orange line, sold in the last slot along a blue line at 43 falling to 42, the gap between them shaded." loading="lazy" decoding="async"></div><figcaption>One shop turn of a recorded ladder game, replayed unit by unit from the engine&#x27;s price rule. Our block of 60, bought in the rival&#x27;s slot and sold in the last one, made 94 coins; the rival paid 94 more for its 80.</figcaption></figure>
+      </div>
+    </div>
+  </article>
   <article class="work work--wide" id="pallorhb">
     <header class="work__head">
       <h3 class="work__name">PallorHb</h3>
@@ -400,18 +426,6 @@
         <p class="links"><a href="https://github.com/Pai-88/gripper">Code</a></p><p class="tools">Python, MediaPipe, C++, ESP32</p>
       </div>
       <figure class="fig fig--frame row__fig"><div class="fig__in"><img src="assets/img/gripper_dashboard.webp" width="1360" height="560" alt="A dark monospace telemetry page titled gripper, live telemetry: a green TELEOP state badge, bars for base 15.1 degrees, shoulder 30, elbow minus 60, wrist 14 and grip 68 percent, then latency p50 58 ms p95 95 ms, vbat 7.40 V, and the words no faults in green" loading="lazy" decoding="async"></div><figcaption>The live telemetry page the package serves, here in its standalone demo with made-up joint angles. The arm is not attached yet.</figcaption></figure>
-    </article>
-    <article class="row" id="kaggriculture">
-      <div class="row__id">
-        <h4 class="row__name">Kaggriculture</h4>
-        <p class="row__what">Market-timing layers for Kaggle&#x27;s two-farm simulation competition</p>
-      </div>
-      <div class="row__text">
-        <p class="status"><span class="mark" aria-hidden="true"></span>Competition bronze medal: final rank 549 of 10,148 teams, awarded 15 October 2026.</p>
-        <p>Two farms sell into one market where the price is a fixed function of stock and orders are served slot by slot, so the position of an order in the list is worth money. Most rivals in my band ran the same public engine, so I could predict their list, check that prediction every turn against their public money, and place each of my sales one slot ahead of theirs. When a rival buys a block of wheat, a layer buys alongside it and sells in the last slot of the same turn, taking the rise the rival&#x27;s own purchase causes. Every build was replayed into my seat of a few hundred recorded ladder games and had to win at least as many; the farm itself is the public 2965 Master Engine (Apache-2.0), unchanged except three constants.</p>
-        <p class="links"><a href="https://www.kaggle.com/competitions/kaggriculture">Competition</a><a href="https://www.kaggle.com/certification/competitions/painghtetsw/kaggriculture">Certificate</a></p><p class="tools">Python, NumPy, kaggle-environments</p>
-      </div>
-      <figure class="fig fig--frame row__fig"><div class="fig__in"><img src="assets/img/kaggriculture_game.webp" width="1600" height="1007" alt="The competition&#x27;s pixel-art visualiser at day 23 of a 30-day game: two fenced farms of ten by ten tiles either side of a town square with seven shops, crops and animals on both farms, farm hands walking the rows, and beneath them two player panels and a price board for eight products" loading="lazy" decoding="async"></div><figcaption>Day 23 of 30 in one of the entry&#x27;s ladder games on 30 September 2026, in the competition&#x27;s own visualiser. Our farm is on the right.</figcaption></figure>
     </article>
   </div>
 </section>

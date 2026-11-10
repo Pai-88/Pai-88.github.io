@@ -62,6 +62,54 @@ caption = "Each stripe is one of the **383** distinct photographs in the CP-Anem
 # ───────────────────────────── Selected work ─────────────────────────────
 
 [[project]]
+id = "kaggriculture"
+tier = "featured"
+name = "Kaggriculture"
+what = "Market-timing layers for Kaggle's two-farm simulation competition"
+evidence = "real"
+status = "Competition bronze medal: final rank 549 of 10,148 teams, awarded 15 October 2026."
+checked = 2026-11-10
+layout = "wide"
+summary = "Two farms sell into one market where the price is a fixed function of stock and orders are served slot by slot, so the position of an order in the list is worth money. Most rivals in my band ran the same public engine, so I could predict their list, check that prediction every turn against their public money, and place each of my sales one slot ahead of theirs. When a rival buys a block of wheat, a layer buys alongside it and sells in the last slot of the same turn, taking the rise the rival's own purchase causes. Every build was replayed into my seat of a few hundred recorded ladder games and had to win at least as many; the farm itself is the public 2965 Master Engine (Apache-2.0), unchanged except three constants."
+tools = "Python, NumPy, kaggle-environments"
+
+  [[project.fact]]
+  label = "Ladder"
+  value = "Final rank **549** of 10,148 teams, top 5.4%, bronze medal. Rank 339 at the close on 30 September 2026, before the ladder settled."
+  [[project.fact]]
+  label = "One turn of the ride"
+  value = "**+94** coins for us, **+94** more paid by the rival for its own block, in a recorded game replayed unit by unit"
+  [[project.fact]]
+  label = "Recorded games against early wheat buyers"
+  value = "**31** of 42 won with the ride, 24 without"
+  [[project.fact]]
+  label = "Testbeds"
+  value = "401 recorded games replayed to the coin; a reactive panel of synthetic rivals; a census of destroyed goods and failed orders; fault injection; a control build for every new switch"
+  [[project.fact]]
+  label = "Limit"
+  value = "Recorded rivals cannot react. A live rival whose blocks cost more may stop buying, and then the ride earns nothing."
+
+  [[project.link]]
+  label = "Competition"
+  href = "https://www.kaggle.com/competitions/kaggriculture"
+  [[project.link]]
+  label = "Certificate"
+  href = "https://www.kaggle.com/certification/competitions/painghtetsw/kaggriculture"
+
+  [[project.figure]]
+  src = "assets/img/kaggriculture_game.webp"
+  kind = "frame"
+  alt = "The competition's pixel-art visualiser at day 23 of a 30-day game: two fenced farms of ten by ten tiles either side of a town square with seven shops, crops and animals on both farms, farm hands walking the rows, and beneath them two player panels and a price board for eight products"
+  caption = "Day 23 of 30 in one of the entry's ladder games on 30 September 2026, in the competition's own visualiser. Our farm is on the right."
+
+  [[project.figure]]
+  src = "assets/img/kaggriculture_ride.webp"
+  kind = "frame"
+  alt = "Two step charts of the wheat price, 39 to 43 coins, in one market turn. Left, what the rival paid for each of its 80 units: a grey line rising 39, 40, 41, 42 had we stood aside, and an orange line reaching 43 sooner with our block in its slot, the gap shaded. Right, our 60 units: bought along the same rising orange line, sold in the last slot along a blue line at 43 falling to 42, the gap between them shaded."
+  caption = "One shop turn of a recorded ladder game, replayed unit by unit from the engine's price rule. Our block of 60, bought in the rival's slot and sold in the last one, made 94 coins; the rival paid 94 more for its 80."
+
+
+[[project]]
 id = "pallorhb"
 tier = "featured"
 name = "PallorHb"
@@ -585,51 +633,6 @@ tools = "Python, MediaPipe, C++, ESP32"
   alt = "A dark monospace telemetry page titled gripper, live telemetry: a green TELEOP state badge, bars for base 15.1 degrees, shoulder 30, elbow minus 60, wrist 14 and grip 68 percent, then latency p50 58 ms p95 95 ms, vbat 7.40 V, and the words no faults in green"
   caption = "The live telemetry page the package serves, here in its standalone demo with made-up joint angles. The arm is not attached yet."
 
-[[project]]
-id = "kaggriculture"
-tier = "software"
-name = "Kaggriculture"
-what = "Market-timing layers for Kaggle's two-farm simulation competition"
-evidence = "real"
-status = "Competition bronze medal: final rank 549 of 10,148 teams, awarded 15 October 2026."
-checked = 2026-11-10
-summary = "Two farms sell into one market where the price is a fixed function of stock and orders are served slot by slot, so the position of an order in the list is worth money. Most rivals in my band ran the same public engine, so I could predict their list, check that prediction every turn against their public money, and place each of my sales one slot ahead of theirs. When a rival buys a block of wheat, a layer buys alongside it and sells in the last slot of the same turn, taking the rise the rival's own purchase causes. Every build was replayed into my seat of a few hundred recorded ladder games and had to win at least as many; the farm itself is the public 2965 Master Engine (Apache-2.0), unchanged except three constants."
-tools = "Python, NumPy, kaggle-environments"
-
-  [[project.fact]]
-  label = "Ladder"
-  value = "Final rank **549** of 10,148 teams, top 5.4%, bronze medal. Rank 339 at the close on 30 September 2026, before the ladder settled."
-  [[project.fact]]
-  label = "One turn of the ride"
-  value = "**+94** coins for us, **+94** more paid by the rival for its own block, in a recorded game replayed unit by unit"
-  [[project.fact]]
-  label = "Recorded games against early wheat buyers"
-  value = "**31** of 42 won with the ride, 24 without"
-  [[project.fact]]
-  label = "Testbeds"
-  value = "401 recorded games replayed to the coin; a reactive panel of synthetic rivals; a census of destroyed goods and failed orders; fault injection; a control build for every new switch"
-  [[project.fact]]
-  label = "Limit"
-  value = "Recorded rivals cannot react. A live rival whose blocks cost more may stop buying, and then the ride earns nothing."
-
-  [[project.link]]
-  label = "Competition"
-  href = "https://www.kaggle.com/competitions/kaggriculture"
-  [[project.link]]
-  label = "Certificate"
-  href = "https://www.kaggle.com/certification/competitions/painghtetsw/kaggriculture"
-
-  [[project.figure]]
-  src = "assets/img/kaggriculture_game.webp"
-  kind = "frame"
-  alt = "The competition's pixel-art visualiser at day 23 of a 30-day game: two fenced farms of ten by ten tiles either side of a town square with seven shops, crops and animals on both farms, farm hands walking the rows, and beneath them two player panels and a price board for eight products"
-  caption = "Day 23 of 30 in one of the entry's ladder games on 30 September 2026, in the competition's own visualiser. Our farm is on the right."
-
-  [[project.figure]]
-  src = "assets/img/kaggriculture_ride.webp"
-  kind = "frame"
-  alt = "Two step charts of the wheat price, 39 to 43 coins, in one market turn. Left, what the rival paid for each of its 80 units: a grey line rising 39, 40, 41, 42 had we stood aside, and an orange line reaching 43 sooner with our block in its slot, the gap shaded. Right, our 60 units: bought along the same rising orange line, sold in the last slot along a blue line at 43 falling to 42, the gap between them shaded."
-  caption = "One shop turn of a recorded ladder game, replayed unit by unit from the engine's price rule. Our block of 60, bought in the rival's slot and sold in the last one, made 94 coins; the rival paid 94 more for its 80."
 
 
 # ─────────────────────────────── Publication ─────────────────────────────
