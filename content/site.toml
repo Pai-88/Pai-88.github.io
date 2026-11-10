@@ -37,6 +37,10 @@ label = "Preprint"
 value = "doi:10.5281/zenodo.22782147"
 href = "https://doi.org/10.5281/zenodo.22782147"
 [[fact]]
+label = "Kaggle"
+value = "Competition bronze medal, 549th of 10,148 teams, Kaggriculture 2026"
+href = "https://www.kaggle.com/certification/competitions/painghtetsw/kaggriculture"
+[[fact]]
 label = "Memberships"
 value = "IEEE and IET, student member"
 [[fact]]
@@ -587,14 +591,14 @@ tier = "software"
 name = "Kaggriculture"
 what = "Market-timing layers for Kaggle's two-farm simulation competition"
 evidence = "real"
-status = "Rank 339 of 10,246 on the public leaderboard at the close, 30 September 2026. Final standing settles in mid-October."
-checked = 2026-10-01
+status = "Competition bronze medal: final rank 549 of 10,148 teams, awarded 15 October 2026."
+checked = 2026-11-10
 summary = "Two farms sell into one market where the price is a fixed function of stock and orders are served slot by slot, so the position of an order in the list is worth money. Most rivals in my band ran the same public engine, so I could predict their list, check that prediction every turn against their public money, and place each of my sales one slot ahead of theirs. When a rival buys a block of wheat, a layer buys alongside it and sells in the last slot of the same turn, taking the rise the rival's own purchase causes. Every build was replayed into my seat of a few hundred recorded ladder games and had to win at least as many; the farm itself is the public 2965 Master Engine (Apache-2.0), unchanged except three constants."
 tools = "Python, NumPy, kaggle-environments"
 
   [[project.fact]]
   label = "Ladder"
-  value = "Rank **339** of 10,246 teams at the close, 30 September 2026 (the silver line stood at 2050; my entry at 2188)"
+  value = "Final rank **549** of 10,148 teams, top 5.4%, bronze medal. Rank 339 at the close on 30 September 2026, before the ladder settled."
   [[project.fact]]
   label = "One turn of the ride"
   value = "**+94** coins for us, **+94** more paid by the rival for its own block, in a recorded game replayed unit by unit"
@@ -611,6 +615,9 @@ tools = "Python, NumPy, kaggle-environments"
   [[project.link]]
   label = "Competition"
   href = "https://www.kaggle.com/competitions/kaggriculture"
+  [[project.link]]
+  label = "Certificate"
+  href = "https://www.kaggle.com/certification/competitions/painghtetsw/kaggriculture"
 
   [[project.figure]]
   src = "assets/img/kaggriculture_game.webp"
