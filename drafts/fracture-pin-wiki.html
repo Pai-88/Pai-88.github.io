@@ -64,6 +64,7 @@ sup.cite a { text-decoration: none; }
 figure.fig { margin: 20px 0 24px; }
 figure.fig img, figure.fig svg { display: block; max-width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--rule); }
 figure.fig img { background: #000; }
+figure.fig img.draw { background: #fff; }
 figure.fig#fig1 img { max-width: min(560px, 100%); }
 figure.fig#fig7 img { background: #fff; max-width: min(520px, 100%); }
 figure.fig svg { background: var(--paper); width: 100%; font-family: var(--display); }
@@ -132,7 +133,7 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <article>
 
 <figure class="fig" id="fig1">
-  <img src="{{FIG1}}" alt="Side-view X-ray of an elbow with five yellow labels: the humerus above, two parallel K-wires entered from the back of the elbow, the fracture line just above the joint, the olecranon of the ulna, and the bent wire ends left outside the bone." width="1430" height="1280">
+  <img src="images/fig1-pinned-fracture-xray-labelled.png" alt="Side-view X-ray of an elbow with five yellow labels: the humerus above, two parallel K-wires entered from the back of the elbow, the fracture line just above the joint, the olecranon of the ulna, and the bent wire ends left outside the bone." width="1430" height="1280">
   <figcaption><strong>Figure 1.</strong> A supracondylar fracture of the humerus held by two K-wires, seen from the side, with the parts named. The wires cross the fracture and their ends are bent and left outside the bone.
   <div class="credit">Adapted from "Rad 1300116.JPG" by Nevit Dilmen, <a href="https://commons.wikimedia.org/wiki/File:Rad_1300116.JPG">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Labels added; this labelled version is released under the same licence.</div></figcaption>
 </figure>
@@ -143,33 +144,7 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <p>For a manager the attraction is plain: a cut and ground length of wire, minutes of theatre time, nothing to cut out later. The surgical steps are in the <a href="https://surgeryreference.aofoundation.org/orthopedic-trauma/pediatric-trauma/distal-humerus">AO Surgery Reference for paediatric distal humerus fractures</a>; this page does not repeat them.</p>
 
 <figure class="fig" id="fig2">
-  <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig2t">
-    <title id="fig2t">Scale drawing of a 1.6 mm K-wire and a 4 mm Steinmann pin with three tip shapes</title>
-    <text x="20" y="28" class="lab">K-wire, 1.6 mm, smooth, trocar tip</text>
-    <rect x="20" y="42" width="520" height="16" fill="var(--pin)" rx="1"/>
-    <polygon points="540,42 580,50 540,58" fill="var(--pin)"/>
-    <line x1="548" y1="44" x2="574" y2="50" stroke="var(--paper)" stroke-width="1"/>
-    <text x="600" y="54" class="small">1.6 mm = 16 px</text>
-    <text x="20" y="110" class="lab">Steinmann pin, 4.0 mm, smooth, trocar tip</text>
-    <rect x="20" y="122" width="520" height="40" fill="var(--pin)" rx="2"/>
-    <polygon points="540,122 610,142 540,162" fill="var(--pin)"/>
-    <line x1="552" y1="126" x2="602" y2="142" stroke="var(--paper)" stroke-width="1.2"/>
-    <text x="620" y="146" class="small">4.0 mm = 40 px</text>
-    <text x="20" y="200" class="small">Same scale, 10 px per mm. Bending stiffness rises with diameter⁴: (4.0 / 1.6)⁴ ≈ 39. Lengths not to scale.</text>
-    <g transform="translate(20,225)">
-      <text x="0" y="0" class="lab">Tip shapes</text>
-      <polygon points="0,20 70,20 110,34 70,48 0,48" fill="var(--pin)"/>
-      <line x1="76" y1="22" x2="106" y2="34" stroke="var(--paper)" stroke-width="1"/>
-      <text x="0" y="68" class="small">Trocar: three facets, 129 °C</text>
-      <polygon points="210,20 280,20 320,34 280,48 210,48" fill="var(--pin)"/>
-      <line x1="286" y1="22" x2="316" y2="34" stroke="var(--paper)" stroke-width="1"/>
-      <line x1="286" y1="46" x2="316" y2="34" stroke="var(--paper)" stroke-width="1"/>
-      <text x="210" y="68" class="small">Diamond: four facets, 98 °C</text>
-      <polygon points="430,20 500,20 540,34 500,48 430,48" fill="var(--pin)"/>
-      <path d="M436 20 l6 28 M446 20 l6 28 M456 20 l6 28 M466 20 l6 28 M476 20 l6 28 M486 20 l6 28" stroke="var(--paper)" stroke-width="1.5" fill="none"/>
-      <text x="430" y="68" class="small">Threaded: more grip, not across a growth plate</text>
-    </g>
-  </svg>
+  <img class="draw" src="images/fig2-kwire-vs-steinmann-pin-tips.png" alt="Scale drawing of a 1.6 mm K-wire above a 4.0 mm Steinmann pin, both with trocar tips, and below them three tip shapes: trocar with three facets (129 °C drilled dry), diamond with four facets (98 °C), and threaded." width="2260" height="919">
   <figcaption><strong>Figure 2.</strong> A K-wire and a Steinmann pin drawn at the same scale, and three tip shapes. The pin is 2.5 times wider and about 39 times stiffer in bending. Tip temperatures are those quoted in section 2.
   <div class="credit">Own drawing for this page.</div></figcaption>
 </figure>
@@ -179,35 +154,7 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <p>The running example is a displaced supracondylar fracture of the humerus, a break just above the elbow, in a child aged five to eight.<sup class="cite"><a href="#r1">[1]</a></sup> Figure 3 names the parts.</p>
 
 <figure class="fig" id="fig3">
-  <svg viewBox="0 0 720 330" role="img" aria-labelledby="fig3t">
-    <title id="fig3t">Section through a child's lower humerus showing cortex, cancellous bone, periosteum, growth plate and the fracture line</title>
-    <!-- periosteum outline -->
-    <path d="M300 10 L300 150 Q290 200 250 230 L250 260 Q250 290 300 300 L420 300 Q470 290 470 260 L470 230 Q430 200 420 150 L420 10" fill="none" stroke="var(--artery)" stroke-width="3" stroke-dasharray="6 4"/>
-    <!-- cortex -->
-    <path d="M306 10 L306 150 Q296 200 258 230 L258 258 Q258 284 300 292 L420 292 Q462 284 462 258 L462 230 Q424 200 414 150 L414 10" fill="var(--bone-dk)"/>
-    <!-- cancellous interior -->
-    <path d="M330 10 L330 150 Q322 200 290 232 L290 262 Q290 278 310 282 L410 282 Q430 278 430 262 L430 232 Q398 200 390 150 L390 10" fill="var(--bone)"/>
-    <g fill="var(--bone-dk)" opacity=".7">
-      <circle cx="320" cy="170" r="3"/><circle cx="345" cy="190" r="3"/><circle cx="375" cy="180" r="3"/><circle cx="300" cy="215" r="3"/><circle cx="330" cy="235" r="3"/><circle cx="360" cy="225" r="3"/><circle cx="395" cy="240" r="3"/><circle cx="410" cy="212" r="3"/><circle cx="350" cy="255" r="3"/><circle cx="310" cy="265" r="3"/><circle cx="385" cy="268" r="3"/><circle cx="420" cy="258" r="3"/>
-    </g>
-    <ellipse cx="360" cy="188" rx="34" ry="16" fill="var(--paper)" opacity=".75" stroke="var(--bone-dk)" stroke-dasharray="3 3"/>
-    <!-- growth plate -->
-    <path d="M262 262 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0" fill="none" stroke="var(--nerve)" stroke-width="5"/>
-    <!-- fracture -->
-    <path d="M258 206 l30 -8 l25 10 l30 -9 l30 8 l28 -9 l30 10 l31 -8" fill="none" stroke="var(--artery)" stroke-width="2.5"/>
-    <!-- labels -->
-    <g class="small">
-      <line x1="306" y1="60" x2="215" y2="60" stroke="var(--muted)"/><text x="208" y="64" text-anchor="end">Cortex, thick in the shaft</text>
-      <line x1="262" y1="248" x2="215" y2="248" stroke="var(--muted)"/><text x="208" y="252" text-anchor="end">Cortex thins near the elbow</text>
-      <line x1="300" y1="100" x2="215" y2="100" stroke="var(--muted)"/><text x="208" y="104" text-anchor="end">Periosteum, thick in a child</text>
-      <line x1="400" y1="120" x2="520" y2="120" stroke="var(--muted)"/><text x="528" y="124">Cancellous bone (spongy core)</text>
-      <line x1="394" y1="184" x2="520" y2="170" stroke="var(--muted)"/><text x="528" y="174">Thin bone joining the columns</text>
-      <line x1="452" y1="206" x2="520" y2="206" stroke="var(--muted)"/><text x="528" y="210">Supracondylar fracture line</text>
-      <line x1="462" y1="262" x2="520" y2="262" stroke="var(--muted)"/><text x="528" y="266">Growth plate (physis), cartilage</text>
-      <line x1="470" y1="290" x2="520" y2="290" stroke="var(--muted)"/><text x="528" y="294">Epiphysis, then joint cartilage</text>
-      <text x="20" y="320">Schematic, not to scale. Front view, lower end of a child's humerus.</text>
-    </g>
-  </svg>
+  <img class="draw" src="images/fig3-childs-distal-humerus-section.png" alt="Section through the lower end of a child's humerus, front view. Labels: thick cortex in the shaft, periosteum, cancellous core, a pale oval of thin bone joining the two columns with the zigzag fracture line through it, cortex thinning near the elbow, the wavy growth plate, and the epiphysis." width="2260" height="1120">
   <figcaption><strong>Figure 3.</strong> A child's lower humerus in section. Look at the thin bone between the two columns, where the fracture runs, and at the growth plate just below it.
   <div class="credit">Own drawing for this page, schematic.</div></figcaption>
 </figure>
@@ -228,21 +175,7 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <p>Healing runs in overlapping stages: inflammation, which peaks within a day and ends within a week; a soft cartilage callus; a hard bony callus; then remodelling, which starts at three to four weeks and takes years. It is faster in the young.<sup class="cite"><a href="#r2">[2]</a></sup> Figure 4 sets the stages against the pin, which in this fracture comes out at three weeks.<sup class="cite"><a href="#r1">[1]</a></sup> Dwell time must match the clock: too short and the fracture shifts, too long and infection risk climbs.</p>
 
 <figure class="fig" id="fig4">
-  <svg viewBox="0 0 720 250" role="img" aria-labelledby="fig4t">
-    <title id="fig4t">Timeline of fracture healing over twelve weeks: inflammation in week one, soft callus peaking at days seven to nine, hard callus peaking by day fourteen, remodelling from weeks three to four, with pin removal marked at week three</title>
-    <g class="small">
-      <line x1="80" y1="160" x2="700" y2="160" stroke="var(--muted)"/>
-      <g stroke="var(--muted)"><line x1="80" y1="156" x2="80" y2="164"/><line x1="131" y1="156" x2="131" y2="164"/><line x1="183" y1="156" x2="183" y2="164"/><line x1="234" y1="156" x2="234" y2="164"/><line x1="286" y1="156" x2="286" y2="164"/><line x1="389" y1="156" x2="389" y2="164"/><line x1="492" y1="156" x2="492" y2="164"/><line x1="595" y1="156" x2="595" y2="164"/><line x1="698" y1="156" x2="698" y2="164"/></g>
-      <text x="76" y="180">0</text><text x="127" y="180">1</text><text x="179" y="180">2</text><text x="218" y="180">3</text><text x="282" y="180">4</text><text x="385" y="180">6</text><text x="488" y="180">8</text><text x="588" y="180">10</text><text x="698" y="180" text-anchor="end">12 wk</text>
-    </g>
-    <rect x="80" y="30" width="51" height="18" fill="var(--artery)" opacity=".85"/><text x="140" y="44">Inflammation: peaks in a day, over in a week</text>
-    <rect x="106" y="60" width="77" height="18" fill="var(--nerve)" opacity=".9"/><text x="192" y="74">Soft cartilage callus: peaks days 7 to 9*</text>
-    <rect x="131" y="90" width="155" height="18" fill="var(--bone-dk)"/><text x="296" y="104">Hard bony callus: peaks by day 14*</text>
-    <rect x="234" y="120" width="464" height="18" fill="var(--bone)" stroke="var(--bone-dk)"/><text x="300" y="134" class="small">Remodelling: starts weeks 3 to 4, continues for years</text>
-    <line x1="234" y1="114" x2="234" y2="196" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/>
-    <text x="242" y="210" class="lab">Child's elbow pins out at week 3</text>
-    <text x="80" y="238" class="small">* Peak timings are from animal models; healing is faster in the young.</text>
-  </svg>
+  <img class="draw" src="images/fig4-healing-timeline.png" alt="Timeline from 0 to 12 weeks with four bars: inflammation in week one, soft cartilage callus peaking at days 7 to 9, hard bony callus peaking by day 14, remodelling from week 3 onward. A marker at week 3 shows when a child's elbow pins come out." width="2260" height="780">
   <figcaption><strong>Figure 4.</strong> Healing stages on a twelve-week line. Look at where the pin comes out: after the hard callus has peaked, as remodelling begins.
   <div class="credit">Own drawing for this page. Timings after Marsell and Einhorn<sup class="cite"><a href="#r2">[2]</a></sup> and Vaquero-Picado et al.<sup class="cite"><a href="#r1">[1]</a></sup></div></figcaption>
 </figure>
@@ -254,26 +187,7 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <p class="know"><b>In one line</b>Between skin and bone sit fat, muscle, nerves, an artery and the immune system.</p>
 
 <figure class="fig" id="fig6">
-  <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig6t">
-    <title id="fig6t">Cross-section of the layers a pin passes through, from skin to the far side of the bone, with a nerve and artery beyond</title>
-    <g>
-      <rect x="60" y="40" width="300" height="26" fill="var(--danger)"/><text x="372" y="58" class="small">Skin: the barrier the pin holds open for weeks</text>
-      <rect x="60" y="66" width="300" height="26" fill="var(--slot)"/><text x="372" y="84" class="small">Fat: deeper in obese patients, so more unsupported pin</text>
-      <rect x="60" y="92" width="300" height="40" fill="var(--artery)" opacity=".35"/><text x="372" y="116" class="small">Muscle and tendon: a pin through a tendon stops the joint</text>
-      <rect x="60" y="132" width="300" height="8" fill="var(--artery)"/><text x="372" y="140" class="small">Periosteum: living wrapping, source of healing cells</text>
-      <rect x="60" y="140" width="300" height="18" fill="var(--bone-dk)"/><text x="372" y="154" class="small">Near cortex: first grip, thin in a child</text>
-      <rect x="60" y="158" width="300" height="56" fill="var(--bone)"/><text x="372" y="190" class="small">Cancellous bone: little grip; heat limit 47 °C for 1 min</text>
-      <rect x="60" y="214" width="300" height="18" fill="var(--bone-dk)"/><text x="372" y="228" class="small">Far cortex: second grip, then a sudden give</text>
-      <rect x="60" y="232" width="300" height="40" fill="var(--danger)"/><text x="372" y="256" class="small">Beyond: ulnar nerve or brachial artery</text>
-      <circle cx="250" cy="252" r="7" fill="var(--nerve)"/><circle cx="290" cy="252" r="7" fill="var(--artery)"/>
-    </g>
-    <!-- pin -->
-    <rect x="178" y="14" width="10" height="212" fill="var(--pin)"/>
-    <polygon points="178,226 188,226 183,240" fill="var(--pin)"/>
-    <rect x="160" y="8" width="46" height="14" rx="4" fill="var(--accent)"/>
-    <text x="212" y="20" class="small">Cap on the bent, cut end</text>
-    <text x="60" y="292" class="small">Schematic, not to scale. Tip stopped just past the far cortex.</text>
-  </svg>
+  <img class="draw" src="images/fig6-layers-the-pin-crosses.png" alt="Cross-section of stacked layers with a pin driven down through them: cap, skin, fat, muscle and tendon, periosteum, near cortex, cancellous bone, far cortex, and beyond it a nerve and an artery. Each layer has a one-line note on what it means for the pin." width="2260" height="960">
   <figcaption><strong>Figure 6.</strong> Every layer the pin crosses, from the capped end outside the skin to the tip just beyond the far cortex, and what lies beyond if it goes further.
   <div class="credit">Own drawing for this page, schematic.</div></figcaption>
 </figure>
@@ -285,39 +199,7 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <p>Three nerves and one artery run close to the distal humerus. The ulnar nerve lies behind the medial epicondyle, the bony bump on the inner elbow, where a medial pin enters. The median nerve and brachial artery cross the front of the elbow; the radial nerve runs on the outer side. The fracture itself injures a nerve in 6.5 to 19 per cent of displaced cases;<sup class="cite"><a href="#r1">[1]</a></sup> the pin must not add to that. Figure 5 shows how it can: a medial pin costs one extra ulnar nerve injury for every 28 children.<sup class="cite"><a href="#r10">[10]</a></sup></p>
 
 <figure class="fig" id="fig5">
-  <svg viewBox="0 0 720 360" role="img" aria-labelledby="fig5t">
-    <title id="fig5t">Front view of the right elbow with the ulnar, median and radial nerves and brachial artery, and two pin layouts: lateral-only and crossed</title>
-    <!-- humerus -->
-    <path d="M300 10 L300 160 Q270 210 230 225 L230 250 L490 250 L490 225 Q450 210 420 160 L420 10" fill="var(--bone)" stroke="var(--bone-dk)" stroke-width="2"/>
-    <text x="432" y="40" class="small">Humerus</text>
-    <text x="20" y="270" class="small">Lateral (outer) side</text><text x="455" y="275" class="small">Medial epicondyle</text>
-    <!-- fracture -->
-    <path d="M232 200 l25 -6 l25 8 l28 -8 l30 7 l30 -8 l28 8 l30 -7 l24 6" fill="none" stroke="var(--artery)" stroke-width="2.5"/>
-    <text x="500" y="200" class="small">Fracture</text>
-    <!-- joint / forearm bones -->
-    <rect x="245" y="262" width="60" height="90" rx="8" fill="var(--bone)" stroke="var(--bone-dk)"/><text x="252" y="340" class="small">Radius</text>
-    <rect x="380" y="262" width="80" height="90" rx="8" fill="var(--bone)" stroke="var(--bone-dk)"/><text x="400" y="340" class="small">Ulna</text>
-    <!-- danger zone around medial epicondyle -->
-    <circle cx="488" cy="238" r="26" fill="var(--danger)"/>
-    <!-- ulnar nerve: behind medial epicondyle -->
-    <path d="M405 10 L405 150 Q440 200 490 236 L500 300" fill="none" stroke="var(--nerve)" stroke-width="4"/>
-    <text x="510" y="300" class="lab" fill="var(--nerve)">Ulnar nerve</text>
-    <!-- brachial artery + median nerve: anterior -->
-    <path d="M360 10 L360 180 L340 300" fill="none" stroke="var(--artery)" stroke-width="5"/>
-    <path d="M372 10 L372 180 L352 300" fill="none" stroke="var(--nerve)" stroke-width="4"/>
-    <text x="300" y="325" class="small">Brachial artery and median nerve, in front</text>
-    <!-- radial nerve: lateral -->
-    <path d="M315 10 Q290 100 240 180 L228 300" fill="none" stroke="var(--nerve)" stroke-width="4"/>
-    <text x="150" y="315" class="lab">Radial nerve</text>
-    <!-- lateral pins -->
-    <line x1="150" y1="290" x2="330" y2="150" stroke="var(--accent)" stroke-width="4"/>
-    <line x1="140" y1="255" x2="300" y2="130" stroke="var(--accent)" stroke-width="4"/>
-    <text x="20" y="120" class="lab" fill="var(--accent)">Lateral-only: two or three</text><text x="20" y="138" class="lab" fill="var(--accent)">pins from the outer side</text><text x="20" y="156" class="small">Ulnar nerve injury 0.7%</text>
-    <!-- medial pin (crossed) -->
-    <line x1="580" y1="280" x2="400" y2="140" stroke="var(--pin)" stroke-width="4" stroke-dasharray="8 5"/>
-    <text x="705" y="120" class="lab" text-anchor="end">Crossed: adds a medial pin,</text><text x="705" y="138" class="lab" text-anchor="end">entering at the ulnar nerve</text><text x="705" y="156" class="small" text-anchor="end">Ulnar nerve injury 3.4%</text>
-    <text x="20" y="30" class="small">Front view, right elbow. Schematic.</text>
-  </svg>
+  <img class="draw" src="images/fig5-elbow-nerves-artery-pin-paths.png" alt="Front view of a right elbow. The radial nerve runs down the outer side, the brachial artery and median nerve down the middle, and the ulnar nerve round the inner bump. Two solid blue lateral pins enter from the outer side (ulnar nerve injury 0.7 per cent); a dashed medial pin enters through a shaded zone on the ulnar nerve (3.4 per cent)." width="2260" height="1200">
   <figcaption><strong>Figure 5.</strong> The right elbow from the front. Lateral-only pins (solid) stay away from the nerves; the medial pin of a crossed layout (dashed) enters through the shaded zone where the ulnar nerve lies. Injury rates from Vaquero-Picado et al.<sup class="cite"><a href="#r1">[1]</a></sup>
   <div class="credit">Own drawing for this page, after Gray's Anatomy Plate 1235 for the nerve courses.</div></figcaption>
 </figure>
@@ -338,7 +220,7 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <p>This is the commonest elbow fracture in children: 55 to 80 per cent of their elbow fractures, about 177 per 100,000 children a year, usually from a fall onto an outstretched hand.<sup class="cite"><a href="#r1">[1]</a></sup> The <a href="https://en.wikipedia.org/wiki/Supracondylar_humerus_fracture">Gartland classification</a> grades it, as Figure 7 shows: type I undisplaced, type II hinged, type III fully displaced. Types II and III are pinned.</p>
 
 <figure class="fig" id="fig7">
-  <img src="{{FIG7}}" alt="Three drawings of an elbow from the side. Type I: the humerus is cracked just above the elbow but not displaced. Type II: the lower fragment is tilted backward but still hinged on the back cortex. Type III: the fragment is fully separated from the shaft." width="800" height="380">
+  <img src="images/fig7-gartland-classification-Benoudina-CC-BY-SA-4.0.jpg" alt="Three drawings of an elbow from the side. Type I: the humerus is cracked just above the elbow but not displaced. Type II: the lower fragment is tilted backward but still hinged on the back cortex. Type III: the fragment is fully separated from the shaft." width="800" height="380">
   <figcaption><strong>Figure 7.</strong> The Gartland classification. Look at the gap between the shaft and the lower fragment: none in type I, a hinge in type II, a full break in type III.
   <div class="credit">"Gartland Classification.jpg" by S. Benoudina, <a href="https://commons.wikimedia.org/wiki/File:Gartland_Classification.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Unchanged.</div></figcaption>
 </figure>

@@ -16,7 +16,7 @@ A fracture pin is a stiff metal wire, 1 to 6 mm across, drilled through skin int
 For a manager the attraction is plain: a cut and ground length of wire, minutes of theatre time, nothing to cut out later. The surgical steps are in the [AO Surgery Reference for paediatric distal humerus fractures](https://surgeryreference.aofoundation.org/orthopedic-trauma/pediatric-trauma/distal-humerus); this page does not repeat them.
 
 > **[Figure 2]**
-> **Alt text:** (drawn figure) Scale drawing of a 1.6 mm K-wire and a 4 mm Steinmann pin with three tip shapes
+> **Alt text:** Scale drawing of a 1.6 mm K-wire above a 4.0 mm Steinmann pin, both with trocar tips, and below them three tip shapes: trocar with three facets (129 °C drilled dry), diamond with four facets (98 °C), and threaded.
 > **Caption:** Figure 2. A K-wire and a Steinmann pin drawn at the same scale, and three tip shapes. The pin is 2.5 times wider and about 39 times stiffer in bending. Tip temperatures are those quoted in section 2.
 > **Credit:** Own drawing for this page.
 
@@ -27,7 +27,7 @@ For a manager the attraction is plain: a cut and ground length of wire, minutes 
 The running example is a displaced supracondylar fracture of the humerus, a break just above the elbow, in a child aged five to eight. [1] Figure 3 names the parts.
 
 > **[Figure 3]**
-> **Alt text:** (drawn figure) Section through a child's lower humerus showing cortex, cancellous bone, periosteum, growth plate and the fracture line
+> **Alt text:** Section through the lower end of a child's humerus, front view. Labels: thick cortex in the shaft, periosteum, cancellous core, a pale oval of thin bone joining the two columns with the zigzag fracture line through it, cortex thinning near the elbow, the wavy growth plate, and the epiphysis.
 > **Caption:** Figure 3. A child's lower humerus in section. Look at the thin bone between the two columns, where the fracture runs, and at the growth plate just below it.
 > **Credit:** Own drawing for this page, schematic.
 
@@ -52,7 +52,7 @@ Near each end of a child's long bone is a disc of cartilage, the physis or growt
 Healing runs in overlapping stages: inflammation, which peaks within a day and ends within a week; a soft cartilage callus; a hard bony callus; then remodelling, which starts at three to four weeks and takes years. It is faster in the young. [2] Figure 4 sets the stages against the pin, which in this fracture comes out at three weeks. [1] Dwell time must match the clock: too short and the fracture shifts, too long and infection risk climbs.
 
 > **[Figure 4]**
-> **Alt text:** (drawn figure) Timeline of fracture healing over twelve weeks: inflammation in week one, soft callus peaking at days seven to nine, hard callus peaking by day fourteen, remodelling from weeks three to four, with pin removal marked at week three
+> **Alt text:** Timeline from 0 to 12 weeks with four bars: inflammation in week one, soft cartilage callus peaking at days 7 to 9, hard bony callus peaking by day 14, remodelling from week 3 onward. A marker at week 3 shows when a child's elbow pins come out.
 > **Caption:** Figure 4. Healing stages on a twelve-week line. Look at where the pin comes out: after the hard callus has peaked, as remodelling begins.
 > **Credit:** Own drawing for this page. Timings after Marsell and Einhorn[2] and Vaquero-Picado et al.[1]
 
@@ -65,7 +65,7 @@ Children's bone has less mineral, lower stiffness and lower strength than adult 
 *In one line: Between skin and bone sit fat, muscle, nerves, an artery and the immune system.*
 
 > **[Figure 6]**
-> **Alt text:** (drawn figure) Cross-section of the layers a pin passes through, from skin to the far side of the bone, with a nerve and artery beyond
+> **Alt text:** Cross-section of stacked layers with a pin driven down through them: cap, skin, fat, muscle and tendon, periosteum, near cortex, cancellous bone, far cortex, and beyond it a nerve and an artery. Each layer has a one-line note on what it means for the pin.
 > **Caption:** Figure 6. Every layer the pin crosses, from the capped end outside the skin to the tip just beyond the far cortex, and what lies beyond if it goes further.
 > **Credit:** Own drawing for this page, schematic.
 
@@ -78,7 +78,7 @@ Skin keeps bacteria out. A pin holds a hole in it open for weeks, giving bacteri
 Three nerves and one artery run close to the distal humerus. The ulnar nerve lies behind the medial epicondyle, the bony bump on the inner elbow, where a medial pin enters. The median nerve and brachial artery cross the front of the elbow; the radial nerve runs on the outer side. The fracture itself injures a nerve in 6.5 to 19 per cent of displaced cases; [1] the pin must not add to that. Figure 5 shows how it can: a medial pin costs one extra ulnar nerve injury for every 28 children. [10]
 
 > **[Figure 5]**
-> **Alt text:** (drawn figure) Front view of the right elbow with the ulnar, median and radial nerves and brachial artery, and two pin layouts: lateral-only and crossed
+> **Alt text:** Front view of a right elbow. The radial nerve runs down the outer side, the brachial artery and median nerve down the middle, and the ulnar nerve round the inner bump. Two solid blue lateral pins enter from the outer side (ulnar nerve injury 0.7 per cent); a dashed medial pin enters through a shaded zone on the ulnar nerve (3.4 per cent).
 > **Caption:** Figure 5. The right elbow from the front. Lateral-only pins (solid) stay away from the nerves; the medial pin of a crossed layout (dashed) enters through the shaded zone where the ulnar nerve lies. Injury rates from Vaquero-Picado et al.[1]
 > **Credit:** Own drawing for this page, after Gray's Anatomy Plate 1235 for the nerve courses.
 
