@@ -89,3 +89,19 @@ Score 1 to 5. First pass 23 Nov before posting; second pass 9 Dec after feedback
 - **Feedback week:** one comment per groupmate page, written before reading others'. Two specific praises and three to five suggestions, each tied to a rubric row, each linking to the place on their page.
 - **After feedback:** reply to every comment with what changed or why not, then rescore on 9 Dec.
 - **Be ready to explain it.** If asked about any sentence, you should be able to say where it came from. The evidence table above is the crib.
+
+## 5. Whose assumptions are in section 6
+
+The setting in section 6 (certified 316L imported, steam sterilisation only, clinics a day's travel away) is this page's own assumption, made for Decision 4. The staff forum settled only that the client's country is unspecified and not the UK. An earlier draft wrongly labelled the setting "from the staff forum"; that wording is gone. If asked, say the setting is yours and why you chose it.
+
+## 6. Pasting into the Moodle wiki
+
+Checked against Moodle's own source (`mod/wiki/parser/markups/html.php`, `wikimarkup.php`, and the image dialogs of both editors, 4.4 branch).
+
+- **Contents list.** Moodle builds it from headings that match `<h3>` with nothing inside the tag. A heading with any attribute (`<h3 dir="ltr">`, `<h3 style="…">`) is skipped. After pasting, open the editor's HTML view and check the heading tags are bare.
+- **Numbering.** Moodle numbers the contents list itself, so the copied headings carry no numbers. Left in, they would show as "1. 1. What a fracture pin…".
+- **Levels.** Sections are `<h3>`, subsections `<h4>`, the three tension headings `<h5>`. Moodle shows three levels in the contents list, which is all of them.
+- **Duplicate headings.** Moodle turns a repeated heading into a plain paragraph. No heading on this page repeats.
+- **Double square brackets** make a link to another wiki page. The page uses none; citation markers are single brackets.
+- **Image description.** Both Moodle editors cap it at 125 characters. Every alt text on the page is 112 to 123 characters and says what the image shows, then why it is there.
+- **Paste-ready file:** `drafts/fracture-pin-wiki-moodle.html` is the whole page in this form.
