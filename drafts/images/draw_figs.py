@@ -207,7 +207,7 @@ def fig5():
     ax.text(800, 120, "Ulnar nerve", fontweight="bold", color=INK, fontsize=14)
     ax.text(240, 95, "Radial nerve", fontweight="bold", color=INK, fontsize=14)
     pointer(ax, (590, 18), (560, 175), "Brachial artery and median nerve, in front")
-    save(fig, "fig5-elbow-nerves-artery-pin-paths.png")
+    save(fig, "fig6-elbow-nerves-artery-pin-paths.png")
 
 
 # ---------------------------------------------------------------- Figure 6
@@ -242,7 +242,7 @@ def fig6():
     for y, t in rows:
         ax.text(590 if y < 440 else 335, y, t, va="center", color=INK, fontsize=12.5)
     ax.text(95, 18, "Schematic, not to scale. Tip stopped just past the far cortex.", color=GREY, fontsize=12)
-    save(fig, "fig6-layers-the-pin-crosses.png")
+    save(fig, "fig5-layers-the-pin-crosses.png")
 
 
 if __name__ == "__main__":

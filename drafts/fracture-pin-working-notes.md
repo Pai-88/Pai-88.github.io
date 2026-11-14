@@ -9,12 +9,12 @@ Every number on the page, where it comes from, and how it was checked. "Abstract
 | Claim on the page | Source (ref no.) | Checked against |
 |---|---|---|
 | Peak age five to eight; 55 to 80% of children's elbow fractures; 177.3 per 100,000 | Vaquero-Picado 2018 [1] | Full text (PMC6335593) |
-| Two columns joined by thin bone, "a zone of weakness" | [1] | Full text |
+| Two pillars of bone with a thin plate between them, the weak point where the fracture runs (source wording: two columns joined by thin bone, "a zone of weakness"; reworded on the page) | [1] | Full text |
 | Distal humerus gives about 20% of growth; remodelling limited after age four | [1]; Pritchett 1991 [7] (about 80% proximal) | Full text; abstract |
 | Pins 1.8 to 2.0 mm, two divergent lateral, third if unstable, out at three weeks, left exposed | [1] | Full text |
 | Pin-track infection 1% to over 25%, mostly superficial | [1] | Full text |
 | Nerve injured by the fracture in 6.5 to 19% of displaced cases | [1] | Abstract and full text |
-| Ulnar nerve injury 3.4% crossed vs 0.7% lateral (Figure 5) | [1] | Full text |
+| Ulnar nerve injury 3.4% crossed vs 0.7% lateral (Figure 6) | [1] | Full text |
 | Cubitus varus 26.1% in unreduced type II | [1] | Full text |
 | Type IV: periosteum completely torn, unstable in all directions | [1] | Full text |
 | Inflammation peaks at 24 h, over by 7 days; soft callus peak days 7 to 9; hard callus peak by day 14; remodelling from weeks 3 to 4, for years; faster in the young | Marsell & Einhorn 2011 [2] | Full text (PMC3105171). Callus peaks are animal-model figures. |
@@ -50,45 +50,61 @@ Every tissue the pin touches, against each phase. The bracket says where the pag
 
 | Tissue | Insertion | Weeks in place | Removal | After |
 |---|---|---|---|---|
-| Skin | Punctured; entry chosen away from nerves (3, Fig 6) | Held open: the infection track; rubbed by the end; cap (3, row 8) | Pulled through the same hole, in clinic (1, row 9) | Infection settles with pin removal (3) |
-| Fat | Depth sets unsupported pin length (Fig 6) | None significant | None | None |
+| Skin | Punctured; entry chosen away from nerves (3, Fig 5) | Held open: the infection track; rubbed by the end; cap (3, row 8) | Pulled through the same hole, in clinic (1, row 9) | Infection settles with pin removal (3) |
+| Fat | Depth sets unsupported pin length (Fig 5) | None significant | None | None |
 | Muscle and tendon | Avoided at entry (3) | Tethered tendon stops the joint (3) | Freed | Stiffness after removal (3) |
 | Periosteum | Pierced; pain fibres (3) | Source of healing cells (2) | Pain source | Callus (2) |
-| Cortical bone | Grip in two cortices; far-cortex plunge (2, Fig 6) | Holds the pin; thin bone limits diameter (5, tension 1) | Smooth wire pulls free (row 9) | **Gap: pin hole healing not stated** |
+| Cortical bone | Grip in two cortices; far-cortex plunge (2, Fig 5) | Holds the pin; thin bone limits diameter (5, tension 1) | Smooth wire pulls free (row 9) | **Gap: pin hole healing not stated** |
 | Cancellous bone | Little grip (2) | Threaded tip grips here (Fig 2) | None | Remodelling (2) |
 | Osteocytes | Heat limit 47 °C; tip, speed, irrigation (2, row 3) | Dead bone loosens the pin (2) | None | Remodelling (2) |
 | Growth plate | Crossed; threads and heat harm it (2, row 5) | Smooth wire only (row 5) | Smooth wire pulls free | Little remodelling after four; crooked stays crooked (2) |
 | Joint and cartilage | Avoided; a pin in the joint grinds it (3) | Infection can enter the joint: 1 of 622 (3) | None | Cartilage does not repair (3) |
-| Nerves | Ulnar at medial entry; median and radial near exit (3, Fig 5) | None significant | None | 1 extra ulnar injury per 28 medial pins (3, 4) |
-| Brachial artery | In front of the fracture; plunge risk (3, Fig 5, Fig 6) | None | None | None |
+| Nerves | Ulnar at medial entry; median and radial near exit (3, Fig 6) | None significant | None | 1 extra ulnar injury per 28 medial pins (3, 4) |
+| Brachial artery | In front of the fracture; plunge risk (3, Fig 6, Fig 5) | None | None | None |
 | Immune system | Protein coat in minutes (3) | Giant cells and capsule; surface matters most in weeks 2 to 4 (3, row 6) | Capsule left | Resolves if no debris (3) |
 
 One gap left: what happens to the pin hole. Add one sentence only with a source.
 
-## 3. Self-marking sheet
+## 3. Marking criteria: where each mark is earned on the page
 
-Score 1 to 5. First pass 23 Nov before posting; second pass 9 Dec after feedback. Fix anything under 3. The "now" column is an honest read of the draft as it stands, not a prediction of the mark.
+From Table 1 of the brief. "Now" is an honest read of the draft, not a predicted mark. Score it yourself before 26 Nov and again before 11 Dec.
 
-| Rubric row | Marks | What the marker looks for | Draft now | Still to do | 23 Nov | 9 Dec |
-|---|---|---|---|---|---|---|
-| Anatomy and physiology | 20 | All relevant A&P, not just the target; each fact ends in a reason it matters | Strong: bone, periosteum, cells, physis, healing, skin, nerves, artery, tendon, cartilage, immune, pain | Growth plate label on Figure 1; one textbook citation for the uncited anatomy | | |
-| Pathology and success | 12 | Injuries, rates with sources, failure modes, population variability | Strong: every rate sourced; variability by country and age | Read refs 9 and 12 in full | | |
-| Design choices | 24 | All significant interactions; body fact to design to control; the tensions | Strong: nine rows, three tensions, envelope with ISO numbers, own calculation | Confirm ISO 5838-3 range in the standard | | |
-| Audience and context | — | Plain English; client's assumptions drive section 6 | Good | Plain-English pass by you, aloud | | |
-| Compliance | 16 | Alt text, heading order, link wording, copyright lines | Complete in the draft | Re-check after pasting into the wiki; wiki may strip alt text | | |
-| Process | 12 | Ten saves on four dates before 26 Nov; status comment | **Not started** | Only you can earn these | | |
-| Giving feedback | 8 | One comment per groupmate page, before reading others' | **Not started** | Only you | | |
-| Receiving feedback | 4 | A reply to every comment | **Not started** | Only you | | |
+| Criterion | Marks | What "excellent" asks for | Where the page answers it | Now | Still to do |
+|---|---|---|---|---|---|
+| A&P relevant to topic | 20 | All relevant A&P, not just the target; right depth; support for no prior knowledge | Sections 2 and 3: cortex and cancellous bone, periosteum, osteocytes, growth plate, healing, child vs adult bone, skin, nerves, artery, tendon, cartilage, immune response. Every term links out. | Strong | Growth-plate label on Figure 1; one textbook citation for the uncited anatomy |
+| Pathology, variability, success | 12 | Context of use; strengths and weaknesses of historic and current designs | Section 4: the injury and its rate; what happens without a pin; strengths and weaknesses with rates; crossed (historic) vs lateral (current); two potential improvements; variation by country and age | Strong | Read refs 9 and 12 in full |
+| Micro/macro A&P to design choices | 24 | Impact of A&P on design and of product on the body; all significant interactions | Section 5: Table 1 has a scale column (micro/macro), the body fact, the design choice, and what a wrong pin does to the body; three conflicts; five controls; own stiffness calculation | Strong | Confirm ISO 5838-3 range; check table column 4 reasoning with a tutor |
+| Resources: choice | 4 | Carefully chosen, complements own work | 7 figures (5 own, 1 adapted, 1 found); 30 links in the text to AO, OpenStax, TeachMeAnatomy, Wikipedia, ISO | Good | Swap any Wikipedia link for a course-recommended source if you have one |
+| Resources: usability of links | 4 | Embedded links, user-friendly wording, at all appropriate points | Every link is worded as its destination; none says "here" | Good | Click every link once in Moodle after pasting |
+| Resources: copyright | 4 | Always cited; used within licence; copyright statements | Credit line under every figure with author, source, licence; own drawings say so; no non-commercial images | Good | Paste the credit lines exactly; do not crop them off |
+| Aesthetic quality and readability | 4 | Logical layout; balance of text and figures | Seven numbered sections, figures in order, one table | Depends on the Moodle template | Check against the supplied template; I have not seen it |
+| Spelling and grammar | 4 | Well proofread | British spelling throughout | Good | Read it aloud once; proofread after every edit |
+| Accessibility: general | 4 | W3C WAI guidelines | Headings in order, table has header cells and a caption, links descriptive, meaning never carried by colour alone | Good | Re-check heading levels after pasting |
+| Accessibility: alt text | 4 | All images have useful alt text | All seven, 112 to 123 characters, what it shows then why | Good | Paste each into Moodle's image description box |
+| Level for audience | 4 | Minimal prior knowledge, signposted links, not patronising | Plain English; each term linked on first use | Good | Ask someone outside the course to read section 2 |
+| Giving feedback | 8 | Praise plus several constructive suggestions, with links or examples | Not on this page | **Not started** | Only you. By 9am Thu 3 Dec |
+| Receiving feedback | 4 | Development over time; draft almost finished; responds to feedback | Wiki history and comment replies | **Not started** | Only you |
 
-24 of the 100 marks are process and feedback. No draft, however good, earns them.
+12 of the 100 marks are for collaboration and can only be earned in the wiki. (An earlier version of these notes said 24; that was wrong.)
 
-## 4. Process plan
+## 4. Deadlines and process
 
-- **Saves:** at least ten, on at least four dates, before 26 Nov. Suggested: sections 2 and 3 (date 1); section 4 and the table (date 2); figures (date 3); sections 1, 5 commentary, 6, 7 and the compliance pass (date 4). Edit as you paste: change wording, reorder, cut. The history should show your decisions.
-- **Status comment** after each save day: what changed, what is next.
-- **Feedback week:** one comment per groupmate page, written before reading others'. Two specific praises and three to five suggestions, each tied to a rubric row, each linking to the place on their page.
-- **After feedback:** reply to every comment with what changed or why not, then rescore on 9 Dec.
-- **Be ready to explain it.** If asked about any sentence, you should be able to say where it came from. The evidence table above is the crib.
+- **Draft for peer review: 9am Thursday 26 November 2026.** Most material in place; it should look almost finished. Optional: post a status comment, e.g. what you still plan to change.
+- **Peer review comments: 9am Thursday 3 December.** At least one comment on every other topic page in your group. Write yours before reading anyone else's. Then add follow-ups if you want.
+- **Final: 4pm Friday 11 December.** Only revisions saved before then are marked. The wiki date-stamps every save.
+- **Comments:** on the page, open the Comments item in the menu at the top left of the wiki window, then "add comment".
+- **Giving feedback (8 marks):** name two specific things done well, then several concrete suggestions. Tie each to a criterion in Table 1, link to a resource or to an example of good practice (your own page counts), and say what you would do.
+- **Receiving feedback (4 marks):** reply to every comment. Say what you changed, or politely why you did not.
+- **Development over time:** save in stages on several days. Reword as you go; the brief rewards paraphrase that draws out what matters for your page.
+- **Group index page:** check that your topic page is linked from it.
+
+### Own work
+
+The brief says all material must be your own work or acknowledged. This draft was produced with an AI assistant. Check the module's and UCL's rules on AI use for this assessment and acknowledge it in the way they require. Whatever the rule, rewrite the text in your own words as you paste, and use the evidence table so you can explain any sentence if asked.
+
+### Not yet seen
+
+The brief says to use the supplied template. I have not seen it. If its headings differ from the seven sections here, the template wins.
 
 ## 5. Whose assumptions are in section 6
 

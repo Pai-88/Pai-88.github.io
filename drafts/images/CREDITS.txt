@@ -1,31 +1,30 @@
 Fracture pin wiki page: figure files (14 Nov 2026)
-Figures 2 to 6 are the redrawn textbook-style set, with content corrected
-after the source check. They replace both earlier downloads.
+File numbers match the figure numbers on the page. Figures 5 and 6 swapped
+numbers so that figures appear in order: 5 is the layers drawing, 6 the elbow.
+
+Alt text is on the page, in the box under each figure (all within Moodle's
+125-character limit).
 
 fig1-pinned-fracture-xray-labelled.png
   Adapted from "Rad 1300116.JPG" by Nevit Dilmen, Wikimedia Commons,
-  CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Rad_1300116.JPG
+  licensed CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Rad_1300116.JPG
   Labels added. This labelled version is released under CC BY-SA 3.0.
 
 fig2 to fig6 (*.png; hand-drawn-look variants in sketch/)
-  Own drawings made for this page. Caption says "own drawing".
-  Regenerate with:  python3 draw_figs.py   (add --sketch for the sketch set)
-  Changed from the uploaded redraw:
-    fig2  tip notes now "129 °C" (trocar) and "98 °C" (diamond), drilled dry:
-          Piska et al. 2002, doi:10.1302/0301-620x.84b1.10692. The earlier
-          "trocar cuts coolest" was the wrong way round.
-    fig3  "about 1 mm" removed (unverified); thin bone joining the two columns
-          added: Vaquero-Picado et al. 2018, doi:10.1302/2058-5241.3.170049
-    fig4  bars redrawn to Marsell & Einhorn 2011, doi:10.1016/j.injury.2011.03.031;
-          pins out at week 3 (Vaquero-Picado 2018); "adult twice as long" removed
-    fig5  ulnar nerve injury rates added, 0.7% lateral, 3.4% crossed
-          (Vaquero-Picado 2018); nerve courses after Gray's Plate 1235
-    fig6  "1 mm", "within 1 cm" removed; heat limit worded as "47 °C for 1 min"
+  Own drawings made for this page. Regenerate with:  python3 draw_figs.py
+  fig2  tip temperatures: Piska et al. 2002, doi:10.1302/0301-620x.84b1.10692
+  fig3  thin bone between the two pillars: Vaquero-Picado et al. 2018,
+        doi:10.1302/2058-5241.3.170049
+  fig4  timings: Marsell & Einhorn 2011, doi:10.1016/j.injury.2011.03.031;
+        pins out at week 3: Vaquero-Picado 2018
+  fig5  layers the pin crosses: schematic from the page's own text
+  fig6  nerve courses after Gray's Anatomy (1918) Plate 1235, public domain;
+        ulnar nerve injury 0.7% lateral, 3.4% crossed: Vaquero-Picado 2018
 
 fig7-gartland-classification-Benoudina-CC-BY-SA-4.0.jpg
   "Gartland Classification.jpg" by S. Benoudina, Wikimedia Commons,
-  CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Gartland_Classification.jpg
-  Unchanged.
+  licensed CC BY-SA 4.0,
+  https://commons.wikimedia.org/wiki/File:Gartland_Classification.jpg  Unchanged.
 
-Figures 3 and 4 are own drawings, not OpenStax: OpenStax Anatomy & Physiology 2e
-is CC BY-NC-SA, which does not fit a page framed as commercial advice.
+Not embedded, by decision: OpenStax and Radiopaedia images (non-commercial
+licences; the brief frames the page as advice to a commercial company).
