@@ -347,3 +347,190 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 </article>
 </div>
 </div>
+<style>
+.copybar { border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); padding: 12px 14px; margin: 0 0 20px; font-family: var(--display); font-size: 14px; display: grid; gap: 10px; }
+.copybar .row1 { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.copybar .lbl { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.copybar .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; }
+.copybar .seg button { border: 0; border-right: 1px solid var(--rule); border-radius: 0; background: transparent; color: var(--fg); }
+.copybar .seg button:last-child { border-right: 0; }
+.copybar .seg button[aria-pressed="true"] { background: var(--accent); color: var(--paper); }
+.copybar .hint { color: var(--muted); font-size: 13px; line-height: 1.45; margin: 0; }
+.copybar .status { min-height: 1.3em; color: var(--accent); font-weight: 500; margin: 0; }
+button.cp { font: inherit; font-family: var(--display); font-size: 13px; line-height: 1.2; padding: 6px 10px; border: 1px solid var(--rule); border-radius: 5px; background: var(--paper); color: var(--fg); cursor: pointer; white-space: nowrap; }
+button.cp:hover { border-color: var(--accent); color: var(--accent); }
+button.cp:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button.cp.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+button.cp.primary:hover { color: var(--paper); filter: brightness(1.08); }
+button.cp.done { border-color: var(--accent); color: var(--accent); }
+button.cp.primary.done { color: var(--paper); }
+.fallback[hidden] { display: none; }
+article h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+article h2 .h2t { flex: 1 1 12ch; min-width: 0; }
+article h2 button.cp { font-weight: 400; align-self: center; }
+.kit { margin-top: 10px; border: 1px dashed var(--rule); border-radius: 6px; background: var(--slot); padding: 10px 12px; font-family: var(--display); font-size: 13px; display: grid; gap: 8px; }
+.kit .kt { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.kit .kr { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 8px; align-items: start; }
+.kit .kk { color: var(--muted); padding-top: 6px; }
+.kit .kv { background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; line-height: 1.45; overflow-wrap: anywhere; user-select: all; }
+@media (max-width: 520px) { .kit .kr { grid-template-columns: minmax(0, 1fr) auto; } .kit .kk { grid-column: 1 / -1; padding-top: 0; } }
+.fallback { border: 1px solid var(--warn); background: var(--warn-soft); border-radius: 6px; padding: 10px 12px; display: grid; gap: 8px; }
+.fallback p { margin: 0; color: var(--warn); font-size: 13px; }
+.fallback .box { background: var(--paper); color: var(--fg); border: 1px solid var(--rule); border-radius: 4px; padding: 8px 10px; max-height: 220px; overflow: auto; font-size: 13px; }
+.fallback pre.box { white-space: pre-wrap; font-family: var(--mono); margin: 0; }
+body.notools .copybar .hint, body.notools .kit, body.notools article h2 button.cp { display: none; }
+</style>
+<script>
+(function () {
+  var FILES = { 1: 'fig1-pinned-fracture-xray-labelled.png', 2: 'fig2-kwire-vs-steinmann-pin-tips.png', 3: 'fig3-childs-distal-humerus-section.png', 4: 'fig4-healing-timeline.png', 5: 'fig5-elbow-nerves-artery-pin-paths.png', 6: 'fig6-layers-the-pin-crosses.png', 7: 'fig7-gartland-classification-Benoudina-CC-BY-SA-4.0.jpg' };
+  var article = document.querySelector('article');
+  if (!article) return;
+  var fmt = 'rich';
+  try { fmt = localStorage.getItem('fp-copy-format') || 'rich'; } catch (e) {}
+
+  function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function kids(n) { var o = ''; n.childNodes.forEach(function (c) { o += clean(c); }); return o; }
+  function figNo(f) { return (f.id || '').replace('fig', ''); }
+  function capParts(f) {
+    var fc = f.querySelector('figcaption').cloneNode(true), cr = fc.querySelector('.credit');
+    var credit = cr ? cr.cloneNode(true) : null; if (cr) cr.remove();
+    var st = fc.querySelector('strong'); if (st) st.remove();
+    return { caption: fc, credit: credit };
+  }
+  // Reduce the page's markup to plain wiki-safe HTML: headings, paragraphs, lists, table, links.
+  function clean(n) {
+    if (n.nodeType === 3) return esc(n.nodeValue.replace(/\s+/g, ' '));
+    if (n.nodeType !== 1) return '';
+    var t = n.tagName.toLowerCase(), c = n.classList;
+    if (t === 'button' || t === 'script' || t === 'style' || c.contains('kit') || c.contains('copybar')) return '';
+    if (t === 'figure') {
+      var no = figNo(n), p = capParts(n);
+      return '<p>[FIGURE ' + no + ' HERE: upload ' + FILES[no] + ']</p>' +
+        '<p><strong>Figure ' + no + '.</strong> ' + kids(p.caption).trim() + '</p>' +
+        (p.credit ? '<p>' + kids(p.credit).trim() + '</p>' : '');
+    }
+    if (t === 'sup' && c.contains('cite')) return '<sup>' + esc(n.textContent.trim()) + '</sup>';
+    if (t === 'h1') return '<h1>' + esc(n.textContent.trim()) + '</h1>';
+    if (t === 'h2') {
+      var num = n.querySelector('.num'), tt = n.querySelector('.h2t');
+      var title = (tt ? tt.textContent : n.textContent).trim();
+      return '<h2>' + (num ? esc(num.textContent.trim()) + '. ' : '') + esc(title) + '</h2>';
+    }
+    if (t === 'h4' && n.parentNode.classList.contains('envelope')) return '<p><strong>' + kids(n).trim() + '</strong></p>';
+    if (t === 'p' && c.contains('know')) { var k = n.cloneNode(true), b = k.querySelector('b'); if (b) b.remove(); return '<p><em>In one line: ' + kids(k).trim() + '</em></p>'; }
+    if (t === 'a') return '<a href="' + esc(n.getAttribute('href') || '') + '">' + kids(n) + '</a>';
+    if (t === 'b') return '<strong>' + kids(n) + '</strong>';
+    if (t === 'th') return '<th scope="col">' + kids(n).trim() + '</th>';
+    if (['p', 'ul', 'ol', 'li', 'table', 'thead', 'tbody', 'tr', 'td', 'em', 'strong', 'h3', 'h4'].indexOf(t) > -1) {
+      var inner = kids(n); if (t !== 'em' && t !== 'strong') inner = inner.trim();
+      return '<' + t + '>' + inner + '</' + t + '>';
+    }
+    return kids(n);
+  }
+  // Small HTML-to-Markdown converter for the reduced markup above.
+  function md(n) {
+    if (n.nodeType === 3) return n.nodeValue;
+    var t = n.tagName.toLowerCase(), k = function () { var o = ''; n.childNodes.forEach(function (c) { o += md(c); }); return o; };
+    if (t === 'h1') return '# ' + k() + '\n\n';
+    if (t === 'h2') return '## ' + k() + '\n\n';
+    if (t === 'h3') return '### ' + k() + '\n\n';
+    if (t === 'h4') return '#### ' + k() + '\n\n';
+    if (t === 'p') return k().trim() + '\n\n';
+    if (t === 'em') return '*' + k() + '*';
+    if (t === 'strong') return '**' + k() + '**';
+    if (t === 'a') return '[' + k() + '](' + n.getAttribute('href') + ')';
+    if (t === 'sup') return ' ' + k();
+    if (t === 'ul' || t === 'ol') { var i = 0, o = ''; n.querySelectorAll(':scope > li').forEach(function (li) { i++; var s = ''; li.childNodes.forEach(function (c) { s += md(c); }); o += (t === 'ol' ? i + '. ' : '- ') + s.trim() + '\n'; }); return o + '\n'; }
+    if (t === 'table') { var o2 = ''; n.querySelectorAll('tr').forEach(function (tr, r) { var cells = []; tr.querySelectorAll('th,td').forEach(function (c) { var s = ''; c.childNodes.forEach(function (x) { s += md(x); }); cells.push(s.trim().replace(/\|/g, '/')); }); o2 += '| ' + cells.join(' | ') + ' |\n'; if (r === 0) o2 += '|' + cells.map(function () { return '---'; }).join('|') + '|\n'; }); return o2 + '\n'; }
+    return k();
+  }
+  function toMd(html) { var d = new DOMParser().parseFromString('<div>' + html + '</div>', 'text/html'); return md(d.body.firstChild).replace(/^[ \t]+/gm, '').replace(/[ \t]+$/gm, '').replace(/\n{3,}/g, '\n\n').trim() + '\n'; }
+
+  function sectionHtml(h2) {
+    var out = clean(h2), n = h2.nextElementSibling;
+    while (n && n.tagName !== 'H2' && !n.classList.contains('notes')) { out += clean(n); n = n.nextElementSibling; }
+    return out;
+  }
+  function titleHtml() {
+    var h1 = document.querySelector('header.title h1'), sf = document.querySelector('header.title .standfirst'), f1 = document.getElementById('fig1');
+    return clean(h1) + '<p><em>' + esc(sf.textContent.trim()) + '</em></p>' + (f1 ? clean(f1) : '');
+  }
+  function pageHtml() { var o = titleHtml(); article.querySelectorAll(':scope > h2').forEach(function (h) { o += sectionHtml(h); }); return o; }
+
+  var status, fb;
+  function say(m) { status.textContent = m; }
+  function showFallback(html, text, rich) {
+    fb.hidden = false; fb.innerHTML = '';
+    var p = document.createElement('p'); p.textContent = 'This browser blocked the clipboard. The text is selected below: press Ctrl+C (or Cmd+C on a Mac), then paste into the wiki.'; fb.appendChild(p);
+    var box = document.createElement(rich ? 'div' : 'pre'); box.className = 'box'; box.tabIndex = 0;
+    if (rich) box.innerHTML = html; else box.textContent = text; fb.appendChild(box);
+    var r = document.createRange(); r.selectNodeContents(box); var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    fb.scrollIntoView({ block: 'nearest' }); say('Clipboard blocked: copy the selected text below.');
+  }
+  function execRich(html) {
+    var d = document.createElement('div'); d.contentEditable = 'true'; d.style.cssText = 'position:fixed;left:-9999px;top:0;background:#fff;color:#000'; d.innerHTML = html; document.body.appendChild(d);
+    var r = document.createRange(); r.selectNodeContents(d); var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) {} s.removeAllRanges(); d.remove(); return ok;
+  }
+  function copy(html, label, btn, forceText) {
+    var f = forceText ? 'text' : fmt, text = f === 'html' ? html : (f === 'text' ? html : toMd(html));
+    var done = function (how) { fb.hidden = true; say('Copied ' + label + ' as ' + how + '.'); if (btn) { var o = btn.textContent; btn.textContent = 'Copied'; btn.classList.add('done'); setTimeout(function () { btn.textContent = o; btn.classList.remove('done'); }, 1400); } };
+    var plain = function () {
+      try { navigator.clipboard.writeText(text).then(function () { done(f === 'html' ? 'HTML source' : f === 'md' ? 'Markdown' : 'text'); }, function () { showFallback(html, text, false); }); }
+      catch (e) { showFallback(html, text, false); }
+    };
+    if (f !== 'rich') return plain();
+    var viaExec = function () { if (execRich(html)) done('rich text'); else showFallback(html, text, true); };
+    try {
+      var item = new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([text], { type: 'text/plain' }) });
+      navigator.clipboard.write([item]).then(function () { done('rich text'); }, viaExec);
+    } catch (e) { viaExec(); }
+  }
+  function mk(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+  // Toolbar
+  var bar = mk('div', 'copybar'), row = mk('div', 'row1');
+  row.appendChild(mk('span', 'lbl', 'Copy for the wiki as'));
+  var seg = mk('div', 'seg'); seg.setAttribute('role', 'group'); seg.setAttribute('aria-label', 'Copy format');
+  [['rich', 'Rich text'], ['md', 'Markdown'], ['html', 'HTML source']].forEach(function (o) {
+    var b = mk('button', 'cp', o[1]); b.type = 'button'; b.id = 'fp-fmt-' + o[0]; b.setAttribute('aria-pressed', String(fmt === o[0]));
+    b.addEventListener('click', function () { fmt = o[0]; try { localStorage.setItem('fp-copy-format', fmt); } catch (e) {} seg.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); }); say(''); });
+    seg.appendChild(b);
+  });
+  row.appendChild(seg);
+  var all = mk('button', 'cp primary', 'Copy whole page'); all.type = 'button'; all.id = 'fp-copy-all';
+  all.addEventListener('click', function () { copy(pageHtml(), 'the whole page', all); }); row.appendChild(all);
+  var tb = mk('button', 'cp', 'Copy title block'); tb.type = 'button'; tb.id = 'fp-copy-title';
+  tb.addEventListener('click', function () { copy(titleHtml(), 'the title block', tb); }); row.appendChild(tb);
+  var tg = mk('button', 'cp', 'Hide copy tools'); tg.type = 'button'; tg.id = 'fp-toggle-tools';
+  tg.addEventListener('click', function () { var off = document.body.classList.toggle('notools'); tg.textContent = off ? 'Show copy tools' : 'Hide copy tools'; }); row.appendChild(tg);
+  bar.appendChild(row);
+  bar.appendChild(mk('p', 'hint', 'Rich text pastes into a visual editor with its headings, table and links. Each section has its own Copy button, so you can paste in stages. Figures paste as a placeholder line with the caption and credit; upload the image, then copy its alt text from the box under the figure.'));
+  status = mk('p', 'status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); bar.appendChild(status);
+  fb = mk('div', 'fallback'); fb.hidden = true; bar.appendChild(fb);
+  article.insertBefore(bar, article.firstChild);
+
+  // Per-section buttons
+  article.querySelectorAll(':scope > h2').forEach(function (h) {
+    var span = mk('span', 'h2t'); Array.prototype.slice.call(h.childNodes).forEach(function (c) { if (!(c.nodeType === 1 && c.classList.contains('num'))) span.appendChild(c); });
+    h.appendChild(span);
+    var name = h.id === 'refs' ? 'the references' : 'section ' + (h.querySelector('.num') ? h.querySelector('.num').textContent.trim() : '');
+    var b = mk('button', 'cp', h.id === 'refs' ? 'Copy references' : 'Copy section'); b.type = 'button'; b.id = 'fp-copy-' + h.id;
+    b.addEventListener('click', function () { copy(sectionHtml(h), name, b); }); h.appendChild(b);
+  });
+
+  // Per-figure wiki fields
+  article.querySelectorAll('figure.fig').forEach(function (f) {
+    var no = figNo(f), p = capParts(f), img = f.querySelector('img');
+    var kit = mk('div', 'kit'); kit.appendChild(mk('div', 'kt', 'Figure ' + no + ': fields for the wiki image dialog'));
+    [['File', FILES[no]], ['Alt text', img ? img.alt : ''], ['Caption', 'Figure ' + no + '. ' + p.caption.textContent.replace(/\s+/g, ' ').trim()], ['Credit', p.credit ? p.credit.textContent.replace(/\s+/g, ' ').trim() : '']].forEach(function (r) {
+      var rowEl = mk('div', 'kr'); rowEl.appendChild(mk('div', 'kk', r[0])); rowEl.appendChild(mk('div', 'kv', r[1]));
+      var b = mk('button', 'cp', 'Copy'); b.type = 'button'; b.id = 'fp-fig' + no + '-' + r[0].toLowerCase().replace(' ', '');
+      b.setAttribute('aria-label', 'Copy ' + r[0].toLowerCase() + ' for figure ' + no);
+      b.addEventListener('click', function () { copy(r[1], 'the ' + r[0].toLowerCase() + ' for Figure ' + no, b, true); });
+      rowEl.appendChild(b); kit.appendChild(rowEl);
+    });
+    f.appendChild(kit);
+  });
+})();
+</script>
