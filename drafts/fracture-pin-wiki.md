@@ -2,9 +2,10 @@
 
 *For a manager deciding whether to make K-wires and Steinmann pins locally. It explains what the body requires of the design, and which of those requirements cannot be changed.*
 
-> **[Figure 1, hero image slot]**
-> **Alt text:** Side-view X-ray of a child's elbow showing a supracondylar fracture of the humerus held by two thin metal wires that enter from the outer side of the elbow and cross the fracture line. Shown because this is the commonest use of the device the page describes.
-> **Credit line (fill in before posting):** "[File title]" by [author], Wikimedia Commons, licensed under [CC BY 4.0 / CC BY-SA 4.0], [URL]. Cropped and labelled.
+> **[Figure 1]** https://commons.wikimedia.org/wiki/File:Rad_1300116.JPG
+> **Alt text:** Side-view X-ray of an elbow showing a fracture of the lower humerus held by two parallel metal wires that enter from the back of the elbow, cross the fracture line and end in bent tips outside the bone. Shown because this is the commonest use of the device the page describes.
+> **Caption:** A supracondylar fracture of the humerus held by two K-wires, seen from the side. The wire ends are bent and left outside the bone for removal in clinic.
+> **Credit line:** "Rad 1300116.JPG" by Nevit Dilmen, Wikimedia Commons, licensed under CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/). Resized; otherwise unchanged.
 
 ## 1. What a fracture pin is and does
 
@@ -48,9 +49,11 @@ Skin keeps bacteria out. A pin punches a hole in it and holds it open for weeks,
 
 ### The nerves and artery around the elbow
 
-> **[Figure 2 slot: nerve and artery map of the elbow]**
-> **Alt text:** Diagram of the right elbow from the front, showing the ulnar nerve behind the inner bony bump, the median nerve and brachial artery crossing the front of the joint, and the radial nerve on the outer side. Shown because these structures sit within a centimetre of where pins enter and exit.
-> **Credit line:** adapted from OpenStax *Anatomy and Physiology* or Servier Medical Art, CC BY 4.0, with labels added. Record the exact figure and URL.
+> **[Figure 2]** https://commons.wikimedia.org/wiki/File:Gray1235.png
+> **Alt text:** Drawing of the front of a right arm with the skin's surface markings: the brachial artery and median nerve run down the inner front of the upper arm and cross the front of the elbow, the ulnar nerve passes the inner side of the elbow, and the radial nerve passes the outer side. Shown because these structures sit within a centimetre of where pins enter and exit.
+> **Caption:** Front of the right arm with the brachial artery (red) and the median, ulnar and radial nerves (yellow) drawn on the skin. The elbow crease is at the centre of the drawing.
+> **Credit line:** Plate 1235 from Henry Gray, *Anatomy of the Human Body*, 20th edition (1918), illustration by Henry Vandyke Carter, via Wikimedia Commons. Public domain.
+> Alternative if a more detailed view is wanted: https://commons.wikimedia.org/wiki/File:Nerves_of_the_left_upper_extremity.gif (Gray's Plate 816, public domain).
 
 Three nerves and one artery run close to the distal humerus. The ulnar nerve lies directly behind the medial epicondyle, the bony bump on the inner elbow, which is where a medial pin enters. The median nerve and brachial artery cross the front of the elbow, directly in front of the fracture. The radial nerve runs on the outer side. The fracture itself often injures these; the pin must not add to it. In a systematic review, about one child in 28 treated with a medial pin suffered an ulnar nerve injury that lateral-only pinning would have avoided [8].
 
@@ -147,8 +150,8 @@ A fracture pin is simple to make and hard to make right, because the bone, nerve
 
 ### Image credits
 
-- Figure 1: [fill in: file, author, licence, URL]
-- Figure 2: [fill in: source figure, licence CC BY 4.0, URL; "labels added"]
+- Figure 1: "Rad 1300116.JPG" by Nevit Dilmen, Wikimedia Commons, CC BY-SA 3.0, resized. https://commons.wikimedia.org/wiki/File:Rad_1300116.JPG
+- Figure 2: Gray's Anatomy (1918) Plate 1235, Henry Vandyke Carter, Wikimedia Commons, public domain. https://commons.wikimedia.org/wiki/File:Gray1235.png
 - Figure 3 (optional, tip geometry for row 3): own drawing, no credit needed.
 
 ---
@@ -169,8 +172,10 @@ A fracture pin is simple to make and hard to make right, because the bone, nerve
 
 **Images**
 
-- Find a CC BY or CC BY-SA radiograph on Wikimedia Commons for Figure 1; record the exact licence text. Not Radiopaedia (non-commercial licence conflicts with a page framed as commercial advice).
-- Figure 2: OpenStax A&P figure 11.4.x or Servier Medical Art; relabel to show only the four structures named.
+- Figure 1 is CC BY-SA 3.0: if you crop or label it, the labelled version must be released under CC BY-SA too. The Commons record gives no patient age or view; the caption's "seen from the side" comes from the image, not the record. Do not call the patient a child in the caption.
+- Figure 2 is public domain, so it can be relabelled freely; add "labels added" to the credit if you do.
+- OpenStax Anatomy & Physiology 2e is CC BY-NC-SA on its current pages, not CC BY as the brief assumed. Its figures do not fit a page framed as commercial advice. Gray's Anatomy (1918) plates on Commons are public domain and cover the same anatomy.
+- Not Radiopaedia anywhere on the page (non-commercial licence).
 
 **Compliance**
 
