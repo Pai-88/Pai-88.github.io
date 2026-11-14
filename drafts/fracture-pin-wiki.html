@@ -64,8 +64,8 @@ sup.cite a { text-decoration: none; }
 figure.fig { margin: 20px 0 24px; }
 figure.fig img, figure.fig svg { display: block; max-width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--rule); }
 figure.fig img { background: #000; }
-figure.fig#fig1 img { max-width: 560px; }
-figure.fig#fig7 img { background: #fff; max-width: 520px; }
+figure.fig#fig1 img { max-width: min(560px, 100%); }
+figure.fig#fig7 img { background: #fff; max-width: min(520px, 100%); }
 figure.fig svg { background: var(--paper); width: 100%; font-family: var(--display); }
 figure.fig svg text { fill: var(--fg); font-size: 13px; }
 figure.fig svg text.small { font-size: 11px; fill: var(--muted); }
@@ -88,7 +88,7 @@ table.design td .n { font-family: var(--mono); font-variant-numeric: tabular-num
 .scenario { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 12px 16px; margin: 0 0 16px; border-radius: 0 6px 6px 0; font-size: 16px; }
 .summary { border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); padding: 18px 20px; font-size: 18px; }
 ol.refs { font-family: var(--display); font-size: 14px; padding-left: 1.6em; margin: 0; line-height: 1.5; }
-ol.refs li { margin-bottom: 8px; scroll-margin-top: 24px; }
+ol.refs li { margin-bottom: 8px; scroll-margin-top: 24px; overflow-wrap: anywhere; }
 ol.refs li:target { background: var(--accent-soft); }
 ul.credits { font-family: var(--display); font-size: 14px; color: var(--muted); padding-left: 1.2em; }
 details.notes { margin-top: 48px; border: 1px solid var(--warn); border-radius: 6px; background: var(--warn-soft); font-family: var(--display); font-size: 14px; }
@@ -122,10 +122,10 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
     <li><a href="#refs">References</a></li>
   </ol>
   <dl class="facts">
-    <dt>Running example</dt><dd>Displaced supracondylar humerus fracture, child aged 5 to 7</dd>
-    <dt>Device scope</dt><dd>K-wires 1.0 to 2.0 mm; Steinmann pins 2.5 to 6 mm</dd>
+    <dt>Running example</dt><dd>Displaced supracondylar humerus fracture, child aged 5 to 8</dd>
+    <dt>Device scope</dt><dd>K-wires 0.8 to 3.0 mm; Steinmann pins thicker, to 6 mm</dd>
     <dt>Audience</dt><dd>Engineering-literate manager, no clinical knowledge</dd>
-    <dt>Figures</dt><dd>7: one adapted, two found, four drawn for this page</dd>
+    <dt>Figures</dt><dd>7: one adapted, one found, five drawn for this page</dd>
   </dl>
 </nav>
 
@@ -138,8 +138,8 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 </figure>
 
 <h2 id="s1"><span class="num">1</span>What a fracture pin is and does</h2>
-<p class="know"><b>In one line</b>A pin is a stiff wire that holds broken bone still for a few weeks and then comes out.</p>
-<p class="lede">A fracture pin is a stiff metal wire, 1 to 6 mm across, drilled through skin into bone so that it crosses a break and holds the pieces still while they heal. The thin ones (1.0 to 2.0 mm) are Kirschner wires, or K-wires. The thicker ones (2.5 to 6 mm) are Steinmann pins, for larger bones and traction. Figure 1 shows the arrangement: two wires in from the back of the elbow, across the break, ends bent outside the bone. Figure 2 compares the two sizes and their tips. Both go in under live X-ray, stay for weeks, and come out in a clinic room, usually without anaesthetic.</p>
+<p class="know"><b>In one line</b>A pin is a stiff wire that holds broken bone still for a few weeks, then comes out.</p>
+<p class="lede">A fracture pin is a stiff metal wire, 1 to 6 mm across, drilled through skin into bone so that it crosses a break and holds the pieces still while they heal. The thin ones, up to 3 mm, are Kirschner wires, or K-wires. The thicker ones are Steinmann pins, for larger bones and traction. Figure 1 shows the arrangement: two wires in from the back of the elbow, across the break, ends bent outside the bone. Figure 2 compares the two sizes and their tips. Both go in under live X-ray, stay for weeks, and come out in a clinic room.</p>
 <p>For a manager the attraction is plain: a cut and ground length of wire, minutes of theatre time, nothing to cut out later. The surgical steps are in the <a href="https://surgeryreference.aofoundation.org/orthopedic-trauma/pediatric-trauma/distal-humerus">AO Surgery Reference for paediatric distal humerus fractures</a>; this page does not repeat them.</p>
 
 <figure class="fig" id="fig2">
@@ -160,23 +160,23 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
       <text x="0" y="0" class="lab">Tip shapes</text>
       <polygon points="0,20 70,20 110,34 70,48 0,48" fill="var(--pin)"/>
       <line x1="76" y1="22" x2="106" y2="34" stroke="var(--paper)" stroke-width="1"/>
-      <text x="0" y="68" class="small">Trocar: three facets, cuts coolest</text>
+      <text x="0" y="68" class="small">Trocar: three facets, 129 °C</text>
       <polygon points="210,20 280,20 320,34 280,48 210,48" fill="var(--pin)"/>
       <line x1="286" y1="22" x2="316" y2="34" stroke="var(--paper)" stroke-width="1"/>
       <line x1="286" y1="46" x2="316" y2="34" stroke="var(--paper)" stroke-width="1"/>
-      <text x="210" y="68" class="small">Diamond: four facets, runs hotter</text>
+      <text x="210" y="68" class="small">Diamond: four facets, 98 °C</text>
       <polygon points="430,20 500,20 540,34 500,48 430,48" fill="var(--pin)"/>
       <path d="M436 20 l6 28 M446 20 l6 28 M456 20 l6 28 M466 20 l6 28 M476 20 l6 28 M486 20 l6 28" stroke="var(--paper)" stroke-width="1.5" fill="none"/>
-      <text x="430" y="68" class="small">Threaded: grips cancellous bone, not for growth plates</text>
+      <text x="430" y="68" class="small">Threaded: more grip, not across a growth plate</text>
     </g>
   </svg>
-  <figcaption><strong>Figure 2.</strong> A K-wire and a Steinmann pin drawn at the same scale, and the three tip shapes. The pin is 2.5 times wider and about 39 times stiffer in bending.
-  <div class="credit">Own drawing for this page. Dimensions from manufacturers' catalogue ranges.</div></figcaption>
+  <figcaption><strong>Figure 2.</strong> A K-wire and a Steinmann pin drawn at the same scale, and three tip shapes. The pin is 2.5 times wider and about 39 times stiffer in bending. Tip temperatures are those quoted in section 2.
+  <div class="credit">Own drawing for this page.</div></figcaption>
 </figure>
 
 <h2 id="s2"><span class="num">2</span>The bone the pin goes into</h2>
 <p class="know"><b>In one line</b>The bone is small, alive, growing and fast-healing; each of those limits the pin.</p>
-<p>The running example is a displaced supracondylar fracture of the humerus in a child aged 5 to 7: a break just above the elbow.<sup class="cite"><a href="#r1">[1]</a></sup> Figure 3 shows the parts of that bone named below.</p>
+<p>The running example is a displaced supracondylar fracture of the humerus, a break just above the elbow, in a child aged five to eight.<sup class="cite"><a href="#r1">[1]</a></sup> Figure 3 names the parts.</p>
 
 <figure class="fig" id="fig3">
   <svg viewBox="0 0 720 330" role="img" aria-labelledby="fig3t">
@@ -190,6 +190,7 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
     <g fill="var(--bone-dk)" opacity=".7">
       <circle cx="320" cy="170" r="3"/><circle cx="345" cy="190" r="3"/><circle cx="375" cy="180" r="3"/><circle cx="300" cy="215" r="3"/><circle cx="330" cy="235" r="3"/><circle cx="360" cy="225" r="3"/><circle cx="395" cy="240" r="3"/><circle cx="410" cy="212" r="3"/><circle cx="350" cy="255" r="3"/><circle cx="310" cy="265" r="3"/><circle cx="385" cy="268" r="3"/><circle cx="420" cy="258" r="3"/>
     </g>
+    <ellipse cx="360" cy="188" rx="34" ry="16" fill="var(--paper)" opacity=".75" stroke="var(--bone-dk)" stroke-dasharray="3 3"/>
     <!-- growth plate -->
     <path d="M262 262 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0" fill="none" stroke="var(--nerve)" stroke-width="5"/>
     <!-- fracture -->
@@ -197,60 +198,60 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
     <!-- labels -->
     <g class="small">
       <line x1="306" y1="60" x2="215" y2="60" stroke="var(--muted)"/><text x="208" y="64" text-anchor="end">Cortex, thick in the shaft</text>
-      <line x1="262" y1="248" x2="215" y2="248" stroke="var(--muted)"/><text x="208" y="252" text-anchor="end">Cortex, about 1 mm near the elbow</text>
+      <line x1="262" y1="248" x2="215" y2="248" stroke="var(--muted)"/><text x="208" y="252" text-anchor="end">Cortex thins near the elbow</text>
       <line x1="300" y1="100" x2="215" y2="100" stroke="var(--muted)"/><text x="208" y="104" text-anchor="end">Periosteum, thick in a child</text>
-      <line x1="430" y1="150" x2="520" y2="150" stroke="var(--muted)"/><text x="528" y="154">Cancellous bone (spongy core)</text>
+      <line x1="400" y1="120" x2="520" y2="120" stroke="var(--muted)"/><text x="528" y="124">Cancellous bone (spongy core)</text>
+      <line x1="394" y1="184" x2="520" y2="170" stroke="var(--muted)"/><text x="528" y="174">Thin bone joining the columns</text>
       <line x1="452" y1="206" x2="520" y2="206" stroke="var(--muted)"/><text x="528" y="210">Supracondylar fracture line</text>
       <line x1="462" y1="262" x2="520" y2="262" stroke="var(--muted)"/><text x="528" y="266">Growth plate (physis), cartilage</text>
       <line x1="470" y1="290" x2="520" y2="290" stroke="var(--muted)"/><text x="528" y="294">Epiphysis, then joint cartilage</text>
       <text x="20" y="320">Schematic, not to scale. Front view, lower end of a child's humerus.</text>
     </g>
   </svg>
-  <figcaption><strong>Figure 3.</strong> A child's lower humerus in section. The cortex thins towards the elbow, the inside is cancellous, the growth plate sits just below the usual fracture line, and the periosteum wraps all of it.
+  <figcaption><strong>Figure 3.</strong> A child's lower humerus in section. Look at the thin bone between the two columns, where the fracture runs, and at the growth plate just below it.
   <div class="credit">Own drawing for this page, schematic.</div></figcaption>
 </figure>
 
 <h3>Hard shell, spongy core</h3>
-<p>Bone is two materials: a dense outer cortex and a spongy honeycomb inside, the cancellous bone. In a young child's distal humerus the cortex is a millimetre or so thick and most of the width is cancellous. A drill tip feels the cortex as resistance then a sudden give, and the cancellous bone as almost nothing. So a pin's grip comes from the two cortices it crosses, and it plunges once the far cortex gives way (section 3).</p>
+<p>Bone is two materials: a dense outer cortex and a spongy honeycomb inside, the cancellous bone. Above the elbow the humerus splits into two columns joined by thin bone, a zone of weakness where this fracture runs.<sup class="cite"><a href="#r1">[1]</a></sup> A drill tip feels cortex as resistance then a sudden give, and cancellous bone as almost nothing. So a pin grips in the two cortices it crosses, and plunges when the far one gives way.</p>
 
 <h3>Periosteum</h3>
-<p>Bone is wrapped in periosteum, a tough living membrane that supplies healing cells. In children it is thick and loosely attached, which is why a child's fracture often stays hinged on it and heals fast: the callus grows from this sleeve.</p>
+<p>Bone is wrapped in periosteum, a tough living membrane that supplies healing cells.<sup class="cite"><a href="#r2">[2]</a></sup> In children it is thick, so a broken bone often stays hinged on it. When it tears right through, the fracture is unstable in every direction.<sup class="cite"><a href="#r1">[1]</a></sup></p>
 
 <h3>Bone is alive and dies from heat</h3>
-<p>Bone is populated by osteocytes, cells in tiny chambers in the mineral, with a known heat limit. In rabbit bone, 47 °C for one minute reduced regeneration and 50 °C caused lasting damage.<sup class="cite"><a href="#r2">[2]</a></sup> A wire tip rubbing in bone passes this easily; temperature rises with speed, blunt tips and pressure.<sup class="cite"><a href="#r3">[3]</a></sup> Dead bone does not grip the pin, so it loosens, and the dead ring is where infection takes hold.</p>
+<p>Bone is populated by osteocytes, cells in tiny chambers in the mineral, and they have a heat limit. In rabbit bone, 47 °C for one minute significantly reduced new bone formation; 44 °C did not.<sup class="cite"><a href="#r3">[3]</a></sup> Wire tips pass it easily: drilled into pig bone, trocar tips reached 129 °C and diamond tips 98 °C,<sup class="cite"><a href="#r4">[4]</a></sup> and drilled K-wire tracks in rabbits lost their osteocytes.<sup class="cite"><a href="#r5">[5]</a></sup> Heat rises with drill speed and diameter; irrigation is the best coolant.<sup class="cite"><a href="#r6">[6]</a></sup> Dead bone does not grip, so the pin loosens.</p>
 
 <h3>The growth plate</h3>
-<p>Near each end of a child's long bone is a disc of cartilage, the physis or growth plate, where growth happens. The distal humeral physis sits just below the usual fracture line and supplies about a fifth of the humerus's length.<sup class="cite"><a href="#r4">[4]</a></sup> Pins cross it routinely here; threads, heat or repeated passes can stop growth on one side and bend the arm. Such injuries are graded by the <a href="https://en.wikipedia.org/wiki/Salter%E2%80%93Harris_fracture">Salter–Harris classification</a>.</p>
+<p>Near each end of a child's long bone is a disc of cartilage, the physis or growth plate, where growth happens. The one at the elbow gives only about a fifth of the humerus's length.<sup class="cite"><a href="#r7">[7]</a></sup> Pins cross it here, and threads or heat can damage it. And because remodelling follows growth, this end corrects little after age four:<sup class="cite"><a href="#r1">[1]</a></sup> a fracture that heals crooked stays crooked, which is why it is pinned, not just cast. Growth-plate injuries are graded by the <a href="https://en.wikipedia.org/wiki/Salter%E2%80%93Harris_fracture">Salter–Harris classification</a>.</p>
 
 <h3>Healing has a clock</h3>
-<p>Healing passes through four stages: clot and inflammation (days), soft cartilage callus (two to three weeks), hard bony callus (weeks to months), then remodelling (months to years).<sup class="cite"><a href="#r5">[5]</a></sup> Figure 4 puts them on a timeline. A six-year-old's supracondylar fracture is stable at about three weeks and pins come out at three to four; the holes fill with bone within weeks. An adult long bone takes six to twelve weeks or longer. Dwell time must match this clock: too short and the fracture shifts, too long and infection risk climbs.</p>
+<p>Healing runs in overlapping stages: inflammation, which peaks within a day and ends within a week; a soft cartilage callus; a hard bony callus; then remodelling, which starts at three to four weeks and takes years. It is faster in the young.<sup class="cite"><a href="#r2">[2]</a></sup> Figure 4 sets the stages against the pin, which in this fracture comes out at three weeks.<sup class="cite"><a href="#r1">[1]</a></sup> Dwell time must match the clock: too short and the fracture shifts, too long and infection risk climbs.</p>
 
 <figure class="fig" id="fig4">
-  <svg viewBox="0 0 720 230" role="img" aria-labelledby="fig4t">
-    <title id="fig4t">Timeline of fracture healing stages over twelve weeks, with the pin-removal window for a child marked</title>
+  <svg viewBox="0 0 720 250" role="img" aria-labelledby="fig4t">
+    <title id="fig4t">Timeline of fracture healing over twelve weeks: inflammation in week one, soft callus peaking at days seven to nine, hard callus peaking by day fourteen, remodelling from weeks three to four, with pin removal marked at week three</title>
     <g class="small">
-      <line x1="80" y1="150" x2="700" y2="150" stroke="var(--muted)"/>
-      <g stroke="var(--muted)"><line x1="80" y1="146" x2="80" y2="154"/><line x1="131" y1="146" x2="131" y2="154"/><line x1="183" y1="146" x2="183" y2="154"/><line x1="234" y1="146" x2="234" y2="154"/><line x1="286" y1="146" x2="286" y2="154"/><line x1="389" y1="146" x2="389" y2="154"/><line x1="492" y1="146" x2="492" y2="154"/><line x1="595" y1="146" x2="595" y2="154"/><line x1="698" y1="146" x2="698" y2="154"/></g>
-      <text x="76" y="170">0</text><text x="127" y="170">1</text><text x="179" y="170">2</text><text x="230" y="170">3</text><text x="282" y="170">4</text><text x="385" y="170">6</text><text x="488" y="170">8</text><text x="588" y="170">10</text><text x="698" y="170" text-anchor="end">12 wk</text>
+      <line x1="80" y1="160" x2="700" y2="160" stroke="var(--muted)"/>
+      <g stroke="var(--muted)"><line x1="80" y1="156" x2="80" y2="164"/><line x1="131" y1="156" x2="131" y2="164"/><line x1="183" y1="156" x2="183" y2="164"/><line x1="234" y1="156" x2="234" y2="164"/><line x1="286" y1="156" x2="286" y2="164"/><line x1="389" y1="156" x2="389" y2="164"/><line x1="492" y1="156" x2="492" y2="164"/><line x1="595" y1="156" x2="595" y2="164"/><line x1="698" y1="156" x2="698" y2="164"/></g>
+      <text x="76" y="180">0</text><text x="127" y="180">1</text><text x="179" y="180">2</text><text x="218" y="180">3</text><text x="282" y="180">4</text><text x="385" y="180">6</text><text x="488" y="180">8</text><text x="588" y="180">10</text><text x="698" y="180" text-anchor="end">12 wk</text>
     </g>
-    <rect x="80" y="30" width="51" height="18" fill="var(--artery)" opacity=".85"/><text x="140" y="44">Clot and inflammation (days)</text>
-    <rect x="100" y="56" width="134" height="18" fill="var(--nerve)" opacity=".9"/><text x="244" y="70">Soft cartilage callus (weeks 1 to 3)</text>
-    <rect x="183" y="82" width="515" height="18" fill="var(--bone-dk)"/><text x="300" y="96">Hard bony callus (week 3 to months)</text>
-    <rect x="389" y="108" width="309" height="18" fill="var(--bone)" stroke="var(--bone-dk)"/><text x="400" y="122" class="small">Remodelling continues for months to years</text>
-    <rect x="234" y="140" width="52" height="20" fill="var(--accent)" opacity=".25"/>
-    <text x="238" y="200" class="lab">Child's pins out, weeks 3 to 4</text>
-    <line x1="260" y1="160" x2="260" y2="186" stroke="var(--accent)" stroke-width="2"/>
-    <text x="80" y="222" class="small">Adult long bone: the same stages, roughly twice as long.</text>
+    <rect x="80" y="30" width="51" height="18" fill="var(--artery)" opacity=".85"/><text x="140" y="44">Inflammation: peaks in a day, over in a week</text>
+    <rect x="106" y="60" width="77" height="18" fill="var(--nerve)" opacity=".9"/><text x="192" y="74">Soft cartilage callus: peaks days 7 to 9*</text>
+    <rect x="131" y="90" width="155" height="18" fill="var(--bone-dk)"/><text x="296" y="104">Hard bony callus: peaks by day 14*</text>
+    <rect x="234" y="120" width="464" height="18" fill="var(--bone)" stroke="var(--bone-dk)"/><text x="300" y="134" class="small">Remodelling: starts weeks 3 to 4, continues for years</text>
+    <line x1="234" y1="114" x2="234" y2="196" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="242" y="210" class="lab">Child's elbow pins out at week 3</text>
+    <text x="80" y="238" class="small">* Peak timings are from animal models; healing is faster in the young.</text>
   </svg>
-  <figcaption><strong>Figure 4.</strong> The four healing stages on a twelve-week line, with the window where a child's supracondylar pins come out. The stages overlap; the bars show when each dominates.
-  <div class="credit">Own drawing for this page. Stage timings after OpenStax <em>Anatomy and Physiology 2e</em>, section 6.5<sup class="cite"><a href="#r5">[5]</a></sup>; pin timing after Omid et al.<sup class="cite"><a href="#r1">[1]</a></sup></div></figcaption>
+  <figcaption><strong>Figure 4.</strong> Healing stages on a twelve-week line. Look at where the pin comes out: after the hard callus has peaked, as remodelling begins.
+  <div class="credit">Own drawing for this page. Timings after Marsell and Einhorn<sup class="cite"><a href="#r2">[2]</a></sup> and Vaquero-Picado et al.<sup class="cite"><a href="#r1">[1]</a></sup></div></figcaption>
 </figure>
 
 <h3>Child bone against adult bone</h3>
-<p>Children's bone is less mineralised and markedly less stiff; it bends before it snaps, and it remodels so well that moderate malalignment corrects itself.<sup class="cite"><a href="#r6">[6]</a></sup> That is why a thin smooth wire, which only has to hold position for three weeks while fast-healing bone takes over, is a paediatric mainstay. In an adult weight-bearing bone, with slower healing and no remodelling to forgive error, smooth wires loosen and bend, so plates, screws or nails take over.</p>
+<p>Children's bone has less mineral, lower stiffness and lower strength than adult bone, but bends further and absorbs more energy before it breaks.<sup class="cite"><a href="#r8">[8]</a></sup> A thin smooth wire that only has to hold position for three weeks suits it. Adult weight-bearing bone heals slower and loads the implant harder, so plates, screws or nails take over, and the Steinmann pin's work is mostly traction.</p>
 
 <h2 id="s3"><span class="num">3</span>Everything the pin passes through or sits next to</h2>
-<p class="know"><b>In one line</b>Between skin and bone sit fat, muscle, nerves, an artery and the immune system, and the pin crosses them all.</p>
+<p class="know"><b>In one line</b>Between skin and bone sit fat, muscle, nerves, an artery and the immune system.</p>
 
 <figure class="fig" id="fig6">
   <svg viewBox="0 0 720 300" role="img" aria-labelledby="fig6t">
@@ -260,10 +261,10 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
       <rect x="60" y="66" width="300" height="26" fill="var(--slot)"/><text x="372" y="84" class="small">Fat: deeper in obese patients, so more unsupported pin</text>
       <rect x="60" y="92" width="300" height="40" fill="var(--artery)" opacity=".35"/><text x="372" y="116" class="small">Muscle and tendon: a pin through a tendon stops the joint</text>
       <rect x="60" y="132" width="300" height="8" fill="var(--artery)"/><text x="372" y="140" class="small">Periosteum: living wrapping, source of healing cells</text>
-      <rect x="60" y="140" width="300" height="18" fill="var(--bone-dk)"/><text x="372" y="154" class="small">Near cortex: first grip, 1 mm in a child</text>
-      <rect x="60" y="158" width="300" height="56" fill="var(--bone)"/><text x="372" y="190" class="small">Cancellous bone: little grip, osteocytes die above 47 °C</text>
+      <rect x="60" y="140" width="300" height="18" fill="var(--bone-dk)"/><text x="372" y="154" class="small">Near cortex: first grip, thin in a child</text>
+      <rect x="60" y="158" width="300" height="56" fill="var(--bone)"/><text x="372" y="190" class="small">Cancellous bone: little grip; heat limit 47 °C for 1 min</text>
       <rect x="60" y="214" width="300" height="18" fill="var(--bone-dk)"/><text x="372" y="228" class="small">Far cortex: second grip, then a sudden give</text>
-      <rect x="60" y="232" width="300" height="40" fill="var(--danger)"/><text x="372" y="256" class="small">Beyond: ulnar nerve or brachial artery, within 1 cm</text>
+      <rect x="60" y="232" width="300" height="40" fill="var(--danger)"/><text x="372" y="256" class="small">Beyond: ulnar nerve or brachial artery</text>
       <circle cx="250" cy="252" r="7" fill="var(--nerve)"/><circle cx="290" cy="252" r="7" fill="var(--artery)"/>
     </g>
     <!-- pin -->
@@ -278,10 +279,10 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 </figure>
 
 <h3>Skin: the barrier the pin breaks</h3>
-<p>Skin keeps bacteria out. A pin holds a hole in it open for weeks, giving bacteria a track straight to bone; Figure 6 shows the layers along that track. The skin–pin junction is the weakest point of the treatment: every movement of skin against pin pumps bacteria downward. Pin-track infection runs from redness that settles with antibiotics to infection of bone and marrow that forces removal.<sup class="cite"><a href="#r7">[7]</a></sup></p>
+<p>Skin keeps bacteria out. A pin holds a hole in it open for weeks, giving bacteria a track to bone; Figure 6 shows the layers along it. Reported pin-track infection runs from 1 to over 25 per cent. Most is superficial and settles with antibiotics and pin removal,<sup class="cite"><a href="#r1">[1]</a></sup> but one child in a series of 622 developed infection of bone and joint.<sup class="cite"><a href="#r9">[9]</a></sup></p>
 
 <h3>The nerves and artery around the elbow</h3>
-<p>Three nerves and one artery run close to the distal humerus. The ulnar nerve lies behind the medial epicondyle, the bony bump on the inner elbow, where a medial pin enters. The median nerve and brachial artery cross the front of the elbow, in front of the fracture. The radial nerve runs on the outer side. Figure 5 shows the two pin layouts against these structures. In a systematic review, about one child in 28 treated with a medial pin suffered an ulnar nerve injury that lateral-only pinning would have avoided.<sup class="cite"><a href="#r8">[8]</a></sup></p>
+<p>Three nerves and one artery run close to the distal humerus. The ulnar nerve lies behind the medial epicondyle, the bony bump on the inner elbow, where a medial pin enters. The median nerve and brachial artery cross the front of the elbow; the radial nerve runs on the outer side. The fracture itself injures a nerve in 6.5 to 19 per cent of displaced cases;<sup class="cite"><a href="#r1">[1]</a></sup> the pin must not add to that. Figure 5 shows how it can: a medial pin costs one extra ulnar nerve injury for every 28 children.<sup class="cite"><a href="#r10">[10]</a></sup></p>
 
 <figure class="fig" id="fig5">
   <svg viewBox="0 0 720 360" role="img" aria-labelledby="fig5t">
@@ -311,13 +312,13 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
     <!-- lateral pins -->
     <line x1="150" y1="290" x2="330" y2="150" stroke="var(--accent)" stroke-width="4"/>
     <line x1="140" y1="255" x2="300" y2="130" stroke="var(--accent)" stroke-width="4"/>
-    <text x="20" y="120" class="lab" fill="var(--accent)">Lateral-only: two or three</text><text x="20" y="138" class="lab" fill="var(--accent)">pins from the outer side</text>
+    <text x="20" y="120" class="lab" fill="var(--accent)">Lateral-only: two or three</text><text x="20" y="138" class="lab" fill="var(--accent)">pins from the outer side</text><text x="20" y="156" class="small">Ulnar nerve injury 0.7%</text>
     <!-- medial pin (crossed) -->
     <line x1="580" y1="280" x2="400" y2="140" stroke="var(--pin)" stroke-width="4" stroke-dasharray="8 5"/>
-    <text x="705" y="120" class="lab" text-anchor="end">Crossed: adds a medial pin,</text><text x="705" y="138" class="lab" text-anchor="end">entering at the ulnar nerve</text>
+    <text x="705" y="120" class="lab" text-anchor="end">Crossed: adds a medial pin,</text><text x="705" y="138" class="lab" text-anchor="end">entering at the ulnar nerve</text><text x="705" y="156" class="small" text-anchor="end">Ulnar nerve injury 3.4%</text>
     <text x="20" y="30" class="small">Front view, right elbow. Schematic.</text>
   </svg>
-  <figcaption><strong>Figure 5.</strong> The right elbow from the front. Lateral-only pins (solid) stay away from the nerves; the medial pin of a crossed layout (dashed) enters through the shaded zone where the ulnar nerve lies.
+  <figcaption><strong>Figure 5.</strong> The right elbow from the front. Lateral-only pins (solid) stay away from the nerves; the medial pin of a crossed layout (dashed) enters through the shaded zone where the ulnar nerve lies. Injury rates from Vaquero-Picado et al.<sup class="cite"><a href="#r1">[1]</a></sup>
   <div class="credit">Own drawing for this page, after Gray's Anatomy Plate 1235 for the nerve courses.</div></figcaption>
 </figure>
 
@@ -325,16 +326,16 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <p>A pin through a tendon tethers it, so the joint cannot move and is stiff after removal. Joint cartilage cannot repair itself; a pin entering the joint grinds it and can carry infection in.</p>
 
 <h3>The immune response to a foreign body</h3>
-<p>Within minutes, body proteins coat the metal. Macrophages, the clean-up cells, cannot engulf a pin, so they wall it off in a thin fibrous capsule.<sup class="cite"><a href="#r9">[9]</a></sup> This truce holds only if the metal releases no ions or particles. Corrosion products from poor steel or a scratched surface provoke inflammation, loosen the pin and cause pain.</p>
+<p>Within minutes, body proteins coat the metal. Macrophages, the clean-up cells, cannot engulf a pin, so they fuse into giant cells on its surface and wall it off in a fibrous capsule. The surface decides how strong this reaction is, most of all in the first two to four weeks,<sup class="cite"><a href="#r11">[11]</a></sup> the pin's whole dwell time. A scratched or corroding surface provokes more inflammation and loosens the pin.</p>
 
 <h3>Nerves and pain</h3>
-<p>Skin and periosteum are rich in pain fibres; marrow is not. Most pin-site pain is skin rubbed by a protruding end, which decides how the pin is cut, bent and capped.</p>
+<p>Skin and periosteum are rich in pain fibres. Most pin-site pain is skin rubbed by a protruding end, which decides how the pin is cut, bent and capped.</p>
 
 <h2 id="s4"><span class="num">4</span>Why pins are needed and how well they work</h2>
 <p class="know"><b>In one line</b>Pins work; what fails is the pin site, the pin position, or a nerve beside the pin.</p>
 
 <h3>The injury</h3>
-<p>Supracondylar fractures are about 3 per cent of all children's fractures and more than half of their elbow fractures, peaking at 5 to 7 years, usually from a fall onto an outstretched hand.<sup class="cite"><a href="#r1">[1]</a></sup> The <a href="https://en.wikipedia.org/wiki/Supracondylar_humerus_fracture">Gartland classification</a> grades them, as Figure 7 shows: type I undisplaced, type II hinged, type III fully displaced. Types II and III are pinned.</p>
+<p>This is the commonest elbow fracture in children: 55 to 80 per cent of their elbow fractures, about 177 per 100,000 children a year, usually from a fall onto an outstretched hand.<sup class="cite"><a href="#r1">[1]</a></sup> The <a href="https://en.wikipedia.org/wiki/Supracondylar_humerus_fracture">Gartland classification</a> grades it, as Figure 7 shows: type I undisplaced, type II hinged, type III fully displaced. Types II and III are pinned.</p>
 
 <figure class="fig" id="fig7">
   <img src="{{FIG7}}" alt="Three drawings of an elbow from the side. Type I: the humerus is cracked just above the elbow but not displaced. Type II: the lower fragment is tilted backward but still hinged on the back cortex. Type III: the fragment is fully separated from the shaft." width="800" height="380">
@@ -343,24 +344,23 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 </figure>
 
 <h3>Without fixation</h3>
-<p>A displaced fracture held in a cast alone can slip. The elbow heals bent inward (cubitus varus, the "gunstock" arm), the growth plate may be damaged, and a swollen elbow in a cast risks compartment syndrome, pressure cutting off the forearm's blood supply.</p>
+<p>Left unreduced, 26 per cent of type II fractures healed with cubitus varus, the inward-bent "gunstock" arm.<sup class="cite"><a href="#r1">[1]</a></sup> A swollen elbow bent up in a cast also risks compartment syndrome, pressure cutting off the forearm's blood supply.</p>
 
 <h3>Alternatives</h3>
-<p>Cast alone for type I; pinning for most type II and III; open surgery when the fracture cannot be lined up from outside; plates and screws in adults; an external frame where the skin is badly damaged. Pins win on cost and theatre time.</p>
+<p>Cast alone for type I; open surgery when the fracture cannot be lined up from outside; plates and screws in adults; an external frame where skin is badly damaged.</p>
 
 <h3>How well it works</h3>
-<p>Union is near universal in children; the problems are the complications.<sup class="cite"><a href="#r10">[10]</a></sup></p>
+<p>In 622 pinned children:<sup class="cite"><a href="#r9">[9]</a></sup></p>
 <ul>
-  <li>Pin-track infection: around 1 to 3 per 100, the commonest, usually settling with antibiotics and pin removal.</li>
-  <li>Loss of position: a few per cent, mostly from pin placement and spread rather than the pin itself.<sup class="cite"><a href="#r11">[11]</a></sup></li>
-  <li>Iatrogenic ulnar nerve injury: about 1 in 28 with a medial pin.<sup class="cite"><a href="#r8">[8]</a></sup></li>
-  <li>Pin migration: smooth pins back out or push in, particularly if left long.</li>
-  <li>Pin breakage: rare at 1.6 mm and above, more common with thinner wire.</li>
+  <li>Pin migration needing a return to theatre: 1.8 per cent, the commonest complication.</li>
+  <li>Infection: 1.0 per cent, one case deep.</li>
+  <li>Position lost and re-pinned: 0.6 per cent.</li>
+  <li>Compartment syndrome: 0.5 per cent.</li>
 </ul>
-<p>The nerve figure changed practice. Crossed pinning, one wire from each side, was standard for decades because it is stiffer. Once medial-pin nerve injuries were counted, lateral-only pinning with two or three spread wires became the default; it holds as well when the wires are spread at the fracture.<sup class="cite"><a href="#r11">[11]</a></sup> The anatomy in Figure 5 beat the mechanics.</p>
+<p>Complication data also changed the technique. Crossed pins, one from each side, were standard because they are stiffer. Pooled trials now price the trade: crossed pins lose position less often (relative risk 0.70) but injure the ulnar nerve more (relative risk 2.21).<sup class="cite"><a href="#r12">[12]</a></sup> Lateral-only pinning, wires spread wide at the fracture, became the default; a series of 124 lost no reductions and injured no nerves.<sup class="cite"><a href="#r13">[13]</a></sup> Anatomy beat mechanics.</p>
 
 <h3>Population variability</h3>
-<p>Osteoporotic adult bone offers little cortical grip, so smooth pins loosen and a threaded pin is needed. Obesity adds depth, so a longer pin bends. A two-year-old takes 1.2 to 1.4 mm wire; a twelve-year-old may need 2.0 mm. One size does not cover even one fracture.</p>
+<p>The same wire performs differently in different places and patients. Infection was 1.0 per cent in a US series<sup class="cite"><a href="#r9">[9]</a></sup> and 37.5 per cent with exposed wires in an Indian series of a neighbouring elbow fracture.<sup class="cite"><a href="#r14">[14]</a></sup> A three-year-old's elbow will remodel a little; a nine-year-old's will not.<sup class="cite"><a href="#r1">[1]</a></sup> One product and one protocol do not fit all.</p>
 
 <h2 id="s5"><span class="num">5</span>From body to design</h2>
 
@@ -368,15 +368,15 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <table class="design">
   <thead><tr><th scope="col">Body fact</th><th scope="col">Design consequence</th><th scope="col">Manufacturer must control</th></tr></thead>
   <tbody>
-    <tr><td>Small bone, thin cortex in a child</td><td>Diameter range <span class="n">1.0 to 2.0 mm</span>; stiffness rises with diameter⁴, so <span class="n">2.0 mm</span> is <span class="n">2.4×</span> stiffer than <span class="n">1.6 mm</span></td><td>Diameter tolerance; a size range, not one size</td></tr>
-    <tr><td>Bigger, denser bone in adults and long bones</td><td>Steinmann pins <span class="n">2.5 to 6 mm</span>, threaded options for grip</td><td>The same tolerances across the wider range</td></tr>
-    <tr><td>Osteocytes die at <span class="n">47 °C</span> for one minute</td><td>Sharp trocar tip, which cuts cooler than a diamond tip;<sup class="cite"><a href="#r12">[12]</a></sup> low drill speed</td><td>Grind quality, single use, speed instructions</td></tr>
-    <tr><td>Cortical grip, cancellous emptiness</td><td>Smooth shank in children; thread where pull-out matters</td><td>Thread form, surface finish</td></tr>
-    <tr><td>Growth plate damaged by threads and heat</td><td>Smooth wire wherever a physis is crossed</td><td>Product line: smooth is the paediatric default</td></tr>
-    <tr><td>Weeks inside living tissue; corrosion and immune response</td><td>316L stainless (cheap, stiff) or titanium alloy (MRI-friendly, dearer)</td><td>Alloy to ISO 5832-1 or 5832-3, passivation, sterile single-use pack</td></tr>
-    <tr><td>Nerves and artery within a centimetre of bone</td><td>A tip that does not skate; clear X-ray visibility; depth marks</td><td>Marking tolerance, radiodensity, resistance to bending</td></tr>
-    <tr><td>Skin breached for weeks</td><td>Exposed length, buried or protruding ends, caps, clean cut end</td><td>Cap design, cutter specification, patient-facing instructions</td></tr>
-    <tr><td>Removal in clinic, child awake</td><td>Smooth surface, no ingrowth, a grippable end</td><td>Surface finish specification</td></tr>
+    <tr><td>Small bone, thin between its two columns</td><td>K-wires <span class="n">0.8 to 3.0 mm</span>;<sup class="cite"><a href="#r15">[15]</a></sup> <span class="n">1.8 to 2.0 mm</span> for this fracture<sup class="cite"><a href="#r1">[1]</a></sup></td><td>Diameter tolerance; a range, not one size</td></tr>
+    <tr><td>Bigger bone and loads in adults</td><td>Steinmann pins to <span class="n">6 mm</span>; stiffness rises with diameter⁴</td><td>Tensile strength for each diameter band<sup class="cite"><a href="#r15">[15]</a></sup></td></tr>
+    <tr><td>Bone formation falls after <span class="n">47 °C</span> for one minute</td><td>Tip shape sets the heat: trocar <span class="n">129 °C</span>, diamond <span class="n">98 °C</span>, redesigned point <span class="n">66 °C</span><sup class="cite"><a href="#r4">[4]</a></sup></td><td>Tip form and grind; instructions to go slow and irrigate</td></tr>
+    <tr><td>Grip only in two thin cortices</td><td>Two or three smooth wires spread apart, not one thick one<sup class="cite"><a href="#r13">[13]</a></sup></td><td>Straightness, stiffness</td></tr>
+    <tr><td>Growth plate crossed; harmed by threads and heat</td><td>Smooth wire only in children</td><td>Product line: smooth is the paediatric default</td></tr>
+    <tr><td>Foreign-body reaction strongest in weeks two to four</td><td>Passivated surface with no burrs or scratches<sup class="cite"><a href="#r15">[15]</a></sup></td><td>Alloy to ISO 5832-1, cold-drawn, no welds<sup class="cite"><a href="#r15">[15]</a></sup></td></tr>
+    <tr><td>Nerves and artery beside the bone</td><td>A tip that needs little thrust; clear on X-ray</td><td>Sharpness, batch to batch</td></tr>
+    <tr><td>Skin held open for weeks</td><td>Enough length to bend and cap, or to bury</td><td>Caps, cutter, family leaflet</td></tr>
+    <tr><td>Removal in clinic, child awake</td><td>Smooth surface, no ingrowth, a grippable end</td><td>Surface finish</td></tr>
   </tbody>
 </table>
 </div>
@@ -384,46 +384,50 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <h3 id="tension">Where the body and the design pull against each other</h3>
 <div class="tension">
 <h4>Stiffness against size</h4>
-<p>Stiffness is cheap to buy with diameter: 1.6 to 2.0 mm is a 25 per cent wider wire but a 2.4 times stiffer one, and a 4.0 mm Steinmann pin is (4.0 ÷ 1.6)⁴ ≈ 39 times stiffer than a 1.6 mm K-wire. The body punishes diameter: a wider hole in a cortex a millimetre thick, a split fragment, a tip nearer the nerves. Surgeons answer with two or three thinner wires spread apart; spread at the fracture matters more than thickness.<sup class="cite"><a href="#r11">[11]</a></sup> For the maker, the range matters more than the biggest size.</p>
-<h4>Sharp against safe</h4>
-<p>A sharp trocar tip cuts cool and bites where it is placed, protecting osteocytes and growth plate. But it exits the far cortex without warning, into the zone of the ulnar nerve and brachial artery. A blunt tip would skate, heat the bone, then plunge harder. The surgeon manages this with low speed and by stopping at the far cortex; the maker's part is consistent sharpness, so that feel stays reliable. Single use follows: a resharpened pin has a tip nobody has measured.</p>
+<p>Stiffness is cheap to buy with diameter: 1.6 to 2.0 mm is a 25 per cent wider wire but a 2.4 times stiffer one, and a 4.0 mm Steinmann pin is (4.0 ÷ 1.6)⁴ ≈ 39 times stiffer than a 1.6 mm K-wire. The body punishes diameter: a wider hole in thin bone, a tip nearer the nerves. Surgeons answer with two or three thinner wires spread wide at the fracture.<sup class="cite"><a href="#r13">[13]</a></sup> For the maker, the range matters more than the biggest size.</p>
+<h4>Cool against safe</h4>
+<p>Pushing harder cools the bone, because a faster feed gives heat less time to build.<sup class="cite"><a href="#r6">[6]</a></sup> But thrust is what carries the tip through the far cortex towards the nerve and artery of Figure 5. The maker can ease both at once: in the pig-bone tests the redesigned point needed the least thrust and ran coolest.<sup class="cite"><a href="#r4">[4]</a></sup> Tip geometry is the one lever that belongs to the maker alone.</p>
 <h4>Protruding against buried</h4>
-<p>Ends left outside the skin come out in clinic with pliers, no anaesthetic, no second operation, which matters where the clinic is a day away. But the protruding end is the infection pathway. Buried ends are cleaner but need a second procedure, and the evidence does not strongly favour either on infection.<sup class="cite"><a href="#r10">[10]</a></sup> The design answer is to bend, cut short and cap the end, and to instruct the family. The product is a wire, a cap, a cutter and a leaflet.</p>
+<p>Wires left outside the skin come out in clinic with pliers; buried wires need a second operation. In a US series, exposed wires saved about $3,400 a patient.<sup class="cite"><a href="#r16">[16]</a></sup> But where pin care was doubtful, the Indian series found infection in 37.5 per cent of exposed wires against 17.5 per cent of buried ones, and advised burying.<sup class="cite"><a href="#r14">[14]</a></sup> The right answer depends on the country, so the product should allow either: length to bend and bury, and a cap if left out.</p>
 </div>
 
 <div class="envelope" id="envelope">
   <h4>The design envelope: five numbers the maker must hit</h4>
   <ol>
-    <li>Diameter <span class="n">1.0 to 2.0 mm</span> in <span class="n">0.2 mm</span> steps, each to a stated tolerance <span class="row">(row 1)</span></li>
-    <li>Trocar tip that keeps bone below <span class="n">47 °C</span> at the instructed drill speed <span class="row">(row 3)</span></li>
-    <li>Alloy to ISO 5832-1 or 5832-3, passivated, no corrosion after <span class="n">6 weeks</span> in body fluid <span class="row">(row 6)</span></li>
-    <li>Visible on fluoroscopy at <span class="n">1.0 mm</span>, depth marks at known spacing <span class="row">(row 7)</span></li>
-    <li>Holds for <span class="n">4 weeks</span>, then out with hand pliers, no anaesthetic <span class="row">(rows 8, 9)</span></li>
+    <li>Diameter <span class="n">0.8 to 3.0 mm</span> for K-wires, <span class="n">1.8 to 2.0 mm</span> for a child's elbow <span class="row">(rows 1, 4)</span></li>
+    <li>Stainless tensile strength at least <span class="n">1,240 MPa</span> up to <span class="n">2.8 mm</span>, <span class="n">1,100 MPa</span> to <span class="n">4 mm</span>, <span class="n">960 MPa</span> to <span class="n">6 mm</span><sup class="cite"><a href="#r15">[15]</a></sup> <span class="row">(row 2)</span></li>
+    <li>Bone below <span class="n">47 °C</span> at the instructed speed, with irrigation <span class="row">(row 3)</span></li>
+    <li>No burr or scratch visible to the naked eye; passivated<sup class="cite"><a href="#r15">[15]</a></sup> <span class="row">(row 6)</span></li>
+    <li>Holds for <span class="n">3 weeks</span>, then out with hand pliers <span class="row">(rows 8, 9)</span></li>
   </ol>
 </div>
 
 <h2 id="s6"><span class="num">6</span>What this means for a local manufacturer</h2>
 <p class="scenario">The client's assumptions, from the staff forum: certified 316L bar must be imported with mill certificates, hospitals can steam-autoclave but have no gamma or ethylene-oxide sterilisation, and many children live a day's travel from the clinic, so pins stay in longer than planned and removal visits get missed.</p>
-<p>Four things follow from the biology. The alloy must trace to <a href="https://www.iso.org/search.html?q=ISO%205832-1">ISO 5832-1</a> (stainless) or <a href="https://www.iso.org/search.html?q=ISO%205832-3">ISO 5832-3</a> (titanium alloy). Every pin must be passivated. Sterility must be validated for the method available, here steam under <a href="https://www.iso.org/search.html?q=ISO%2017665">ISO 17665</a>. Pins are single use, sharp from the pack, all under an <a href="https://www.iso.org/search.html?q=ISO%2013485">ISO 13485</a> quality system.</p>
-<p>The legitimate adaptation is the packaging and sterilisation route: non-sterile pins for hospital autoclaving, with caps and a family leaflet written for long gaps between visits. The forbidden one is the metal or the tip: no substitute "surgical-looking" steel, no resharpening.</p>
+<p>Four things are fixed. Pins and wires have their own standard, <a href="https://www.iso.org/search.html?q=ISO%205838">ISO 5838</a>: part 1 sets material, strength, finish and labelling; parts 2 and 3 the dimensions. The alloy must trace to <a href="https://www.iso.org/search.html?q=ISO%205832-1">ISO 5832-1</a>. Sterility must be validated for the method available, here steam under <a href="https://www.iso.org/search.html?q=ISO%2017665">ISO 17665</a>. Pins are single use, all under an <a href="https://www.iso.org/search.html?q=ISO%2013485">ISO 13485</a> quality system.</p>
+<p>The legitimate adaptation is to local care: non-sterile pins for hospital autoclaving, wire long enough to bury, caps and a family leaflet written for long gaps between visits. The forbidden one is the metal or the tip: no substitute "surgical-looking" steel, no resharpening.</p>
 
 <h2 id="s7"><span class="num">7</span>Summary for the manager</h2>
-<p class="summary">A fracture pin is simple to make and hard to make right, because the bone, nerves, skin and immune system around it set limits that do not move. Those limits are certified alloy, measured sharpness, a size range and single use. Sterilisation and packaging can be adapted to local conditions.</p>
+<p class="summary">A fracture pin is simple to make and hard to make right, because bone, nerves, skin and the immune system set limits that do not move. Those limits are certified alloy, a controlled tip, a clean surface, a size range and single use. Sterilisation, packaging and how the pin end is finished can follow local conditions.</p>
 
 <h2 id="refs">References</h2>
 <ol class="refs">
-  <li id="r1">Omid R, Choi PD, Skaggs DL. Supracondylar humeral fractures in children. <em>J Bone Joint Surg Am.</em> 2008;90(5):1121–1132.</li>
-  <li id="r2">Eriksson AR, Albrektsson T. Temperature threshold levels for heat-induced bone tissue injury: a vital-microscopic study in the rabbit. <em>J Prosthet Dent.</em> 1983;50(1):101–107.</li>
-  <li id="r3">Augustin G, Davila S, Mihoci K, Udiljak T, Vedrina DS, Antabak A. Thermal osteonecrosis and bone drilling parameters revisited. <em>Arch Orthop Trauma Surg.</em> 2008;128(1):71–77.</li>
-  <li id="r4">Pritchett JW. Growth plate activity in the upper extremity. <em>Clin Orthop Relat Res.</em> 1991;(268):235–242.</li>
-  <li id="r5">Betts JG, et al. <em>Anatomy and Physiology 2e</em>, section 6.5 Fractures: Bone Repair. OpenStax; 2022. Text cited only; figures not reused (CC BY-NC-SA).</li>
-  <li id="r6">Currey JD, Butler G. The mechanical properties of bone tissue in children. <em>J Bone Joint Surg Am.</em> 1975;57(6):810–814.</li>
-  <li id="r7">Checketts RG, MacEachern AG, Otterburn M. Pin track infection and the principles of pin site care. In: De Bastiani G, et al., eds. <em>Orthofix External Fixation in Trauma and Orthopaedics.</em> Springer; 2000:97–103.</li>
-  <li id="r8">Slobogean BL, Jackman H, Tennant S, Slobogean GP, Mulpuri K. Iatrogenic ulnar nerve injury after the surgical treatment of displaced supracondylar fractures of the humerus: number needed to harm, a systematic review. <em>J Pediatr Orthop.</em> 2010;30(5):430–436.</li>
-  <li id="r9">Anderson JM, Rodriguez A, Chang DT. Foreign body reaction to biomaterials. <em>Semin Immunol.</em> 2008;20(2):86–100.</li>
-  <li id="r10">Bashyal RK, Chu JY, Schoenecker PL, Dobbs MB, Luhmann SJ, Gordon JE. Complications after pinning of supracondylar distal humerus fractures. <em>J Pediatr Orthop.</em> 2009;29(7):704–708.</li>
-  <li id="r11">Skaggs DL, Cluck MW, Mostofi A, Flynn JM, Kay RM. Lateral-entry pin fixation in the management of supracondylar fractures in children. <em>J Bone Joint Surg Am.</em> 2004;86(4):702–707.</li>
-  <li id="r12">Piska M, Yang L, Reed M, Saleh M. Drilling efficiency and temperature elevation of three types of Kirschner-wire point. <em>J Bone Joint Surg Br.</em> 2002;84(1):137–140.</li>
+  <li id="r1">Vaquero-Picado A, González-Morán G, Moraleda L. Management of supracondylar fractures of the humerus in children. <em>EFORT Open Rev.</em> 2018;3(10):526–540. <a href="https://doi.org/10.1302/2058-5241.3.170049">doi:10.1302/2058-5241.3.170049</a></li>
+  <li id="r2">Marsell R, Einhorn TA. The biology of fracture healing. <em>Injury.</em> 2011;42(6):551–555. <a href="https://doi.org/10.1016/j.injury.2011.03.031">doi:10.1016/j.injury.2011.03.031</a></li>
+  <li id="r3">Eriksson RA, Albrektsson T. The effect of heat on bone regeneration: an experimental study in the rabbit using the bone growth chamber. <em>J Oral Maxillofac Surg.</em> 1984;42(11):705–711. <a href="https://doi.org/10.1016/0278-2391(84)90417-8">doi:10.1016/0278-2391(84)90417-8</a></li>
+  <li id="r4">Piska M, Yang L, Reed M, Saleh M. Drilling efficiency and temperature elevation of three types of Kirschner-wire point. <em>J Bone Joint Surg Br.</em> 2002;84(1):137–140. <a href="https://doi.org/10.1302/0301-620x.84b1.10692">doi:10.1302/0301-620x.84b1.10692</a></li>
+  <li id="r5">Franssen BBGM, van Diest PJ, Schuurman AH, Kon M. Keeping osteocytes alive: a comparison of drilling and hammering K-wires into bone. <em>J Hand Surg Eur Vol.</em> 2008;33(3):363–368. <a href="https://doi.org/10.1177/1753193408087104">doi:10.1177/1753193408087104</a></li>
+  <li id="r6">Augustin G, Davila S, Mihoci K, Udiljak T, Vedrina DS, Antabak A. Thermal osteonecrosis and bone drilling parameters revisited. <em>Arch Orthop Trauma Surg.</em> 2008;128(1):71–77. <a href="https://doi.org/10.1007/s00402-007-0427-3">doi:10.1007/s00402-007-0427-3</a></li>
+  <li id="r7">Pritchett JW. Growth plate activity in the upper extremity. <em>Clin Orthop Relat Res.</em> 1991;(268):235–242. PMID 2060215.</li>
+  <li id="r8">Currey JD, Butler G. The mechanical properties of bone tissue in children. <em>J Bone Joint Surg Am.</em> 1975;57(6):810–814. PMID 1158919.</li>
+  <li id="r9">Bashyal RK, Chu JY, Schoenecker PL, Dobbs MB, Luhmann SJ, Gordon JE. Complications after pinning of supracondylar distal humerus fractures. <em>J Pediatr Orthop.</em> 2009;29(7):704–708. <a href="https://doi.org/10.1097/BPO.0b013e3181b768ac">doi:10.1097/BPO.0b013e3181b768ac</a></li>
+  <li id="r10">Slobogean BL, Jackman H, Tennant S, Slobogean GP, Mulpuri K. Iatrogenic ulnar nerve injury after the surgical treatment of displaced supracondylar fractures of the humerus: number needed to harm, a systematic review. <em>J Pediatr Orthop.</em> 2010;30(5):430–436. <a href="https://doi.org/10.1097/BPO.0b013e3181e00c0d">doi:10.1097/BPO.0b013e3181e00c0d</a></li>
+  <li id="r11">Anderson JM, Rodriguez A, Chang DT. Foreign body reaction to biomaterials. <em>Semin Immunol.</em> 2008;20(2):86–100. <a href="https://doi.org/10.1016/j.smim.2007.11.004">doi:10.1016/j.smim.2007.11.004</a></li>
+  <li id="r12">Xing B, Dong B, Che X. Medial-lateral versus lateral-only pinning fixation in children with displaced supracondylar humeral fractures: a meta-analysis of randomized controlled trials. <em>J Orthop Surg Res.</em> 2023;18(1):43. <a href="https://doi.org/10.1186/s13018-023-03528-8">doi:10.1186/s13018-023-03528-8</a></li>
+  <li id="r13">Skaggs DL, Cluck MW, Mostofi A, Flynn JM, Kay RM. Lateral-entry pin fixation in the management of supracondylar fractures in children. <em>J Bone Joint Surg Am.</em> 2004;86(4):702–707. <a href="https://doi.org/10.2106/00004623-200404000-00006">doi:10.2106/00004623-200404000-00006</a></li>
+  <li id="r14">Sahoo MM, Sahoo US, Jena M. Exposed versus buried K-wire fixation in paediatric lateral condyle humerus fractures: preliminary communication of a prospective comparative study. <em>J Pediatr Orthop B.</em> 2022;31(3):281–288. <a href="https://doi.org/10.1097/BPB.0000000000000880">doi:10.1097/BPB.0000000000000880</a></li>
+  <li id="r15">International Organization for Standardization. ISO 5838-1:2013 Implants for surgery, Metallic skeletal pins and wires, Part 1: General requirements; ISO 5838-2:1991 Part 2: Steinmann skeletal pins, Dimensions; ISO 5838-3:1993 Part 3: Kirschner skeletal wires. Geneva: ISO.</li>
+  <li id="r16">Das De S, Bae DS, Waters PM. Displaced humeral lateral condyle fractures in children: should we bury the pins? <em>J Pediatr Orthop.</em> 2012;32(6):573–578. <a href="https://doi.org/10.1097/BPO.0b013e318263a25f">doi:10.1097/BPO.0b013e318263a25f</a></li>
 </ol>
 <h3>Figures</h3>
 <ul class="credits">
@@ -435,28 +439,25 @@ details.notes ul { padding-left: 1.2em; margin: 0; }
 <details class="notes">
   <summary>Editor's notes: not part of the page. Delete before posting.</summary>
   <div class="inner">
-    <h3>Facts to confirm against the paper, not from memory</h3>
+    <h3>Verification log, 14 Nov 2026</h3>
     <ul>
-      <li>[2] 47 °C for 1 min and 50 °C: check which of Eriksson &amp; Albrektsson's 1983 and 1984 papers carries each number.</li>
-      <li>[8] "1 in 28": confirm Slobogean's number needed to harm and that it compares crossed with lateral-only pinning.</li>
-      <li>[10] "1 to 3 per 100" pin-track infection: take the exact figure from Bashyal's 622 patients.</li>
-      <li>[4] "about a fifth" of humeral length from the distal physis: confirm in Pritchett.</li>
-      <li>[12] trocar cooler than diamond: confirm the direction of Piska's result.</li>
-      <li>[1] "3 per cent" and "more than half of elbow fractures": confirm Omid's figures.</li>
-      <li>History paragraph in section 4: the move from crossed to lateral-only pinning. Cite the AAOS 2011 guideline on supracondylar fractures if you can access it; otherwise [8] and [11] carry it.</li>
+      <li>Checked against the PubMed abstract: refs 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16. Every number on the page from these is in the abstract.</li>
+      <li>Checked against open-access full text: ref 1 (PMC6335593) and ref 2 (PMC3105171).</li>
+      <li>Checked against the standard's preview: ISO 5838-1:2013 (scope, Table 1 stainless rows, clauses 5 and 6). The K-wire range 0.8 to 3.0 mm is from the ISO 5838-3 catalogue overview, not the full text: confirm in the standard.</li>
+      <li>Corrected by this check: trocar tips run hotter than diamond, not cooler (ref 4); pin migration, not infection, was the commonest complication (ref 9); "3 per cent of all children's fractures" and "cortex about 1 mm" removed as unverified; OpenStax and Checketts references dropped.</li>
+      <li>Read the full papers before posting if you can; an abstract can omit a caveat.</li>
+    </ul>
+    <h3>Still uncited (general anatomy, state plainly or add a textbook reference)</h3>
+    <ul>
+      <li>Children's periosteum is thick; skin and periosteum are rich in pain fibres; a pin through a tendon tethers it; cartilage does not repair; obesity lengthens the unsupported pin. A single anatomy textbook citation would cover all five.</li>
+      <li>Ref 2's callus peak timings are from animal models; Figure 4 says so.</li>
+      <li>Refs 14 and 16 are lateral condyle fractures, not supracondylar; the text says "a neighbouring elbow fracture".</li>
     </ul>
     <h3>Figures</h3>
     <ul>
-      <li>Figure 1: no growth-plate label. The Commons record gives no age or view, and the physis cannot be placed with confidence from the image. Ask a clinician on the course to point to it; then add the label.</li>
-      <li>Figures 3, 5 and 6 are schematics. Check every label against Gray's Plate 1235 (nerves) and a paediatric radiograph (bone) before posting; the caption must say "schematic".</li>
-      <li>OpenStax A&amp;P 2e is CC BY-NC-SA on its current pages. Figures not reused; text timings cited as [5].</li>
-      <li>Not Radiopaedia anywhere on the page.</li>
-    </ul>
-    <h3>Compliance</h3>
-    <ul>
-      <li>Headings: one H1, H2 sections, H3 subsections. Map to the wiki's heading styles.</li>
-      <li>Every figure: number, caption, credit, alt text different from caption, and a sentence in the text that names it.</li>
-      <li>Paste into the wiki in stages so the history shows development.</li>
+      <li>Figure 1: no growth-plate label. Ask a clinician on the course to point to it on this film, then add it.</li>
+      <li>Figures 3, 5 and 6 are schematics. Check each label against Gray's Plate 1235 and a paediatric radiograph.</li>
+      <li>No OpenStax or Radiopaedia images: both are non-commercial licences.</li>
     </ul>
   </div>
 </details>

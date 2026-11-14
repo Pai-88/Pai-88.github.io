@@ -1,16 +1,18 @@
-Fracture pin wiki page: figure files (14 Nov 2026)
+Fracture pin wiki page: figure files (14 Nov 2026, after source verification)
 
 fig1-pinned-fracture-xray-labelled.png
   Adapted from "Rad 1300116.JPG" by Nevit Dilmen, Wikimedia Commons,
   CC BY-SA 3.0, https://commons.wikimedia.org/wiki/File:Rad_1300116.JPG
   Labels added. This labelled version is released under CC BY-SA 3.0.
-  Credit line for the page: Adapted from "Rad 1300116.JPG" by Nevit Dilmen,
-  Wikimedia Commons, CC BY-SA 3.0. Labels added.
   originals/fig1-source-...jpg is the unlabelled source.
 
 fig2 to fig6 (*.png, with -dark variants for a dark page background)
-  Own drawings made for this page. No credit needed; caption says "own drawing".
-  fig5 nerve courses after Gray's Anatomy (1918) Plate 1235, public domain.
+  Own drawings made for this page. Caption says "own drawing".
+  fig2 tip temperatures: Piska et al. 2002, doi:10.1302/0301-620x.84b1.10692
+  fig4 timings: Marsell & Einhorn 2011, doi:10.1016/j.injury.2011.03.031;
+       pin removal at 3 weeks: Vaquero-Picado et al. 2018, doi:10.1302/2058-5241.3.170049
+  fig5 nerve courses after Gray's Anatomy (1918) Plate 1235, public domain;
+       injury rates: Vaquero-Picado et al. 2018.
 
 fig7-gartland-classification-Benoudina-CC-BY-SA-4.0.jpg
   "Gartland Classification.jpg" by S. Benoudina, Wikimedia Commons,
