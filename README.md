@@ -34,6 +34,7 @@ Each project block carries `checked`, the date its claims were last compared aga
 | `assets/img/board_*.webp` | `tools/render_boards.sh`, then `tools/make_images.py` | the KiCad boards, rendered with one camera |
 | `assets/img/*.webp` (the rest) | `tools/make_images.py` | figures from each project |
 | `assets/og.png` | `tools/make_og.py` | a capture of the first screen of the built page |
+| `assets/img/pump_*.webp`, `pump/method.html` | `tools/make_pump_method.py` | the renders and parameter file of the pump home-build pack (`PUMP_PACK`), or the snapshot in the script |
 
 The tools read the project folders that sit next to this one and never write to them.
 
