@@ -456,13 +456,13 @@ tools = "Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, MediaPipe, PETG 
 [[project]]
 id = "oxi"
 tier = "featured"
-name = "OXI-1 Pulse Oximeter"
-what = "A fingertip reflectance pulse oximeter: own analogue front end, board, shell and firmware"
+name = "OXI-1"
+what = "A fingertip optical sensor that times capillary refill: own analogue front end, board, shell and firmware"
 evidence = "untested"
-status = "Drawn and checked, nothing ordered: the board files sit at the fab's order form, nothing printed or soldered as of 26 October 2026. The 60 s test against a fingertip oximeter is due 30 November 2026."
-checked = 2026-10-26
+status = "Boards made by the fab and in hand since 6 November 2026, not yet powered: the module is not fitted, the shell is not printed and nothing has been measured. On 17 November it moved from SpO2 to capillary refill timing. The test against slow-motion video is due 31 January 2027."
+checked = 2026-11-17
 layout = "wide"
-summary = "A 660 nm red and a 940 nm infrared LED either side of a photodiode on the centre line of a 55 x 28 mm board, printed light walls between them, and a finger on the printed bed above. A transimpedance amplifier turns the photocurrent into a voltage, a 16-bit ADC reads it at 100 Hz per colour, and an ESP32-S3 band-passes each channel, finds the pulse and takes the ratio of ratios that the SpO2 reading comes from. The cycle is dark, red, dark, infrared every 10 ms, so mains flicker at 100 Hz lands on DC and the dark slots take it out. Everything sits inside a 60 x 33 x 29 mm printed clip: a pouch cell and its charger, the display in the lid, USB-C through the back wall. It is the physical version of the block diagram in my MPHY0011 oximetry report, drawn as a finished device rather than a bench board, and it is not a medical device. Schematic, board and shell are generated from Python with AI assistance, and every number below is a design value: nothing has been measured yet."
+summary = "A fingertip unit that times capillary refill: how long the finger pad takes to pink up after it is pressed white, a sign used in sepsis and dehydration triage that is still counted by eye. A 660 nm red and a 940 nm infrared LED sit either side of a photodiode on the centre line of a 55 x 28 mm board, with printed light walls between them. A transimpedance amplifier and a 16-bit ADC read each colour at 100 Hz, in a dark, red, dark, infrared cycle every 10 ms that cancels room light. A force sensor under the pad and a thermistor record how hard and how cold each press was, because both change the answer and the bedside test ignores them; a press outside the protocol is refused, not reported. It began as a pulse oximeter, the physical version of my MPHY0011 report, and the same optics carry over. Not a medical device, and every number below is a design value: nothing has been measured yet."
 tools = "KiCad, Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, PLA on a Bambu P1S"
 
   [[project.fact]]
@@ -478,6 +478,9 @@ tools = "KiCad, Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, PLA on a 
   label = "Power"
   value = "A 502025 pouch cell across the front, TP4056 charging at **65 mA**, a P-FET switched by the slide switch and a Schottky to the module's 5 V pin, 0.32 V below the cell. Under 80 mA running, so about 3 h a charge on paper"
   [[project.fact]]
+  label = "Refill"
+  value = "Press and release read from the force sensor; refill time runs from release to a **90 percent** return of the 660 nm signal, averaged over exactly one heartbeat. Seven synthetic presses fed through the firmware land within 0.10 s of the true answer"
+  [[project.fact]]
   label = "Shell"
   value = "**60 x 33 x 29** mm, four printed parts: tub, finger bed, lid and pad; a pen spring and a 1.75 mm filament hinge pin; display in the lid, USB-C through the rear wall. 97 interference and fit checks pass against the real board's pads"
   [[project.fact]]
@@ -485,16 +488,16 @@ tools = "KiCad, Fusion 360, Blender, ngspice, C++ on ESP32-S3, Python, PLA on a 
   value = "55.2 x 28.2 mm, two layers, **41** machine-placed parts on 23 order lines: DRC clean, every pad proved against the netlist, 100 percent ground under the ADC and the photodiode node, placement rotations checked against the fab's own footprints, three adversarial reviews"
   [[project.fact]]
   label = "Limit"
-  value = "The ratio to SpO2 map is the textbook first-order line until a three-point calibration against a fingertip oximeter, and the rule for when a number is shown at all is still to be written. Not a medical device."
+  value = "Optical refill timing has been published before; what this adds is force and pad temperature recorded with every press. The force sensor is not yet calibrated and the rule for which presses count is still to be written. Not a medical device."
   [[project.fact]]
   label = "Test"
-  value = "Finger on the bed, a live pulse trace on the display and SpO2 within 3 points of a fingertip oximeter read at the same time, for 60 s on film, by 30 November 2026"
+  value = "Refill time against slow-motion video of the nail, read blind: 5 people, 6 presses each, warm and cold hands; mean difference within 0.3 s and 95 percent of differences within 0.6 s, on film, by 31 January 2027"
 
   [[project.figure]]
   src = "assets/img/oxi_hero.webp"
   kind = "render"
   alt = "Render on a black studio floor of a small fingertip oximeter clip beside its bare circuit board: a white printed lid with a rectangular display window and OXI-1 on its side, over a matte black lower shell with the finger opening at the front and a hinge pin at the back; in front of it the black 55 by 28 mm two-layer board lies flat, components up, with the sensor window, the amplifier and ADC and a row of labelled test pads"
-  caption = "The unit as drawn, closed, with the board it is built around: 60 x 33 x 29 mm shell, white lid over a black tub, the finger goes in at the front; the 55 x 28 mm board carries the optics, the front end and the ADC on top, and the ESP32-S3 module plugs in underneath. Rendered from the part files and the routed board; nothing printed or ordered."
+  caption = "The unit as drawn, closed, with the board it is built around: 60 x 33 x 29 mm shell, white lid over a black tub, the finger goes in at the front; the 55 x 28 mm board carries the optics, the front end and the ADC on top, and the ESP32-S3 module plugs in underneath. Rendered from the part files and the routed board; the boards now exist, the shell is not printed yet."
   [[project.figure]]
   src = "assets/img/oxi_exploded.webp"
   kind = "render"
